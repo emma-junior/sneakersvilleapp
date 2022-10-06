@@ -10,7 +10,7 @@
   cursor: pointer;
 }
 .card .card__imgwrapper {
-  max-width: 300px;
+  width: 300px;
   display: inline-block;
   overflow: hidden;
 }
