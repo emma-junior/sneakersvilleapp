@@ -1,0 +1,44 @@
+@import "../../variables/variables";
+@import "../../variables/resets";
+
+
+@function weight($weight-name) {
+    @return map-get($font-weights, $weight-name)
+}
+
+@mixin tab {
+    @media (max-width: $tab) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+.header {
+    background-image: url("../../../public/assets/images/cover-pic.jpg");
+    background-color: #cccccc; 
+    height: 550px;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+
+    @include tab {
+        color: #fff;
+    }
+    #{&}__content {
+        width: 500px;
+        padding: 100px 70px;
+
+        @include mobile {
+            width: 350px;
+            padding: 70px 30px;
+        }
+        .header-title {
+            font-size: 50px;
+            font-weight: map-get($font-weights, medium);
+        }
+    }
+}

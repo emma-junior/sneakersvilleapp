@@ -1,0 +1,36 @@
+@import "../../variables/variables";
+@import "../../variables/resets";
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+.activeimage-container {
+    .activeimage-wrapper {
+        width: 110px;
+        border: solid yellow 2px;
+        cursor: pointer;
+        @include mobile {
+            width: 70px;
+        }
+
+        .image {
+            width: 100%;
+        }
+    }
+
+    .image-wrapper {
+        width: 110px;
+        cursor: pointer;
+        @include mobile {
+            width: 70px;
+            margin: 0 3px;
+        }
+
+        .image {
+            width: 100%;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.home {
+  position: relative;
+}
+.home .home-cart-modal {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  top: 0;
+  width: 100%;
+  transition: 0.2s ease-in-out;
+  min-height: 100%;
+}
+.home .home-cart-modal .end {
+  display: flex;
+  justify-content: flex-end;
+}/*# sourceMappingURL=home.css.map */

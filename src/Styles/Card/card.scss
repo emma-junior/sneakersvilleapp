@@ -1,0 +1,77 @@
+@import "../../variables/variables";
+@import "../../variables/resets";
+
+@mixin flexCenter($justify) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+}
+
+@function weight($weight-name) {
+    @return map-get($font-weights, $weight-name)
+}
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+.card {
+
+    margin: 20px auto;
+    cursor: pointer;
+
+
+    #{&}__imgwrapper {
+        max-width: 300px;
+        display: inline-block;
+        overflow: hidden;
+
+        .card-img {
+            width: 100%;
+            transition: 0.3s ease-in-out;
+        }
+
+        .card-img:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    .move-up {
+        position: absolute;
+        margin-top: -40px;
+        background: #fff;
+        transition: 0.3s ease-in-out;  
+    }
+    .card-info {
+        width: 300px;
+        margin: 20px 0 10px;
+        text-align: center;
+
+        .card-info__icon {
+            font-size: 25px;
+        }
+        .card-info__title {
+            font-weight: map-get($font-weights, bold);
+        }
+        .card-info__price {
+            font-weight: map-get($font-weights, medium);
+        }
+        .card-info__btn {
+            padding: 10px 23px;
+            background: $primary-color;
+            color: #fff;
+            border: none;
+            font-weight: map-get($font-weights, bold);
+            border-radius: 30px;
+            font-size: 18px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+        .card-info__btn:active {
+            background-color: rgb(53, 49, 49);
+            transform: scale(1.1);
+            transition: 0.2s ;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.footer {
+  width: 45%;
+  margin: 100px auto 20px;
+}
+@media (max-width: 640px) {
+  .footer {
+    width: 90%;
+  }
+}
+.footer .footer__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer .footer__list li {
+  list-style: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+.footer .footer__address {
+  text-align: center;
+  margin: 30px 0;
+}
+.footer .footer__address h1 {
+  margin: 20px 0;
+}
+.footer .footer__address h1 .ville {
+  color: rgb(3, 3, 73);
+}
+.footer .footer__address .address, .footer .footer__address .email {
+  color: #555;
+}
+.footer .footer__address .tel {
+  color: #555;
+  margin: 5px 0;
+}
+.footer .footer__copyright {
+  text-align: center;
+  color: #555;
+  margin: 50px 0;
+}/*# sourceMappingURL=footer.css.map */

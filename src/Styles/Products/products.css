@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.loader-spinner {
+  display: flex;
+  height: 90vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.products-wrapper {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 80%;
+  margin: auto;
+}
+@media (max-width: 768px) {
+  .products-wrapper {
+    grid-template-columns: auto auto;
+  }
+}
+@media (max-width: 640px) {
+  .products-wrapper {
+    grid-template-columns: auto;
+  }
+}/*# sourceMappingURL=products.css.map */

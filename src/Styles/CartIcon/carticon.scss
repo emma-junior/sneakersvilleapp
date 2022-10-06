@@ -1,0 +1,39 @@
+@import "../../variables/variables";
+@import "../../variables/resets";
+
+@mixin flexCenter($justify) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+}
+
+@function weight($weight-name) {
+    @return map-get($font-weights, $weight-name)
+}
+
+.navbar-cart-icon {
+    position: relative;
+    cursor: pointer;
+
+    .cart-icon {
+        font-size: 28px;
+    }
+    .cart-num-bg {
+        background: $primary-color;
+        width: 25px;
+        height: 25px;
+        border-radius: 50%;
+        position: absolute;
+        top: 15px;
+        left: 15px;
+
+        .cart-num {
+            color: #fff;
+            width: 25px;
+            height: 22px;
+            @include flexCenter(center);
+            font-size: 12px;
+            font-weight: map-get($font-weights, bold);
+        }
+    }
+}

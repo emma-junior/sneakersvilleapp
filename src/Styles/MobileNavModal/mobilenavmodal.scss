@@ -1,0 +1,75 @@
+@import "../../variables/variables";
+@import "../../variables/resets";
+
+@function weight($weight-name) {
+    @return map-get($font-weights, $weight-name)
+}
+
+@mixin iconBg($bgcolor) {
+    background-color: $bgcolor;
+    padding: 7px 10px;
+    font-size: 18px;
+    color: #fff;
+    border-radius: 80px;
+    margin: 2px 5px ;
+}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+.mobilenavmodal {
+    background-color: #fff;
+    width: 50%;
+    height: 100vh;
+    position: fixed;
+    z-index: 2;
+    padding: 20px;
+    @include mobile {
+        width: 80%;
+    }
+
+    .times-icon {
+        cursor: pointer;
+    }
+    .free-shipping {
+        margin-top: 50px;
+    }
+    hr {
+        margin: 30px 0;
+    }
+    input {
+        height: 50px;
+        width: 100%;
+        background-color: #f6f6f6;
+        border: none;
+        outline: none;
+        padding: 3px;
+    }
+    .mobile-navlist {
+        display: flex;
+        width: 100%;
+        font-size: 19px;
+        justify-content: space-between;
+        margin: 10px 0;
+        font-weight: map-get($font-weights, medium);
+    }
+    .icons {
+        display: flex;
+
+        .facebook-icon {
+            @include iconBg(#556fa7);
+        }
+        .twitter-icon {
+            @include iconBg(#6ab6f0);
+        }
+        .pinterest-icon {
+            @include iconBg(#bd081c);
+        }
+        .instagram-icon {
+            @include iconBg(#eb6f86);
+        }
+    }
+}

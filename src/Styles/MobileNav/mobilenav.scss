@@ -1,0 +1,28 @@
+@import "../../variables/variables";
+@import "../../variables/resets";
+
+.mobilenav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 15px;
+
+    h1 {
+        color: $primary-color;
+
+        .ville {
+            color:rgb(3, 3, 73);
+        }
+    }
+    .mobilenav-icons {
+        display: flex;
+        
+        .icon {
+            cursor: pointer;
+        }
+        h3 {
+            margin: 0 15px;
+        }
+    }
+}

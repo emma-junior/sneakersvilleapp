@@ -1,0 +1,63 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.navbar-header {
+  background-color: #272727;
+  color: #fff;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar-header .navbar-header__p {
+  font-weight: 400;
+}
+.navbar-header .navbar-header__p .p-span {
+  font-weight: 700;
+  color: #D21C23;
+}
+
+.navbar-cover .navbar-cover__wrapper {
+  width: 95%;
+  margin: auto;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-cover .navbar-cover__wrapper .navbar-cart {
+  width: 220px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar-cover .navbar-cover__wrapper .navbar-cart .login-register {
+  cursor: pointer;
+}
+.navbar-cover .navbar-cover__wrapper .navbar-cart .login-register:hover {
+  color: #FF2F2F;
+}
+.navbar-cover .navbar-cover__wrapper h1 {
+  font-weight: 700;
+  font-size: 35px;
+  cursor: pointer;
+  color: #272727;
+}
+.navbar-cover .navbar-cover__wrapper h1 .ville {
+  color: rgb(3, 3, 73);
+}
+.navbar-cover .navbar-cover__wrapper input {
+  padding: 6px;
+  width: 250px;
+  border: none;
+  border-bottom: 2px solid #272727;
+  outline: none;
+}
+.navbar-cover hr {
+  width: 95%;
+  margin: auto;
+}/*# sourceMappingURL=navbar.css.map */

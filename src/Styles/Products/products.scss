@@ -1,0 +1,42 @@
+@import "../../variables/variables";
+@import "../../variables/resets";
+
+@mixin loader($height) {
+    display: flex;
+    height: $height;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin tab {
+    @media (max-width: $tab) {
+        @content;
+    }
+}
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+// .products {
+
+    .loader-spinner {
+        @include loader(90vh);
+        margin: auto;
+    }
+
+    .products-wrapper {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        width: 80%;
+        margin: auto;
+        @include tab {
+            grid-template-columns: auto auto;
+        }
+        @include mobile {
+            grid-template-columns: auto;
+        }
+    }
+// }

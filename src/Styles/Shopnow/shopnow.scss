@@ -1,0 +1,116 @@
+@import "../../variables/variables";
+@import "../../variables/resets";
+
+
+@function weight($weight-name) {
+    @return map-get($font-weights, $weight-name)
+}
+
+@mixin tab {
+    @media (max-width: $tab) {
+        @content;
+    }
+}
+
+
+.shopnow {
+
+    width: 100%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: auto auto;
+    @include tab {
+        grid-template-columns: auto;
+    }
+    .adidas {
+        position: relative;
+        // width: 60%;
+        .adidas__imgwrapper {
+            // width: 800px;
+            display: inline-block;
+            overflow: hidden;
+            @include tab {
+                width: 100%;
+            }
+
+            .adidas-img {
+                width: 100%;
+                height: 500px;
+                transition: 0.3s ease-in-out;
+            }
+            .adidas-img:hover {
+                transform: scale(1.2);
+            }
+        }
+        .adidas-content {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            width: 260px;
+
+            .adidas-content-title {
+                font-weight: map-get($font-weights, medium);
+                font-size: 35px;
+            }
+            .adidas-content-para {
+                color: #333;
+                margin: 30px 0;
+            }
+            .adidas-content-start {
+                font-size: 12px;
+                font-weight: map-get($font-weights, bold);
+            }
+            .adidas-content-price {
+                font-size: 50px;
+                color: rgb(3, 3, 73);
+            }
+            .adidas-content-btn {
+                margin: 25px auto;
+                font-size: 17px;
+                padding: 10px;
+                color: #fff;
+                background: #000;
+                border: none;
+                font-weight: map-get($font-weights, medium);
+                cursor: pointer;
+            }
+        }
+    }
+    .nike {
+        position: relative;
+        @include tab {
+            display: none;
+        }
+
+        .nike__imgwrapper {
+            // width: 500px;
+            display: inline-block;
+            overflow: hidden;
+
+            .nike-img {
+                width: 100%;
+                height: 500px;
+                transition: 0.3s ease-in-out;
+            }
+            .nike-img:hover {
+                transform: scale(1.2);
+            }
+        }
+        .nike-content {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 220px;
+
+            .nike-content-title {
+                font-weight: map-get($font-weights, medium);
+                font-size: 35px;
+            }
+
+            .nike-content-para {
+                color: #333;
+                margin: 20px 0;
+            }
+        }
+    }
+}

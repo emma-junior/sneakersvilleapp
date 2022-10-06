@@ -1,0 +1,71 @@
+@import "../../variables/variables";
+@import "../../variables/resets";
+
+
+@mixin flexCenter($justify) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+}
+@mixin loader($height) {
+    display: flex;
+    height: $height;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+.bestseller {
+
+    #{&}__topic {
+        text-align: center;
+        margin: 80px auto 20px;
+        .topic {
+            font-size: 30px;
+        }
+        .topic-info {
+            color: #555;
+        }
+    }
+    #{&}__all {
+        width: 95%;
+        @include flexCenter(space-between);
+        margin: 50px auto;
+        
+        h4 {
+            color: #111;
+        }
+        h4:hover {
+            color: #FF2F2F;
+        }
+    }
+    #{&}__products {
+        margin: 10px auto;
+        width: 95%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        @include mobile {
+            display: block;
+            width: 300px;
+            margin: 5px auto;
+        }
+
+        .loader-spinner {
+            @include loader(200px)
+            // display: flex;
+            // height: 200px;
+            // width: 100%;
+            // justify-content: center;
+            // align-items: center;
+        }
+    }
+}

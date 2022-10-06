@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.navbar-cart-icon {
+  position: relative;
+  cursor: pointer;
+}
+.navbar-cart-icon .cart-icon {
+  font-size: 28px;
+}
+.navbar-cart-icon .cart-num-bg {
+  background: #272727;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+}
+.navbar-cart-icon .cart-num-bg .cart-num {
+  color: #fff;
+  width: 25px;
+  height: 22px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+}/*# sourceMappingURL=carticon.css.map */

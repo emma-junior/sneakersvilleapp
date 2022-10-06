@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.subscribe {
+  width: 90%;
+  margin: 70px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .subscribe {
+    display: block;
+  }
+}
+.subscribe .subscribe__connected {
+  width: 40%;
+}
+.subscribe .subscribe__connected .connected__title {
+  font-size: 30px;
+}
+.subscribe .subscribe__connected .connected__para {
+  color: #555;
+}
+@media (max-width: 768px) {
+  .subscribe .subscribe__connected {
+    margin-bottom: 15px;
+    width: 90%;
+  }
+}
+.subscribe .subscribe__mail .mail {
+  display: flex;
+  padding: 2px;
+}
+.subscribe .subscribe__mail .mail .mail-icon {
+  font-size: 25px;
+  margin-right: 7px;
+}
+.subscribe .subscribe__mail .mail .mail-input {
+  width: 600px;
+  border: none;
+  outline: none;
+}
+.subscribe .subscribe__mail .mail .subscribe-btn {
+  font-weight: 700;
+  cursor: pointer;
+}
+.subscribe .subscribe__mail .mail .subscribe-btn:hover {
+  color: #FF2F2F;
+}/*# sourceMappingURL=subscribe.css.map */

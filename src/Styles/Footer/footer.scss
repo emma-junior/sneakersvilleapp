@@ -1,0 +1,63 @@
+@import "../../variables/variables";
+@import "../../variables/resets";
+
+@mixin flexCenter($justify) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+}
+
+@function weight($weight-name) {
+    @return map-get($font-weights, $weight-name)
+}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+.footer {
+    width: 45%;
+    margin: 100px auto 20px;
+
+    @include mobile {
+        width: 90%;
+    }
+    #{&}__list {
+        @include flexCenter(space-between);
+
+        li {
+            list-style: none;
+            font-weight: map-get($font-weights, medium);
+            cursor: pointer;
+        }
+    }
+
+    #{&}__address {
+        text-align: center;
+        margin: 30px 0;
+
+        h1 {
+            margin: 20px 0;
+
+            .ville {
+                color: rgb(3, 3, 73)
+            }
+        }
+        .address, .email {
+            color: #555;
+        }
+        .tel {
+            color: #555;
+            margin: 5px 0;
+        }
+        
+    }
+
+    .footer__copyright {
+        text-align: center;
+        color: #555;
+        margin: 50px 0;
+    }
+}
