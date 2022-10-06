@@ -18,7 +18,7 @@ const BestSeller = () => {
   
   // const dispatch = useDispatch()
   // useEffect(() => {
-  //   dispatch(getProduct())
+  //    dispatch(getProduct())
   // },[dispatch])
 
   useEffect(() => {
