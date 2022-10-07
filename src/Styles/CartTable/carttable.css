@@ -70,13 +70,6 @@
 .carttable table tr td .delete:hover {
   color: #FF2F2F;
 }
-.carttable .loader-spinner {
-  display: flex;
-  height: 200px;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-}
 .carttable button {
   font-weight: 600;
   margin: 55px;
@@ -89,4 +82,11 @@
 .carttable button:hover {
   background: #FF2F2F;
   color: #FFF;
+}
+.carttable .loader-spinner {
+  display: flex;
+  height: 200px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=carttable.css.map */

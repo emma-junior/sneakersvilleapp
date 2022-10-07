@@ -37,6 +37,7 @@
 }
 .navbar-cover .navbar-cover__wrapper .navbar-cart .login-register {
   cursor: pointer;
+  color: #272727;
 }
 .navbar-cover .navbar-cover__wrapper .navbar-cart .login-register:hover {
   color: #FF2F2F;

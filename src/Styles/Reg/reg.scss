@@ -1,0 +1,118 @@
+@import "../../variables/variables";
+@import "../../variables/resets";
+
+@function weight($weight-name) {
+    @return map-get($font-weights, $weight-name)
+}
+
+.reg-page {
+    .reg {
+        display: flex;
+
+        .reg-img-container{
+            position: relative;
+            width: 50%;
+            height: 100vh;
+
+            .reg-img-cover {
+                position: absolute;
+                background-color: rgba(173, 117, 32, 0.356);
+                width: 100%;
+                height: 100%;
+            }
+           .reg-img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+            .reg-img-loader {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: 3;
+                background-color: rgb(182, 100, 114);
+                display: grid;
+                place-items: center;
+                top: 0;
+                left: 0;
+                transition: 2s opacity linear;
+           }
+       }
+       .reg-form-container {
+            display: flex;
+            height: 100vh;
+            width: 50%;
+            align-items: center;
+
+            form {
+                margin: auto;
+                width: 70%;
+                h1 {
+                    font-size: 30px;
+                    color: $primary-color;
+                    font-weight: 700;
+                    text-align: center;
+                }
+                input {
+                    display: block;
+                    height: 3.2rem;
+                    text-indent: 1.2rem;
+                    margin-top: 2.3rem;
+                    width: 100%;
+                    border-radius: .3rem;
+                    border: 2px solid rgb(194, 187, 187);
+                }
+                .reg-password {
+                    position: relative;
+                    display: block;
+
+                    .shown-password {
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        width: 10%;
+                        font-size: 1.5rem;
+                        height: 100%;
+                        cursor: pointer;
+                        color: rgb(179, 179, 179);
+                        background-color: transparent;
+                        border: none;
+                        transition: .5s all ease;
+                        transform: translateY(-30%);
+                    }
+                    .shown-password:hover {
+                        color: rgb(148, 148, 148);                   
+                    }
+                }
+                .reg-btn {
+                    background-color: $primary-color;
+                    color: #fff;
+                    width: 100%;
+                    height: 45px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    border: none;
+                    margin: 15px auto;
+                    border-radius: 7px;
+                    font-weight: map-get($font-weights, bold);
+                    cursor: pointer;
+                }
+                .reg-btn:hover {
+                    background-color: rgb(51, 49, 49);
+                }
+                .account {
+                    font-weight: map-get($font-weights, medium);
+
+                    span {
+                        font-weight: map-get($font-weights, bold);
+                        cursor: pointer;
+                    }
+                    span:hover {
+                        color: #D21C23;
+                    }
+                }
+            }
+       }
+    }
+}

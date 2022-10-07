@@ -80,9 +80,6 @@
                 }
             }
     }
-    .loader-spinner {
-        @include loader(200px);
-    }
     button {
         font-weight: map-get($font-weights, medium);
         margin: 55px;
@@ -95,5 +92,8 @@
     button:hover {
         background: #FF2F2F;
         color: #FFF;
+    }
+    .loader-spinner {
+        @include loader(200px);
     }
 }

@@ -7,6 +7,7 @@ import Details from './pages/Details';
 import Cart from './pages/Cart';
 import Products from './pages/Products';
 import ScrollToTop from './hooks/ScrollToTop';
+import Register from './pages/Register';
 
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
             <Route path='/' element={<Home />} />
             <Route path='details/:id' element={<Details />} />
             <Route path='/cart' element={<Cart />} /> 
-            <Route path='/products' element={<Products />}  />    
+            <Route path='/products' element={<Products />}  /> 
+            <Route path='/register' element={<Register />} />   
           </Routes>
         </AppProvider>
       </Router>

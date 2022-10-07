@@ -8,6 +8,7 @@ import { increaseQty, decreaseQty, deleteCart } from '../redux/actions'
 import {FaTimes} from 'react-icons/fa'
 import {Product} from '../model'
 import "../Styles/CartTable/carttable.css"
+// import { LineWave } from 'react-loader-spinner'
 import Loading from './Loading'
 
 const CartTable = () => {
@@ -32,9 +33,10 @@ const CartTable = () => {
     }
 
   return (
-    <div className='carttable'>
-        {getItems ? <>       
+    <div className='carttable'>     
         <h2>Your cart items</h2>
+        {getItems ?
+        <>
         <table>
             <tr>
                 <th>Image</th>
@@ -50,18 +52,16 @@ const CartTable = () => {
                             <td>{cart.title}</td>
                             <td>${cart.price}</td>
                             <td>
-                                <span onClick={() => decQuantity(cart._id)} className='qty-change'>-</span>
+                                <span onClick={() => decQuantity(cart._id)} className='qty-change'>-</span>                                
                                 <span>{cart?.quantity}</span>
                                 <span onClick={() => incQuantity(cart._id)} className='qty-change'>+</span>
                             </td>
                             <td><p className='delete' onClick={() => delCartItem(cart._id)}><FaTimes /></p></td>
                         </tr>
                     )
-                })}            
-        </table> </> : 
-        <span className='loader-spinner'>
-            <Loading />
-        </span>}           
+                })}       
+        </table>
+        </>:<span className='loader-spinner'><Loading /></span>} 
         <button>Continue Shopping</button>
     </div>
   )

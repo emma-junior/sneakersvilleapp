@@ -19,10 +19,10 @@ const Navbar = () => {
             <div>
               <input placeholder='Type anything and hit enter' />
             </div>
-            <Link to="/"><h1>Sneakers<span className='ville'>Ville</span></h1></Link>
+            <Link to="/"><h1>Sneakers<span className='ville'>Ville</span></h1></Link>           
             <div className='navbar-cart'>
-              <h3 className='login-register'><BsPerson /></h3>
-              <p className='login-register'>Log In / Register</p>
+            <Link to="/register"><h3 className='login-register'><BsPerson /></h3></Link>
+            <Link to="/register"><p className='login-register'>Log In / Register</p></Link>
               <div onClick={() => setCardModal(true)} >
                 <CartIcon />
               </div>
