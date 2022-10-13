@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 import { getCart } from '../redux/actions'
 import { State } from '../redux/reducers'
 import { dispatchStore } from '../redux/store'
-import { useGlobalContext } from '../hooks/Context';
 import { increaseQty, decreaseQty, deleteCart } from '../redux/actions'
 import {FaTimes} from 'react-icons/fa'
 import {Product} from '../model'
@@ -11,25 +10,24 @@ import "../Styles/CartTable/carttable.css"
 // import { LineWave } from 'react-loader-spinner'
 import Loading from './Loading'
 
+
+//USED STORE.DISPATCH IN PLACE OF USEDISPATCH
+
 const CartTable = () => {
     const getItems:Product[] = useSelector((state: State) => state.products['cart'])
-    const {renderFix, setRenderFix} = useGlobalContext();
 
     useEffect(() => {
         dispatchStore(getCart() as any)
-    },[renderFix])
+    },[])
     
     const incQuantity = (_id: string) => {
         dispatchStore((increaseQty(_id)) as any)
-        setRenderFix(!renderFix)
     }
     const decQuantity = (_id: string) => {
         dispatchStore((decreaseQty(_id)) as any)
-        setRenderFix(!renderFix)
     }
     const delCartItem = (_id: string) => {
         dispatchStore((deleteCart(_id)) as any)
-        setRenderFix(!renderFix)
     }
 
   return (

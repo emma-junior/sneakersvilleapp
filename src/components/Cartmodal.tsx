@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {FaTimes} from 'react-icons/fa'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { State } from '../redux/reducers'
 import { dispatchStore } from '../redux/store'
 import { getCart } from '../redux/actions'
@@ -9,14 +9,16 @@ import { useGlobalContext } from '../hooks/Context';
 import "../Styles/Cardmodal/cartmodal.css"
 import { Link } from 'react-router-dom'
 
+
+//USED STORE.DISPATCH IN PLACE OF USEDISPATCH
+
 const Cartmodal = () => {
-    const {renderFix} = useGlobalContext();
     const getItems:Product[] = useSelector((state: State) => state.products['cart'])
     const {totalAmount, setTotalAmount, setCardModal} = useGlobalContext();
 
     useEffect(() => {
         dispatchStore(getCart() as any)
-    },[renderFix])
+    },[])
 
     useEffect(() => {
         let amount = 0;

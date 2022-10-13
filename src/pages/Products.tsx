@@ -19,13 +19,13 @@ import Loading from '../components/Loading'
 
 const Products = () => {
     const getItems:Product[] = useSelector((state: State) => state.products['product'])
-    const {cardModal, renderFix, mobileNavModal} = useGlobalContext();
+    const {cardModal, mobileNavModal} = useGlobalContext();
 
     const windowSize = useWindowSize()
     
     useEffect(() => {
         dispatchStore(getProduct() as any)
-    },[renderFix])
+    },[])
     return (
         <div className='home'>
             {

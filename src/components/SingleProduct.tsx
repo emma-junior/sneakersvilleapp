@@ -4,7 +4,6 @@ import ActiveImage from './ActiveImage';
 import "../Styles/SingleProduct/singleproduct.css"
 import { Rating } from 'react-simple-star-rating';
 import { postCart } from '../redux/actions';
-import { useGlobalContext } from '../hooks/Context';
 import { dispatchStore } from '../redux/store'
 import { useSelector } from 'react-redux'
 import toast from "react-hot-toast";
@@ -19,7 +18,6 @@ interface Props {
 }
 
 const SingleProduct = ({detail}: Props) => {
-  const {renderFix, setRenderFix} = useGlobalContext();
   const images = [detail.imageOne, detail.imageTwo, detail.imageThree, detail.imageFour];
   const [currentImage, setCurrentImage] = useState<number>(0);
 
@@ -28,7 +26,6 @@ const SingleProduct = ({detail}: Props) => {
 
   const addToCart = (detail:Product) => {
     dispatchStore((postCart(detail)) as any)
-    setRenderFix(!renderFix)
 
     toast.success(
         `${detail.title} added to cart`
@@ -37,7 +34,7 @@ const SingleProduct = ({detail}: Props) => {
 
   useEffect(() => {
     dispatchStore(getProduct() as any)
-  },[renderFix])
+  },[])
 
   return !getItems?.length ? (
     <span className='loader-spinner'>

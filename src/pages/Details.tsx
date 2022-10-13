@@ -1,5 +1,5 @@
 import React,{useEffect} from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { State } from '../redux/reducers'
 import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -15,8 +15,11 @@ import Footer from '../components/Footer';
 import MobileNav from '../components/MobileNav';
 import MobileNavModal from '../components/MobileNavModal';
 
+
+//USED STORE.DISPATCH IN PLACE OF USEDISPATCH
+
 const Details = () => {
-  const {cardModal, renderFix, mobileNavModal} = useGlobalContext();
+  const {cardModal, mobileNavModal} = useGlobalContext();
   const { id } = useParams()
     const details = useSelector((state: State) => state['products'])
     
@@ -26,7 +29,7 @@ const Details = () => {
 
     useEffect(() => {
       dispatchStore(getDetail(id!) as any)    
-    },[renderFix])
+    },[id])
 
   return (
     <div className='home'>

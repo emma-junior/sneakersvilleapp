@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import { Product } from '../model'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { getCart } from '../redux/actions'
 import { State } from '../redux/reducers'
 import { dispatchStore } from '../redux/store'
@@ -9,9 +9,10 @@ import { useGlobalContext } from '../hooks/Context';
 import "../Styles/CartIcon/carticon.css"
 
 
+//USED STORE.DISPATCH IN PLACE OF USEDISPATCH
+
 const CartIcon = () => {
     const getItems:Product[] = useSelector((state: State) => state.products['cart'])
-    const {renderFix} = useGlobalContext();
     const {cartCount, setCartCount} = useGlobalContext();
 
     useEffect(() => {
@@ -20,11 +21,11 @@ const CartIcon = () => {
           count += cart.quantity;
         });
         setCartCount(count);
-      }, [getItems, cartCount, renderFix]);
+      }, [getItems, cartCount]);
       
       useEffect(() => {
         dispatchStore(getCart() as any)
-    },[renderFix])
+    },[])
 
   return (
     <div className='navbar-cart-icon'>

@@ -24,9 +24,7 @@ export interface EcomArray{
 }
 
 export interface MyContext {
-    renderFix: boolean,
     cardModal: boolean,
-    setRenderFix: React.Dispatch<React.SetStateAction<boolean>>,
     setCardModal: React.Dispatch<React.SetStateAction<boolean>>,
     cartCount: number,
     setCartCount: React.Dispatch<React.SetStateAction<number>>,

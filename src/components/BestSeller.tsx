@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { getProduct } from '../redux/actions'
 import { State } from '../redux/reducers'
 import { dispatchStore } from '../redux/store'
@@ -13,13 +13,10 @@ import { Link } from 'react-router-dom'
 import Loading from './Loading'
 
 
+//USED STORE.DISPATCH IN PLACE OF USEDISPATCH
+
 const BestSeller = () => {
   const getItems:Product[] = useSelector((state: State) => state.products['product'])
-  
-  // const dispatch = useDispatch()
-  // useEffect(() => {
-  //    dispatch(getProduct())
-  // },[dispatch])
 
   useEffect(() => {
     Aos.init({duration: 2000})
