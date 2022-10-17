@@ -79,13 +79,13 @@ const SingleProduct = ({detail}: Props) => {
           <div className='categories'>
             <h4>Categories:</h4>
             <div className='product-categories'>
-              {detail.categories?.map((category) => <p>{category},</p>)}
+              {detail.categories?.map((category, index) => <p key={index}>{category} {index < detail.categories.length - 1 ? ", " : ""}</p>)}
             </div>
           </div>
           <div className='categories'>
             <h4>Tag:</h4>
             <div className='product-categories'>
-              {detail.tag?.map((tag) => <p>{tag},</p>)}
+              {detail.tag?.map((tag, index) => <p key={index}>{tag} {index < detail.tag.length - 1 ? ", " : ""}</p>)}
             </div>
           </div>
           <button onClick={() => addToCart(detail)} className='cart-btn'>Add To Cart</button>

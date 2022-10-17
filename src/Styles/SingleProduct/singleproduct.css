@@ -134,7 +134,7 @@
   display: flex;
 }
 .details .singleproduct .singleproduct-detail .sizes .product-sizes .one-size {
-  margin: 12px;
+  margin: 5px;
   border: 1px solid #777;
   padding: 1px 10px;
   cursor: pointer;
