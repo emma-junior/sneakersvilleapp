@@ -27,9 +27,17 @@ const SingleProduct = ({detail}: Props) => {
   const addToCart = (detail:Product) => {
     dispatchStore((postCart(detail)) as any)
 
-    toast.success(
-        `${detail.title} added to cart`
-    )
+    const check = getItems.some((item) => item.title === detail.title)
+        
+        if(check){
+            toast.error(
+                `${detail.title} already exist in cart`
+            )
+        }else {
+            toast.success(
+                `${detail.title} added to cart`
+            )
+        }
   }
 
   useEffect(() => {
