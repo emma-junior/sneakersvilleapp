@@ -30,7 +30,15 @@
         border: 1px solid black;
         border-collapse: collapse;
         margin-top: 20px;
-    
+
+            .cart-empty {
+                display: flex;
+                width: 90vw;
+                height: 200px;
+                justify-content: center;
+                align-items: center;
+            }
+
             tr {
                 border-top: 1px solid black;
                 border-collapse: collapse;

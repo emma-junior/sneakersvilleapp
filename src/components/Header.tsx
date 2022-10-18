@@ -12,8 +12,8 @@ const Header = () => {
   return (
     <section className='header'>
         <div className='header__content' data-aos="fade-right">
-            <p className='header-title'><strong>Realtree</strong> Print Belt Bagn</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            <p className='header-title'><strong>Quality</strong> Sneakers always.</p>
+            <p>Get the best quality sneakers right here on sneakersVille</p>
         </div>
     </section>
   )

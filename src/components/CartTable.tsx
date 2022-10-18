@@ -7,6 +7,7 @@ import { increaseQty, decreaseQty, deleteCart } from '../redux/actions'
 import {FaTimes} from 'react-icons/fa'
 import {Product} from '../model'
 import "../Styles/CartTable/carttable.css"
+import { Link } from 'react-router-dom'
 // import { LineWave } from 'react-loader-spinner'
 import Loading from './Loading'
 
@@ -28,6 +29,16 @@ const CartTable = () => {
     }
     const delCartItem = (_id: string) => {
         dispatchStore((deleteCart(_id)) as any)
+    }
+
+    if (getItems.length < 1) {
+        return (
+          <section className='carttable'>
+                <table>
+                    <h1 className='cart-empty'>No item in cart</h1>
+                </table>
+          </section>
+        );
     }
 
   return (
@@ -60,7 +71,7 @@ const CartTable = () => {
                 })}       
         </table>
         </>:<span className='loader-spinner'><Loading /></span>} 
-        <button>Continue Shopping</button>
+        <Link to="/products"><button>Continue Shopping</button></Link>
     </div>
   )
 }

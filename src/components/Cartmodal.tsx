@@ -30,6 +30,15 @@ const Cartmodal = () => {
         setTotalAmount(amount)
     }, [getItems, totalAmount, setTotalAmount])
 
+    if (totalAmount < 1) {
+        return (
+          <section className='cover'>
+            <span className='times-icon' onClick={() => setCardModal(false)} ><FaTimes /></span>
+              <h1 className='cart-empty'>No item in cart</h1>
+          </section>
+        );
+    }
+
   return (
     <section className='cover'>
         <span className='times-icon' onClick={() => setCardModal(false)} ><FaTimes /></span>
@@ -42,7 +51,7 @@ const Cartmodal = () => {
                         <img src={cart.imageOne} alt="" />
                         <div className='cartmap-wrapper-content'>
                             <p className='cartmap-title'>{cart.title}</p>
-                            <p className='cartmap-price'>{cart.quantity} * ${cart.price}</p>
+                            <p className='cartmap-price'>{cart.quantity} <FaTimes /> ${cart.price}</p>
                         </div>
                         
                     </div>

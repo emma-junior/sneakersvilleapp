@@ -34,7 +34,7 @@
         color: #555;
         border-radius: 5px;
         @include mobile {
-            width: 80%;
+            width: 95%;
             margin: auto;
         }
 
@@ -55,7 +55,7 @@
     .coupon {
         width: 30%;
         @include mobile {
-            width: 80%;
+            width: 95%;
             margin: 15px auto;
         }
         background: #f9f9f9;
@@ -77,7 +77,7 @@
         border-radius: 5px;
         height: fit-content;
         @include mobile {
-            width: 80%;
+            width: 95%;
             margin: auto;
         }
 

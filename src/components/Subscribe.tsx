@@ -7,7 +7,7 @@ const Subscribe = () => {
     <section className='subscribe'>
         <div className='subscribe__connected'>
             <p className='connected__title'><strong>Keep</strong> Connected</p>
-            <p className='connected__para'>Get updates by subscribe our weekly newsletter</p>
+            <p className='connected__para'>Get updates by subscribing to our weekly newsletter</p>
         </div>
         <div className='subscribe__mail'>
             <div className='mail'>

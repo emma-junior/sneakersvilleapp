@@ -26,7 +26,7 @@
 }
 @media (max-width: 640px) {
   .shipping-wrapper .shipping {
-    width: 80%;
+    width: 95%;
     margin: auto;
   }
 }
@@ -54,7 +54,7 @@
 }
 @media (max-width: 640px) {
   .shipping-wrapper .coupon {
-    width: 80%;
+    width: 95%;
     margin: 15px auto;
   }
 }
@@ -74,7 +74,7 @@
 }
 @media (max-width: 640px) {
   .shipping-wrapper .card-total {
-    width: 80%;
+    width: 95%;
     margin: auto;
   }
 }

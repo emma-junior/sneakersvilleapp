@@ -43,6 +43,14 @@
         justify-content: flex-end;
         cursor: pointer;
     }
+    .cart-empty {
+        font-size: 30px;
+        display: flex;
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
     h2 {
         font-size: 20px;
         margin: 30px 10px;
@@ -69,7 +77,11 @@
                 }
                 .cartmap-price {
                     font-weight: map-get($font-weights, regular);
-                    margin-top: 5px;
+                    display: flex;
+                    height: 40px;
+                    width: 70%;
+                    justify-content: space-between;
+                    align-items: center;
                 }
             }
         }

@@ -29,6 +29,14 @@
   justify-content: flex-end;
   cursor: pointer;
 }
+.cover .cart-empty {
+  font-size: 30px;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
 .cover h2 {
   font-size: 20px;
   margin: 30px 10px;
@@ -55,7 +63,11 @@
 }
 .cover .cartmap-container .cartmap-wrapper .cartmap-wrapper-content .cartmap-price {
   font-weight: 400;
-  margin-top: 5px;
+  display: flex;
+  height: 40px;
+  width: 70%;
+  justify-content: space-between;
+  align-items: center;
 }
 .cover .cartmap-container .subtotal {
   margin-top: 35px;

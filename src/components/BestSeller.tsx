@@ -27,7 +27,7 @@ const BestSeller = () => {
     <section data-aos="fade-up" className='bestseller'>
       <div className='bestseller__topic'>
         <p className='topic'><strong>Best</strong> Seller</p>
-        <p className='topic-info'>Top our product best selling</p>
+        <p className='topic-info'>Our top best selling product</p>
       </div> 
       <div className='bestseller__all'>
         <p>ALL PRODUCTS</p>
