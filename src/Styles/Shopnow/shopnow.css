@@ -7,39 +7,24 @@
 
 .shopnow {
   width: 100%;
-  margin: 50px auto;
-  display: grid;
-  grid-template-columns: auto auto;
-}
-@media (max-width: 768px) {
-  .shopnow {
-    grid-template-columns: auto;
-  }
+  display: flex;
 }
 .shopnow .adidas {
-  position: relative;
-}
-.shopnow .adidas .adidas__imgwrapper {
-  display: inline-block;
-  overflow: hidden;
+  background-image: url("../../../public/assets/images/shopnow-two.jpg");
+  width: 50%;
+  background-color: #d2e1ed;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 @media (max-width: 768px) {
-  .shopnow .adidas .adidas__imgwrapper {
+  .shopnow .adidas {
     width: 100%;
   }
 }
-.shopnow .adidas .adidas__imgwrapper .adidas-img {
-  width: 100%;
-  height: 500px;
-  transition: 0.3s ease-in-out;
-}
-.shopnow .adidas .adidas__imgwrapper .adidas-img:hover {
-  transform: scale(1.2);
-}
 .shopnow .adidas .adidas-content {
-  position: absolute;
-  top: 30px;
-  left: 30px;
+  margin: 30px;
   width: 260px;
 }
 .shopnow .adidas .adidas-content .adidas-content-title {
@@ -69,29 +54,22 @@
   cursor: pointer;
 }
 .shopnow .nike {
-  position: relative;
+  background-image: url("../../../public/assets/images/shopnow.jpg");
+  width: 50%;
+  background-color: #d2e1ed;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 @media (max-width: 768px) {
   .shopnow .nike {
     display: none;
   }
 }
-.shopnow .nike .nike__imgwrapper {
-  display: inline-block;
-  overflow: hidden;
-}
-.shopnow .nike .nike__imgwrapper .nike-img {
-  width: 100%;
-  height: 500px;
-  transition: 0.3s ease-in-out;
-}
-.shopnow .nike .nike__imgwrapper .nike-img:hover {
-  transform: scale(1.2);
-}
 .shopnow .nike .nike-content {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  margin: 30px;
+  color: #fff;
   width: 220px;
 }
 .shopnow .nike .nike-content .nike-content-title {
@@ -99,6 +77,6 @@
   font-size: 35px;
 }
 .shopnow .nike .nike-content .nike-content-para {
-  color: #333;
+  color: #fff;
   margin: 20px 0;
 }/*# sourceMappingURL=shopnow.css.map */

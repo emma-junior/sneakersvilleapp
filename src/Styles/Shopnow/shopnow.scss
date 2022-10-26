@@ -12,40 +12,28 @@
     }
 }
 
+@mixin bgimg {
+    background-color: #d2e1ed;
+    height: 500px;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
 
 .shopnow {
 
     width: 100%;
-    margin: 50px auto;
-    display: grid;
-    grid-template-columns: auto auto;
-    @include tab {
-        grid-template-columns: auto;
-    }
+    display: flex;
     .adidas {
-        position: relative;
-        // width: 60%;
-        .adidas__imgwrapper {
-            // width: 800px;
-            display: inline-block;
-            overflow: hidden;
-            @include tab {
-                width: 100%;
-            }
-
-            .adidas-img {
-                width: 100%;
-                height: 500px;
-                transition: 0.3s ease-in-out;
-            }
-            .adidas-img:hover {
-                transform: scale(1.2);
-            }
+        background-image: url("../../../public/assets/images/shopnow-two.jpg");
+        width: 50%;
+        @include bgimg;
+        @include tab {
+            width: 100%;
         }
         .adidas-content {
-            position: absolute;
-            top: 30px;
-            left: 30px;
+            margin: 30px;
             width: 260px;
 
             .adidas-content-title {
@@ -77,29 +65,15 @@
         }
     }
     .nike {
-        position: relative;
+        background-image: url("../../../public/assets/images/shopnow.jpg");
+        width: 50%;
+        @include bgimg;
         @include tab {
             display: none;
         }
-
-        .nike__imgwrapper {
-            // width: 500px;
-            display: inline-block;
-            overflow: hidden;
-
-            .nike-img {
-                width: 100%;
-                height: 500px;
-                transition: 0.3s ease-in-out;
-            }
-            .nike-img:hover {
-                transform: scale(1.2);
-            }
-        }
         .nike-content {
-            position: absolute;
-            top: 20px;
-            left: 20px;
+            margin: 30px;
+            color: #fff;
             width: 220px;
 
             .nike-content-title {
@@ -108,7 +82,7 @@
             }
 
             .nike-content-para {
-                color: #333;
+                color: #fff;
                 margin: 20px 0;
             }
         }
