@@ -22,18 +22,19 @@ const SingleProduct = ({detail}: Props) => {
   const [currentImage, setCurrentImage] = useState<number>(0);
 
   const getItems:Product[] = useSelector((state: State) => state.products['product'])
+  const getCart:Product[] = useSelector((state: State) => state.products['cart'])
 
 
   const addToCart = (detail:Product) => {
     dispatchStore((postCart(detail)) as any)
 
-    const check = getItems.some((item) => item.title === detail.title)
+    const check = getCart.some((item) => item.title === detail.title)
         
         if(check){
             toast.error(
                 `${detail.title} already exist in cart`
             )
-        }else {
+        }else { 
             toast.success(
                 `${detail.title} added to cart`
             )
