@@ -29,4 +29,11 @@
   .products-wrapper {
     grid-template-columns: auto;
   }
+}
+
+.products-pagination {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin: 30px auto;
 }/*# sourceMappingURL=products.css.map */
