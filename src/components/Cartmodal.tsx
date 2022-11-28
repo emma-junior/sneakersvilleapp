@@ -8,6 +8,7 @@ import {Product} from '../model'
 import { useGlobalContext } from '../hooks/Context';
 import "../Styles/Cardmodal/cartmodal.css"
 import { Link } from 'react-router-dom'
+import 'animate.css';
 
 
 //USED STORE.DISPATCH IN PLACE OF USEDISPATCH
@@ -40,7 +41,7 @@ const Cartmodal = () => {
     }
 
   return (
-    <section className='cover'>
+    <section className='cover animate__animated animate__slideInRight'>
         <span className='times-icon' onClick={() => setCardModal(false)} ><FaTimes /></span>
         <h2>Shopping Cart</h2>
         { getItems ? <div className='cartmap-container'>

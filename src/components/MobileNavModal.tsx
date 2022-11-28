@@ -5,11 +5,12 @@ import "../Styles/MobileNavModal/mobilenavmodal.css"
 import {AiOutlinePlus} from "react-icons/ai"
 import {FiFacebook, FiTwitter, FiInstagram} from "react-icons/fi"
 import {FaPinterestP} from "react-icons/fa"
+import 'animate.css';
 
 const MobileNavModal = () => {
     const {setMobileNavModal} = useGlobalContext();
   return (
-    <section className='mobilenavmodal'>
+    <section className='mobilenavmodal animate__animated animate__slideInRight'>
         <span className='times-icon' onClick={() => setMobileNavModal(false)} ><FaTimes /></span>
         <p className='free-shipping'><strong>FREE SHIPPING</strong> world wide for all orders over $199.</p>
         <hr />

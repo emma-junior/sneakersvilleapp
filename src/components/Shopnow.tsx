@@ -1,5 +1,6 @@
 import React from 'react'
 import "../Styles/Shopnow/shopnow.css"
+import { Link } from "react-router-dom"
 
 const Shopnow = () => {
   return (
@@ -10,7 +11,7 @@ const Shopnow = () => {
                 <p className='adidas-content-para'>We sell sneakers at the best rate</p>
                 <p className='adidas-content-start'>START FROM</p>
                 <p className='adidas-content-price'>$59.25</p>
-                <button className='adidas-content-btn'>Shop Now</button>
+                <Link to="/products"><button className='adidas-content-btn'>Shop Now</button></Link>
             </div>
         </div>
         <div className='nike'>
