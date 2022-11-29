@@ -31,10 +31,8 @@
 .bestseller .bestseller__products {
   margin: 10px auto;
   width: 95%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
 }
 @media (max-width: 640px) {
   .bestseller .bestseller__products {

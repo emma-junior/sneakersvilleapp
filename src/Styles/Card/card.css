@@ -6,16 +6,18 @@
 }
 
 .card {
-  margin: 20px auto;
+  position: relative;
+  padding: 20px 10px;
   cursor: pointer;
+  max-width: 300px;
 }
 .card .card__imgwrapper {
-  width: 300px;
+  max-width: 300px;
   display: inline-block;
   overflow: hidden;
 }
 .card .card__imgwrapper .card-img {
-  width: 100%;
+  max-width: 100%;
   transition: 0.3s ease-in-out;
 }
 .card .card__imgwrapper .card-img:hover {
@@ -25,11 +27,13 @@
   position: absolute;
   margin-top: -40px;
   background: #fff;
+  left: -1%;
+  right: -10%;
   transition: 0.3s ease-in-out;
 }
 .card .card-info {
-  width: 300px;
-  margin: 20px 0 10px;
+  max-width: 300px;
+  padding: 20px auto 10px;
   text-align: center;
 }
 .card .card-info .card-info__icon {
