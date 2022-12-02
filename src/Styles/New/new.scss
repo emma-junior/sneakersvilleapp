@@ -73,3 +73,12 @@
         }
     }
 }
+
+//changed to react multi carousel
+.wrapper {
+    width: 70%;
+    @include mobile {
+        width: 80%;
+    }
+    margin: 30px auto;
+}

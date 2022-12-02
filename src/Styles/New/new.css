@@ -86,4 +86,13 @@
       transform: translate(-90%);
     }
   }
+}
+.wrapper {
+  width: 70%;
+  margin: 30px auto;
+}
+@media (max-width: 640px) {
+  .wrapper {
+    width: 80%;
+  }
 }/*# sourceMappingURL=new.css.map */
