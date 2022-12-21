@@ -38,13 +38,19 @@
         .navbar-cart {
             width: 220px;
             @include flexCenter(space-between);
+            .login-logout {
+                display: flex;
 
-            .login-register {
-                cursor: pointer;
-                color: $primary-color;
-
-                &:hover {
-                    color: #FF2F2F;
+                .login-register {
+                    cursor: pointer;
+                    color: $primary-color;
+                    padding: 0 4px;
+                    display: flex;
+                    height: 5px;
+                    align-items: center;
+                    &:hover {
+                        color: #FF2F2F;
+                    }
                 }
             }
         }

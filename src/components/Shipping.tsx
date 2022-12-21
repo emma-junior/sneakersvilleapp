@@ -2,6 +2,7 @@ import React from 'react'
 import Select from './Select'
 import { useGlobalContext } from '../hooks/Context';
 import "../Styles/Shipping/shipping.css"
+import CheckoutBtn from './CheckoutBtn';
 
 const Shipping = () => {
     const {totalAmount} = useGlobalContext();
@@ -51,7 +52,8 @@ const Shipping = () => {
                 <h2>Grand Total</h2>
                 <h2>${totalAmount}</h2>
             </div>
-            <button>Proceed To Checkout</button>
+            <CheckoutBtn btnstyle="" word="Proceed To Checkout" amount={totalAmount} />
+            {/* <button>Proceed To Checkout</button> */}
         </div>
     </section>
   )

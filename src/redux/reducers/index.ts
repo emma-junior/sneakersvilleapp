@@ -1,14 +1,13 @@
 import { combineReducers } from "redux";
-import reducer from "./reducer";
-
-// export default combineReducers({
-//     products: reducer,
-//   });
+// import reducer from "./reducer";
+import cartReducer from "./cartReducer";
+import userReducer from "./userReducer";
 
 const reducers = combineReducers({
-    products: reducer,
+    cart: cartReducer,
+    user: userReducer
 })
 
 export default reducers
 
-  export type State = ReturnType<typeof reducers>
+export type State = ReturnType<typeof reducers>

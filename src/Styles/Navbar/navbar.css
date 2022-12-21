@@ -35,11 +35,18 @@
   justify-content: space-between;
   align-items: center;
 }
-.navbar-cover .navbar-cover__wrapper .navbar-cart .login-register {
+.navbar-cover .navbar-cover__wrapper .navbar-cart .login-logout {
+  display: flex;
+}
+.navbar-cover .navbar-cover__wrapper .navbar-cart .login-logout .login-register {
   cursor: pointer;
   color: #272727;
+  padding: 0 4px;
+  display: flex;
+  height: 5px;
+  align-items: center;
 }
-.navbar-cover .navbar-cover__wrapper .navbar-cart .login-register:hover {
+.navbar-cover .navbar-cover__wrapper .navbar-cart .login-logout .login-register:hover {
   color: #FF2F2F;
 }
 .navbar-cover .navbar-cover__wrapper h1 {

@@ -1,9 +1,5 @@
 import React from 'react'
-import { useEffect } from 'react'
-import { useSelector } from 'react-redux'
-import { getProduct } from '../redux/actions'
-import { State } from '../redux/reducers';
-import { dispatchStore } from '../redux/store'
+import {useState, useEffect } from 'react'
 import {Product} from '../model'
 import "../Styles/Bestseller/bestseller.css"
 import "../Styles/New/new.css"
@@ -13,16 +9,28 @@ import "aos/dist/aos.css";
 import Loading from './Loading';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { publicRequest } from '../api';
 
 
-//USED STORE.DISPATCH IN PLACE OF USEDISPATCH
+
 
 const New = () => {
-    const getItems:Product[] = useSelector((state: State) => state.products['product'])
+    const [products, setProducts] = useState<Product[]>([]);
+
+  useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const res = await publicRequest.get("/products")
+        setProducts(res.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getProducts()
+  })
 
   useEffect(() => {
     Aos.init({duration: 2000})
-    dispatchStore(getProduct() as any)
   },[])
   
   const responsive = {
@@ -52,10 +60,10 @@ const New = () => {
         <p className='topic-info'>We alway up to date new arrivals follows trending</p>
       </div>
       <div className='wrapper'>       
-        {!getItems?.length ? 
+        {!products?.length ? 
           <span className='loader-spinner'>
               <Loading />
-          </span> : <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme new-slider">{getItems.slice(11, 17).map((product : Product) => <Card key={product._id}  product={product} />)}</Carousel>
+          </span> : <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme new-slider">{products.slice(11, 17).map((product : Product) => <Card key={product._id}  product={product} />)}</Carousel>
         }
       </div>
     </section>

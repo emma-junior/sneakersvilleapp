@@ -41,7 +41,7 @@
     margin: 5px auto;
   }
 }
-.bestseller .bestseller__products .loader-spinner {
+.bestseller .loader-spinner {
   display: flex;
   height: 200px;
   width: 100%;

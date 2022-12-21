@@ -10,6 +10,12 @@
     align-items: center;
 }
 
+@mixin flexCenter($justify) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+}
+
 @function weight($weight-name) {
     @return map-get($font-weights, $weight-name)
 }
@@ -88,18 +94,28 @@
                 }
             }
     }
-    button {
-        font-weight: map-get($font-weights, medium);
-        margin: 55px;
-        background: #ebebeb;
-        padding: 15px 30px;
-        border: none;
-        cursor: pointer;
-        font-size: 17px;
-    }
-    button:hover {
-        background: #FF2F2F;
-        color: #FFF;
+    .shopping-clear {
+        width: 100%;
+        @include flexCenter(space-between);
+
+        button {
+            font-weight: map-get($font-weights, medium);
+            margin: 10px 15px;
+            background: #ebebeb;
+            padding: 15px 30px;
+            border: none;
+            cursor: pointer;
+            font-size: 17px;
+            @include mobile {
+                font-size: 15px;
+                padding: 10px 20px;
+                margin: 10px 1px;
+            }
+        }
+        button:hover {
+            background: #FF2F2F;
+            color: #FFF;
+        }
     }
     .loader-spinner {
         @include loader(200px);

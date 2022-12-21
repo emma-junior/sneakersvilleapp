@@ -1,37 +1,23 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
-import { getCart } from '../redux/actions'
 import { State } from '../redux/reducers'
-import { dispatchStore } from '../redux/store'
-import { increaseQty, decreaseQty, deleteCart } from '../redux/actions'
+import { useAppDispatch } from '../helper/appDispatch';
 import {FaTimes} from 'react-icons/fa'
 import {Product} from '../model'
 import "../Styles/CartTable/carttable.css"
 import { Link } from 'react-router-dom'
 // import { LineWave } from 'react-loader-spinner'
+import { decreaseQty, increaseQty, removeAllItem, removeFromCart } from '../redux/actions/cart'
 import Loading from './Loading'
 
 
-//USED STORE.DISPATCH IN PLACE OF USEDISPATCH
 
 const CartTable = () => {
-    const getItems:Product[] = useSelector((state: State) => state.products['cart'])
+    const Cart:Product[] = useSelector((state:State) => state.cart);
 
-    useEffect(() => {
-        dispatchStore(getCart() as any)
-    },[])
+    const dispatch = useAppDispatch()
     
-    const incQuantity = (_id: string) => {
-        dispatchStore((increaseQty(_id)) as any)
-    }
-    const decQuantity = (_id: string) => {
-        dispatchStore((decreaseQty(_id)) as any)
-    }
-    const delCartItem = (_id: string) => {
-        dispatchStore((deleteCart(_id)) as any)
-    }
-
-    if (getItems.length < 1) {
+    if (Cart.length < 1) {
         return (
           <section className='carttable'>
                 <table>
@@ -44,7 +30,7 @@ const CartTable = () => {
   return (
     <div className='carttable'>     
         <h2>Your cart items</h2>
-        {getItems ?
+        {Cart ?
         <>
         <table>
             <tr>
@@ -54,26 +40,30 @@ const CartTable = () => {
                 <th>Qty</th>
                 <th>Action</th>
             </tr>
-                {getItems?.map((cart) => {
+                {Cart?.map((cart) => {
                     return (
-                        <tr key={cart._id}>
-                            <td><img src={cart.imageOne} alt='' /></td>
-                            <td>{cart.title}</td>
-                            <td>${cart.price}</td>
-                            <td>
-                                <span onClick={() => decQuantity(cart._id)} className='qty-change'>-</span>                                
-                                <span>{cart?.quantity}</span>
-                                <span onClick={() => incQuantity(cart._id)} className='qty-change'>+</span>
-                            </td>
-                            <td><p className='delete' onClick={() => delCartItem(cart._id)}><FaTimes /></p></td>
-                        </tr>
+                            <tr>
+                                <td><img src={cart.imageOne} alt='' /></td>
+                                <td>{cart.title}</td>
+                                <td>${cart.price}</td>
+                                <td>
+                                    <span className='qty-change' onClick={() => dispatch(decreaseQty(cart._id))}>-</span>                                
+                                    <span>{cart.quantity}</span>
+                                    <span className='qty-change' onClick={() => dispatch(increaseQty(cart._id))}>+</span>
+                                </td>
+                                <td><p className='delete' onClick={() => dispatch(removeFromCart(cart._id))}><FaTimes /></p></td>
+                            </tr>
                     )
                 })}       
         </table>
-        </>:<span className='loader-spinner'><Loading /></span>} 
-        <Link to="/products"><button>Continue Shopping</button></Link>
+        </>:<span className='loader-spinner'><Loading /></span>}
+        <div className='shopping-clear'>
+            <Link to="/products"><button>Continue Shopping</button></Link>
+            <button onClick={() => dispatch(removeAllItem())}>Clear Cart</button>
+        </div>
     </div>
   )
 }
 
 export default CartTable
+

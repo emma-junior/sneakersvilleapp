@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, { useEffect} from 'react'
 import Benefits from '../components/Benefits'
 import BestSeller from '../components/BestSeller'
 import Cartmodal from '../components/Cartmodal'
@@ -14,10 +14,12 @@ import useWindowSize from '../hooks/useWindowSize'
 import "../Styles/Home/home.css"
 import MobileNavModal from '../components/MobileNavModal'
 
+
 const Home = () => {
   const {cardModal, setCardModal, mobileNavModal, setMobileNavModal} = useGlobalContext();
 
   const windowSize = useWindowSize()
+
 
   useEffect(() => {
     setCardModal(false)

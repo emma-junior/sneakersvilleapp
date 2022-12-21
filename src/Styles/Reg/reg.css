@@ -109,4 +109,8 @@
 }
 .reg-page .reg .reg-form-container form .account span:hover {
   color: #D21C23;
+}
+
+.errorMsg {
+  color: rgb(219, 37, 37);
 }/*# sourceMappingURL=reg.css.map */

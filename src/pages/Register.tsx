@@ -1,12 +1,15 @@
 import React from 'react'
-// import Navbar from '../components/Navbar'
-import Reg from '../components/Reg'
+import Reg from '../components/RegForm'
+import RegLoginImg from '../components/RegLoginImg'
+import "../Styles/Reg/reg.css"
 
 const Register = () => {
   return (
-    <div>
-        {/* <Navbar /> */}
-        <Reg />
+    <div className='reg-page'>
+        <div className='reg'>
+            <RegLoginImg pic="regimg" />
+            <Reg />
+        </div>
     </div>
   )
 }

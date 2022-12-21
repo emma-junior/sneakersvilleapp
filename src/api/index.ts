@@ -1,12 +1,24 @@
 import axios from "axios";
 import { Product } from "../model";
 
-const url = "https://sneakersvilleapi.onrender.com/products";
 
-export const fetchProduct = () => axios.get(url);
-export const fetchCart = () => axios.get(`${url}/cart`)
-export const fetchDetails = (id:string) => axios.get(`${url}/details/${id}`);
-export const createCart = (newCart:Product) => axios.post(`${url}/cart`, newCart);
-export const delCart = (id:string) => axios.delete(`${url}/cart/${id}`);
-export const incQty = (id:string) => axios.patch(`${url}/cart/${id}/incQty`);
-export const decQty = (id:string) => axios.patch(`${url}/cart/${id}/decQty`);
+// const url = "https://sneakersvilleapi.onrender.com/products";
+
+
+const BASE_URL = "https://sneakersvilleapi.onrender.com/api";
+
+const user = JSON.parse(localStorage.getItem("persist:root") || '{}')?.user;
+const currentUser = user && JSON.parse(user).currentUser;
+const TOKEN = currentUser?.accessToken;
+
+export const publicRequest = axios.create({
+  baseURL: BASE_URL,
+});
+
+export const userRequest = axios.create({
+  baseURL: BASE_URL,
+  headers: { token: `Bearer ${TOKEN}` },
+});
+
+// export const fetchProduct = () => publicRequest.get(`${BASE_URL}/products`);
+// export const fetchDetails = (id:string) => publicRequest.get(`${BASE_URL}/products/${id}`);

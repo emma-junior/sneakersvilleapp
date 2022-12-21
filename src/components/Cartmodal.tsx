@@ -2,34 +2,28 @@ import React, {useEffect} from 'react'
 import {FaTimes} from 'react-icons/fa'
 import { useSelector } from 'react-redux'
 import { State } from '../redux/reducers'
-import { dispatchStore } from '../redux/store'
-import { getCart } from '../redux/actions'
 import {Product} from '../model'
 import { useGlobalContext } from '../hooks/Context';
 import "../Styles/Cardmodal/cartmodal.css"
 import { Link } from 'react-router-dom'
 import 'animate.css';
+import CheckoutBtn from './CheckoutBtn'
 
 
-//USED STORE.DISPATCH IN PLACE OF USEDISPATCH
 
 const Cartmodal = () => {
-    const getItems:Product[] = useSelector((state: State) => state.products['cart'])
+    const Cart:Product[] = useSelector((state:State) => state.cart);
     const {totalAmount, setTotalAmount, setCardModal} = useGlobalContext();
-
-    useEffect(() => {
-        dispatchStore(getCart() as any)
-    },[])
-
+    
     useEffect(() => {
         let amount = 0;
 
-        getItems.forEach((item) => {
+        Cart.forEach((item) => {
             amount += item.quantity * item.price
         })
 
         setTotalAmount(amount)
-    }, [getItems, totalAmount, setTotalAmount])
+    }, [Cart, totalAmount, setTotalAmount])
 
     if (totalAmount < 1) {
         return (
@@ -44,9 +38,9 @@ const Cartmodal = () => {
     <section className='cover animate__animated animate__slideInRight'>
         <span className='times-icon' onClick={() => setCardModal(false)} ><FaTimes /></span>
         <h2>Shopping Cart</h2>
-        { getItems ? <div className='cartmap-container'>
+        { Cart ? <div className='cartmap-container'>
             <div className='wrap'>
-            {getItems.map((cart) => {
+            {Cart.map((cart) => {
                 return (
                     <div key={cart._id} className='cartmap-wrapper'>
                         <img src={cart.imageOne} alt="" />
@@ -64,10 +58,12 @@ const Cartmodal = () => {
                 <p>${totalAmount}</p>
             </div>
             <Link to="/cart"><button className='viewcart-btn'>View Cart</button></Link>
-            <button className='viewcart-btn'>Checkout</button>
+            <CheckoutBtn btnstyle="viewcart-btn"  word="Checkout" amount={totalAmount} />
+            {/* <button className='viewcart-btn'>Checkout</button> */}
         </div> : <h2>No Item in cart</h2>}
     </section>
   )
 }
 
 export default Cartmodal
+

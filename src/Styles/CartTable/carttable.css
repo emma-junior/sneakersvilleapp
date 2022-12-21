@@ -77,16 +77,29 @@
 .carttable table tr td .delete:hover {
   color: #FF2F2F;
 }
-.carttable button {
+.carttable .shopping-clear {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.carttable .shopping-clear button {
   font-weight: 600;
-  margin: 55px;
+  margin: 10px 15px;
   background: #ebebeb;
   padding: 15px 30px;
   border: none;
   cursor: pointer;
   font-size: 17px;
 }
-.carttable button:hover {
+@media (max-width: 640px) {
+  .carttable .shopping-clear button {
+    font-size: 15px;
+    padding: 10px 20px;
+    margin: 10px 1px;
+  }
+}
+.carttable .shopping-clear button:hover {
   background: #FF2F2F;
   color: #FFF;
 }

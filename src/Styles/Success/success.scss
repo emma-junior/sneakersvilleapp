@@ -1,0 +1,19 @@
+@import "../../variables/variables";
+@import "../../variables/resets";
+
+
+@mixin flexCenter($justify) {
+    display: flex;
+    justify-content: $justify;
+    align-items: center;
+}
+
+.success {
+    width: 100%;
+    height: 90vh;
+    @include flexCenter(center);
+
+    h2 {
+        padding: 0 3px;
+    }
+}

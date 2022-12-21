@@ -1,34 +1,35 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState} from 'react'
 import {Product} from "../model"
 import ActiveImage from './ActiveImage';
 import "../Styles/SingleProduct/singleproduct.css"
 import { Rating } from 'react-simple-star-rating';
-import { postCart } from '../redux/actions';
-import { dispatchStore } from '../redux/store'
+import { useAppDispatch } from '../helper/appDispatch';
 import { useSelector } from 'react-redux'
+import { addToCart } from '../redux/actions/cart'
 import toast from "react-hot-toast";
-import { getProduct } from '../redux/actions'
 import { State } from '../redux/reducers'
 import SingleDetails from './SingleDetails';
 import Card from './Card';
 import Loading from './Loading';
 
 interface Props {
-  detail: Product;
+  detail: Product | null;
 }
 
 const SingleProduct = ({detail}: Props) => {
-  const images = [detail.imageOne, detail.imageTwo, detail.imageThree, detail.imageFour];
+  const images = [detail?.imageOne, detail?.imageTwo, detail?.imageThree, detail?.imageFour];
   const [currentImage, setCurrentImage] = useState<number>(0);
+  const Cart:Product[] = useSelector((state:State) => state.cart);
 
-  const getItems:Product[] = useSelector((state: State) => state.products['product'])
-  const getCart:Product[] = useSelector((state: State) => state.products['cart'])
+  const dispatch = useAppDispatch()
+
+  const [qty, setQty] = useState<number>(1)
 
 
-  const addToCart = (detail:Product) => {
-    dispatchStore((postCart(detail)) as any)
+  const addCart = (detail:Product) => {
+    dispatch(addToCart(detail))
 
-    const check = getCart.some((item) => item.title === detail.title)
+    const check = Cart.some((item) => item.title === detail.title)
         
         if(check){
             toast.error(
@@ -41,11 +42,12 @@ const SingleProduct = ({detail}: Props) => {
         }
   }
 
-  useEffect(() => {
-    dispatchStore(getProduct() as any)
-  },[])
+  const decQty = () => {
+    qty > 1 && setQty(qty - 1)
+    
+  }
 
-  return !getItems?.length ? (
+  return !detail?  (
     <span className='loader-spinner'>
       <Loading />
     </span>
@@ -89,15 +91,18 @@ const SingleProduct = ({detail}: Props) => {
               {detail.tag?.map((tag, index) => <p key={index}>{tag} {index < detail.tag.length - 1 ? ", " : ""}</p>)}
             </div>
           </div>
-          <button onClick={() => addToCart(detail)} className='cart-btn'>Add To Cart</button>
+          <span className='adjust-qty'>
+            <button onClick={decQty}>-</button>{qty}<button onClick={() => setQty(qty + 1)}>+</button>
+          </span>
+          <button onClick={() => addCart({...detail, quantity:qty})} className='cart-btn'>Add To Cart</button>
         </div>
       </div>
       <SingleDetails detail={detail} />
       <div className='related-product-wrapper'>
         <h2>RELATED PRODUCTS</h2>
-        <div className='related-product'>
+        {/* <div className='related-product'>
           {getItems.slice(9, 13).map((product : Product) => <div className='related-product-card'><Card key={product._id}  product={product} /></div>)}
-        </div>
+        </div> */}
       </div>
     </section>
   )

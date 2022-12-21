@@ -154,6 +154,22 @@
 .details .singleproduct .singleproduct-detail .categories .product-categories p {
   padding-right: 3px;
 }
+.details .singleproduct .singleproduct-detail .adjust-qty {
+  margin-right: 5px;
+  font-size: 20px;
+  color: #111;
+  font-weight: 600;
+}
+.details .singleproduct .singleproduct-detail .adjust-qty button {
+  border: #111 2px solid;
+  border-radius: 5px;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 3px 6px;
+  margin: 0 3px;
+  background-color: #fff;
+  cursor: pointer;
+}
 .details .singleproduct .singleproduct-detail .cart-btn {
   background-color: #111;
   padding: 15px 45px;

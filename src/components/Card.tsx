@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import {Product} from '../model'
 import "../Styles/Card/card.css"
-import { postCart } from '../redux/actions';
-import { dispatchStore } from '../redux/store'
-import { useSelector } from 'react-redux'
+import { addToCart } from '../redux/actions/cart'
+import { useAppDispatch } from '../helper/appDispatch';
 import { State } from '../redux/reducers'
 import { Rating } from 'react-simple-star-rating'
+import { useSelector } from 'react-redux'
 import toast from "react-hot-toast"
 import { Link } from "react-router-dom"
 
@@ -13,15 +13,17 @@ interface Props {
     product: Product    
 }
 
+
 const Card = ({product}: Props) => {
     const [btnShown, setBtnShown] = useState<boolean>(false)
-    const getItems:Product[] = useSelector((state: State) => state.products['cart'])
+    const Cart:Product[] = useSelector((state:State) => state.cart);
 
+    const dispatch = useAppDispatch()
 
-    const addToCart = (product:Product) => {
-        dispatchStore((postCart(product)) as any)
+    const addCart = (product:Product) => {
+        dispatch(addToCart(product) )
 
-        const check = getItems.some((item) => item.title === product.title)
+        const check = Cart.some((item) => item.title === product.title)
         
         if(check){
             toast.error(
@@ -46,7 +48,7 @@ const Card = ({product}: Props) => {
                 </div>        
                 <p className='card-info__title'>{product.title}</p>
                 <p className='card-info__price'>${product.price}</p>
-                {btnShown && <button onClick={() => addToCart(product)} className='card-info__btn'>Add To Cart</button>}
+                {btnShown && <button onClick={() => addCart(product)} className='card-info__btn'>Add To Cart</button>}
             </div>
         </section>
     </main>

@@ -1,9 +1,5 @@
 import React, {useEffect, useState, useMemo} from 'react'
 import Navbar from '../components/Navbar'
-import { useSelector } from 'react-redux'
-import { getProduct } from '../redux/actions'
-import { State } from '../redux/reducers'
-import { dispatchStore } from '../redux/store'
 import {Product} from '../model'
 import Card from '../components/Card'
 import '../Styles/Products/products.css'
@@ -17,22 +13,32 @@ import Cartmodal from '../components/Cartmodal'
 import MobileNavModal from '../components/MobileNavModal'
 import Loading from '../components/Loading'
 import Pagination from '../components/Pagination'
+import { publicRequest } from '../api'
 
 let PageSize = 6;
 
 const Products = () => {
-    const getItems:Product[] = useSelector((state: State) => state.products['product'])
+    const [products, setProducts] = useState<Product[]>([]);
     const {cardModal, mobileNavModal} = useGlobalContext();
 
     const [currentPage, setCurrentPage] = useState<number>(1);
 
     const windowSize = useWindowSize()
-    
-    useEffect(() => {
-        dispatchStore(getProduct() as any)
-    },[])
 
-    const merged = [...getItems, ...getItems];
+    useEffect(() => {
+    const getProducts = async () => {
+      try {
+        const res = await publicRequest.get("/products")
+        setProducts(res.data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    getProducts()
+  })
+    
+
+    const merged = [...products, ...products];
     // const mergedProduct:Product[] = [...new Set(merged)];
 
     const currentData = useMemo(() => {
@@ -49,7 +55,7 @@ const Products = () => {
             }
             {cardModal && <div className='home-cart-modal'><div className='end'><Cartmodal /></div></div>}
             {mobileNavModal && <div className='home-cart-modal'><div className='end'><MobileNavModal /></div></div>}    
-            {!getItems.length ? (
+            {!products.length ? (
                 <span className='loader-spinner'>
                     <Loading />
                 </span>

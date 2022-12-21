@@ -1,35 +1,37 @@
-import React,{useEffect} from 'react'
-import { useSelector } from 'react-redux'
-import { State } from '../redux/reducers'
+import React,{useState, useEffect} from 'react'
 import { useParams } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import { dispatchStore } from '../redux/store'
-import { getDetail } from '../redux/actions';
 import SingleProduct from '../components/SingleProduct';
 import Cartmodal from '../components/Cartmodal';
 import { useGlobalContext } from '../hooks/Context'
 import useWindowSize from '../hooks/useWindowSize'
+import { Product } from '../model';
 import "../Styles/Home/home.css"
 import Subscribe from '../components/Subscribe';
 import Footer from '../components/Footer';
 import MobileNav from '../components/MobileNav';
 import MobileNavModal from '../components/MobileNavModal';
+import { publicRequest } from '../api';
 
-
-//USED STORE.DISPATCH IN PLACE OF USEDISPATCH
 
 const Details = () => {
   const {cardModal, mobileNavModal} = useGlobalContext();
+  const [detail, setDetail] = useState<Product | null>(null);
   const { id } = useParams()
-    const details = useSelector((state: State) => state['products'])
     
     const windowSize = useWindowSize()
 
-    const detail  = details['viewedProduct'];
-
     useEffect(() => {
-      dispatchStore(getDetail(id!) as any)    
-    },[id])
+    const getProduct = async () => {
+      try {
+        const res = await publicRequest.get("/products/" + id);
+        setDetail(res.data);
+      } catch (error) {
+        console.log(error)
+      }
+    };
+    getProduct();
+  }, [id]);
 
   return (
     <div className='home'>

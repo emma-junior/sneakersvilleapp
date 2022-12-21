@@ -163,6 +163,23 @@
                     }
                 }
             }
+            .adjust-qty {
+                margin-right: 5px;
+                font-size: 20px;
+                color: #111;
+                font-weight: map-get($font-weights, medium);
+
+                button {
+                    border: #111 2px solid;
+                    border-radius: 5px;
+                    font-weight: map-get($font-weights, medium);
+                    font-size: 18px;
+                    padding: 3px 6px;
+                    margin: 0 3px;
+                    background-color: #fff;
+                    cursor: pointer;
+                }
+            }
             .cart-btn {
                 background-color: #111;
                 padding: 15px 45px;
