@@ -7,6 +7,7 @@
 
 .reg-page .reg {
   display: flex;
+  position: relative;
 }
 .reg-page .reg .reg-img-container {
   position: relative;
@@ -53,13 +54,14 @@
   .reg-page .reg .reg-form-container {
     position: absolute;
     width: 80%;
-    height: 60%;
+    height: 70vh;
     top: 0;
     bottom: 0;
     border-radius: 10px;
     left: 0;
     right: 0;
     margin: auto;
+    z-index: 10;
   }
 }
 .reg-page .reg .reg-form-container form {

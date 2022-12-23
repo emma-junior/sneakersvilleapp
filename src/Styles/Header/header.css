@@ -6,7 +6,7 @@
 }
 
 .header {
-  background-image: url("../../../public/assets/images/bg-cover-pic.jpg");
+  background-image: url("../../../public/assets/images/cover-pic.jpg");
   background-color: #d2e1ed;
   height: 550px;
   width: 100%;
@@ -16,6 +16,7 @@
 }
 @media (max-width: 768px) {
   .header {
+    background-image: url("../../../public/assets/images/bg-cover-pic.jpg");
     color: #fff;
   }
 }
