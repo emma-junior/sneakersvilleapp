@@ -1,5 +1,5 @@
 import React from 'react'
-import {useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import {Product} from '../model'
 import "../Styles/Bestseller/bestseller.css"
 import "../Styles/New/new.css"
@@ -9,25 +9,13 @@ import "aos/dist/aos.css";
 import Loading from './Loading';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { publicRequest } from '../api';
+import useFetch from '../hooks/usePublicFetch'
 
 
 
 
 const New = () => {
-    const [products, setProducts] = useState<Product[]>([]);
-
-  useEffect(() => {
-    const getProducts = async () => {
-      try {
-        const res = await publicRequest.get("/products")
-        setProducts(res.data)
-      } catch (error) {
-        console.log(error)
-      }
-    }
-    getProducts()
-  })
+    const { data, isloading, isError } = useFetch("products", "true");
 
   useEffect(() => {
     Aos.init({duration: 2000})
@@ -59,12 +47,12 @@ const New = () => {
         <p className='topic'><strong>New</strong> Arrivals</p>
         <p className='topic-info'>We alway up to date new arrivals follows trending</p>
       </div>
-      <div className='wrapper'>       
-        {!products?.length ? 
-          <span className='loader-spinner'>
-              <Loading />
-          </span> : <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme new-slider">{products.slice(11, 17).map((product : Product) => <Card key={product._id}  product={product} />)}</Carousel>
-        }
+      <div className='wrapper'>
+        {isError && <div>{isError}</div>}
+        {isloading && <span className='loader-spinner'><Loading /></span>}
+        {data && <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme new-slider">
+          {data?.map((product : Product) => <Card key={product._id}  product={product} />)}
+        </Carousel>}
       </div>
     </section>
   )

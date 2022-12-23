@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import {Product} from "../model"
 import ActiveImage from './ActiveImage';
 import "../Styles/SingleProduct/singleproduct.css"
@@ -11,20 +11,43 @@ import { State } from '../redux/reducers'
 import SingleDetails from './SingleDetails';
 import Card from './Card';
 import Loading from './Loading';
+import { publicRequest } from '../api';
+import useFetch from '../hooks/usePublicFetch';
 
 interface Props {
-  detail: Product | null;
+  id: string | undefined
 }
 
-const SingleProduct = ({detail}: Props) => {
+const SingleProduct = ({id}:Props) => {
+  const [detail, setDetail] = useState<Product | null>(null);
+  const [isLoading, setIsLoading] = useState<boolean>(true)
+  const [error, setError] = useState(null);
+
   const images = [detail?.imageOne, detail?.imageTwo, detail?.imageThree, detail?.imageFour];
   const [currentImage, setCurrentImage] = useState<number>(0);
   const Cart:Product[] = useSelector((state:State) => state.cart);
+  const [qty, setQty] = useState<number>(1)
 
   const dispatch = useAppDispatch()
 
-  const [qty, setQty] = useState<number>(1)
+    useEffect(() => {
+    const getProduct = async () => {
+      try {
+        const res = await publicRequest.get("/products/" + id);
+        setDetail(res.data);
+        setIsLoading(false)
+        setError(null);
+      } catch (error:any) {
+        console.log(error)
+        setIsLoading(false);
+        setError(error.message);
+      }
+    };
+    getProduct();
+  }, [id]);
 
+
+  const { data, isloading, isError } = useFetch("products", "");
 
   const addCart = (detail:Product) => {
     dispatch(addToCart(detail))
@@ -47,12 +70,11 @@ const SingleProduct = ({detail}: Props) => {
     
   }
 
-  return !detail?  (
-    <span className='loader-spinner'>
-      <Loading />
-    </span>
-  ):(
-    <section className='details'>
+  return (
+    <>
+    {error && <div>{isError}</div>}
+    {isLoading && <span className='loader-spinner'><Loading /></span>}
+    {detail && <section className='details'>
       <div className='singleproduct'>
         <div className='singleproduct-images'>
           <div className='currentimage-div'>
@@ -100,11 +122,17 @@ const SingleProduct = ({detail}: Props) => {
       <SingleDetails detail={detail} />
       <div className='related-product-wrapper'>
         <h2>RELATED PRODUCTS</h2>
-        {/* <div className='related-product'>
-          {getItems.slice(9, 13).map((product : Product) => <div className='related-product-card'><Card key={product._id}  product={product} /></div>)}
-        </div> */}
+        <div>
+          {isError && <div>{isError}</div>}
+          {isloading && <span className='loader-spinner'><Loading /></span>}
+          {data && 
+            <div className='related-product'>
+              {data.slice(9, 13).map((product : Product) => <div className='related-product-card'><Card key={product._id}  product={product} /></div>)}
+            </div>}
+        </div>
       </div>
-    </section>
+    </section>}
+  </>
   )
 }
 

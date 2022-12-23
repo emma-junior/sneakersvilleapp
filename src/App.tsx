@@ -11,6 +11,7 @@ import Register from './pages/Register';
 import Success from './pages/Success';
 import Login from './pages/Login';
 import PrivateRoute from './components/PrivateRoute';
+import Profile from './pages/Profile';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
             </Route>
             <Route path='/success' element={<Success />} />
             <Route path='/register' element={<Register />} />
+            <Route path='/profile' element={<Profile />} />
           </Routes>
         </AppProvider>
       </Router>
