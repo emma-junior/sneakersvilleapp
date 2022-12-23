@@ -13,6 +13,11 @@
   width: 50%;
   height: 100vh;
 }
+@media (max-width: 768px) {
+  .reg-page .reg .reg-img-container {
+    width: 100%;
+  }
+}
 .reg-page .reg .reg-img-container .reg-img-cover {
   position: absolute;
   background-color: rgba(173, 117, 32, 0.356);
@@ -42,10 +47,29 @@
   height: 100vh;
   width: 50%;
   align-items: center;
+  background-color: #fff;
+}
+@media (max-width: 768px) {
+  .reg-page .reg .reg-form-container {
+    position: absolute;
+    width: 80%;
+    height: 60%;
+    top: 0;
+    bottom: 0;
+    border-radius: 10px;
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
 }
 .reg-page .reg .reg-form-container form {
   margin: auto;
   width: 70%;
+}
+@media (max-width: 640px) {
+  .reg-page .reg .reg-form-container form {
+    width: 85%;
+  }
 }
 .reg-page .reg .reg-form-container form h1 {
   font-size: 30px;
@@ -113,4 +137,19 @@
 
 .errorMsg {
   color: rgb(219, 37, 37);
+}
+
+.disabled-btn {
+  background-color: #777;
+  color: #fff;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin: 15px auto;
+  border-radius: 7px;
+  font-weight: 700;
+  cursor: default;
 }/*# sourceMappingURL=reg.css.map */

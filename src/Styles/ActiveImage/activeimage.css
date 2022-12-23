@@ -6,7 +6,7 @@
 }
 
 .activeimage-container .activeimage-wrapper {
-  width: 110px;
+  max-width: 110px;
   border: solid yellow 2px;
   cursor: pointer;
 }
@@ -19,7 +19,7 @@
   width: 100%;
 }
 .activeimage-container .image-wrapper {
-  width: 110px;
+  max-width: 110px;
   cursor: pointer;
 }
 @media (max-width: 640px) {

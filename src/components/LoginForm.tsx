@@ -27,6 +27,7 @@ const LoginForm = () => {
     e.preventDefault();
     login(dispatch, { username, password });
   };
+
   return (
     <div className='reg-form-container'>
             <form>
@@ -46,9 +47,9 @@ const LoginForm = () => {
                     />
                     {visible ? <p onClick={togglePassword} className='shown-password'><AiOutlineEye /></p>: <p onClick={togglePassword} className='shown-password'><AiOutlineEyeInvisible /></p>}
                 </div>
-                <button className='reg-btn' onClick={handleClick}>
+                {username && password ? <button className="reg-btn" onClick={handleClick}>
                     {isFetching ? "Loading.." : "LOGIN"}
-                </button>
+                </button>: <button className='disabled-btn'>LOGIN</button>}
             </form>
         </div>
   )

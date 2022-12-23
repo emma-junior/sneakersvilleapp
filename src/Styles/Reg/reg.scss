@@ -5,6 +5,32 @@
     @return map-get($font-weights, $weight-name)
 }
 
+@mixin btn($bgcolor) {
+    background-color: $bgcolor;
+    color: #fff;
+    width: 100%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    margin: 15px auto;
+    border-radius: 7px;
+    font-weight: map-get($font-weights, bold);
+}
+
+@mixin tab {
+    @media (max-width: $tab) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
 .reg-page {
     .reg {
         display: flex;
@@ -13,6 +39,9 @@
             position: relative;
             width: 50%;
             height: 100vh;
+            @include tab {
+                width: 100%;
+            }
 
             .reg-img-cover {
                 position: absolute;
@@ -43,10 +72,25 @@
             height: 100vh;
             width: 50%;
             align-items: center;
+            background-color: #fff;
+            @include tab {
+                position: absolute;
+                width: 80%;
+                height: 60%;
+                top: 0;
+                bottom: 0;
+                border-radius: 10px;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
 
             form {
                 margin: auto;
                 width: 70%;
+                @include mobile {
+                    width: 85%;
+                }
                 h1 {
                     font-size: 30px;
                     color: $primary-color;
@@ -85,17 +129,7 @@
                     }
                 }
                 .reg-btn {
-                    background-color: $primary-color;
-                    color: #fff;
-                    width: 100%;
-                    height: 45px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    border: none;
-                    margin: 15px auto;
-                    border-radius: 7px;
-                    font-weight: map-get($font-weights, bold);
+                    @include btn($primary-color);
                     cursor: pointer;
                 }
                 .reg-btn:hover {
@@ -118,4 +152,8 @@
 }
 .errorMsg {
     color: rgb(219, 37, 37);
+}
+.disabled-btn {
+    @include btn(#777);
+    cursor: default;
 }
