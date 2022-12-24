@@ -13,7 +13,7 @@ import CheckoutBtn from './CheckoutBtn'
 
 const Cartmodal = () => {
     const Cart:Product[] = useSelector((state:State) => state.cart);
-    const {totalAmount, setTotalAmount, setCardModal} = useGlobalContext();
+    const {totalAmount, setTotalAmount, setCartModal} = useGlobalContext();
     
     useEffect(() => {
         let amount = 0;
@@ -28,7 +28,7 @@ const Cartmodal = () => {
     if (totalAmount < 1) {
         return (
           <section className='cover'>
-            <span className='times-icon' onClick={() => setCardModal(false)} ><FaTimes /></span>
+            <span className='times-icon' onClick={() => setCartModal(false)} ><FaTimes /></span>
               <h1 className='cart-empty'>No item in cart</h1>
           </section>
         );
@@ -36,7 +36,7 @@ const Cartmodal = () => {
 
   return (
     <section className='cover animate__animated animate__slideInRight'>
-        <span className='times-icon' onClick={() => setCardModal(false)} ><FaTimes /></span>
+        <span className='times-icon' onClick={() => setCartModal(false)} ><FaTimes /></span>
         <h2>Shopping Cart</h2>
         { Cart ? <div className='cartmap-container'>
             <div className='wrap'>

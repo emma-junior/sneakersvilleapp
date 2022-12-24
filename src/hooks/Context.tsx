@@ -5,8 +5,8 @@ import {MyContext} from '../model'
     children: React.ReactNode
   }
   const contextDefaultValues: MyContext = {
-    cardModal: false,
-    setCardModal: () => {},
+    cartModal: false,
+    setCartModal: () => {},
     cartCount: 0,
     setCartCount: () => {},
     totalAmount: 0,
@@ -17,13 +17,13 @@ import {MyContext} from '../model'
 
 const AppContext = React.createContext(contextDefaultValues);
 const AppProvider = ({ children }: ContextProviderProps) => {
-    const [cardModal, setCardModal] = useState<boolean>(contextDefaultValues.cardModal)
+    const [cartModal, setCartModal] = useState<boolean>(contextDefaultValues.cartModal)
     const [cartCount, setCartCount] = useState<number>(contextDefaultValues.cartCount);
     const [totalAmount, setTotalAmount] = useState<number>(contextDefaultValues.totalAmount)
     const [mobileNavModal, setMobileNavModal] = useState<boolean>(contextDefaultValues.mobileNavModal)
 
   return (
-    <AppContext.Provider value={{ cardModal, setCardModal, cartCount, setCartCount, totalAmount, setTotalAmount, mobileNavModal, setMobileNavModal }}>
+    <AppContext.Provider value={{ cartModal, setCartModal, cartCount, setCartCount, totalAmount, setTotalAmount, mobileNavModal, setMobileNavModal }}>
       {children}
     </AppContext.Provider>
   );

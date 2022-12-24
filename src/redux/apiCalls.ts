@@ -13,7 +13,8 @@ export const login = async (dispatch:AppDispatch, user:LoginFormData) => {
   try {
     const res = await publicRequest.post("/auth/login", user);
     dispatch(loginSuccess(res.data));
-  } catch (err) {
+  } catch (error:any) {
     dispatch(loginFailure());
+    console.log(error.message)
   }
 };

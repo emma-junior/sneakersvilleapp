@@ -11,11 +11,11 @@ import MobileNav from '../components/MobileNav'
 import MobileNavModal from '../components/MobileNavModal'
 
 const Cart = () => {
-  const {cardModal,setCardModal, mobileNavModal} = useGlobalContext();
+  const {cartModal,setCartModal, mobileNavModal} = useGlobalContext();
   const windowSize = useWindowSize()
 
   useEffect(() => {
-    setCardModal(false)
+    setCartModal(false)
   }, [])
   
 
@@ -24,7 +24,7 @@ const Cart = () => {
         {
           windowSize.width >= 768 ? (<Navbar />) : (<MobileNav />)
         }
-        {cardModal && <div className='home-cart-modal'><div className='end'><Cartmodal /></div></div>}
+        {cartModal && <div className='home-cart-modal'><div className='end'><Cartmodal /></div></div>}
         {mobileNavModal && <div className='home-cart-modal'><div className='end'><MobileNavModal /></div></div>}
         <CartTable />
         <Shipping />

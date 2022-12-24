@@ -21,6 +21,36 @@
 .mobilenav .mobilenav-icons {
   display: flex;
 }
+.mobilenav .mobilenav-icons .account {
+  position: relative;
+}
+.mobilenav .mobilenav-icons .account h4 {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+.mobilenav .mobilenav-icons .account .letter {
+  background-color: rgb(3, 3, 73);
+  padding: 6px 10px;
+  color: #fff;
+  border-radius: 50%;
+}
+.mobilenav .mobilenav-icons .account .dropdown {
+  position: absolute;
+  background-color: #fff;
+  border: solid 1px #333;
+  border-radius: 5px;
+  padding: 3px;
+  z-index: 10;
+  width: 90px;
+}
+.mobilenav .mobilenav-icons .account .dropdown p {
+  color: #222;
+  display: flex;
+  width: 100%;
+  padding: 3px 0;
+  justify-content: center;
+}
 .mobilenav .mobilenav-icons .icon {
   cursor: pointer;
 }

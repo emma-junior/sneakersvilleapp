@@ -42,8 +42,8 @@ export interface RegisterUser {
 
 //Context
 export interface MyContext {
-    cardModal: boolean,
-    setCardModal: React.Dispatch<React.SetStateAction<boolean>>,
+    cartModal: boolean,
+    setCartModal: React.Dispatch<React.SetStateAction<boolean>>,
     cartCount: number,
     setCartCount: React.Dispatch<React.SetStateAction<number>>,
     totalAmount: number,

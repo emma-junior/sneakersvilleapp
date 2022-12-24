@@ -48,7 +48,7 @@ const New = () => {
         <p className='topic-info'>We alway up to date new arrivals follows trending</p>
       </div>
       <div className='wrapper'>
-        {isError && <div>{isError}</div>}
+        {isError && <div className='error'>{isError}</div>}
         {isloading && <span className='loader-spinner'><Loading /></span>}
         {data && <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme new-slider">
           {data?.map((product : Product) => <Card key={product._id}  product={product} />)}

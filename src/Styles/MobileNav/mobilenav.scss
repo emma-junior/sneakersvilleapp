@@ -16,7 +16,39 @@
         }
     }
     .mobilenav-icons {
-        display: flex;
+        display: flex; 
+        
+        .account {
+            position: relative;
+            h4 {
+                display: flex;
+                height: 100%;
+                align-items: center;
+            }
+            .letter {
+                background-color: rgb(3, 3, 73);
+                padding: 6px 10px;
+                color: #fff;
+                border-radius: 50%;
+            }
+            .dropdown {
+                position: absolute;
+                background-color: #fff;
+                border: solid 1px #333;
+                border-radius: 5px;
+                padding: 3px;
+                z-index: 10;
+                width: 90px;
+
+                p {
+                    color: #222;
+                    display: flex;
+                    width: 100%;
+                    padding: 3px 0;
+                    justify-content: center;
+                }
+            }
+        }
         
         .icon {
             cursor: pointer;

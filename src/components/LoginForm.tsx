@@ -14,6 +14,7 @@ const LoginForm = () => {
     const dispatch = useAppDispatch()
     
     const { isFetching, error } = useSelector((state:State) => state.user);
+    console.log(error)
 
     const [visible, setVisible] = useState<boolean>(false)
     const [input, setInput] = useState<string>("password")
@@ -31,6 +32,7 @@ const LoginForm = () => {
   return (
     <div className='reg-form-container'>
             <form>
+                {error && <div className='error'>Something went wrong!!</div>}
                 <h1>SneakersVille</h1>
                 <input 
                     type="text" 

@@ -14,7 +14,7 @@ import { logOut } from '../redux/actions/user';
 
 
 const Navbar = () => {  
-  const {setCardModal} = useGlobalContext();
+  const {setCartModal} = useGlobalContext();
   const User:CurrentUser | null = useSelector((state:State) => state.user.currentUser);
 
 
@@ -39,7 +39,7 @@ const Navbar = () => {
                   <Link to="/login"><p className='login-register'>Login</p></Link><p className='login-register'>/</p>
                   <Link to="/register"><p className='login-register'>Register</p></Link>
                 </div>}
-              <div onClick={() => setCardModal(true)} >
+              <div onClick={() => setCartModal(true)} >
                 <CartIcon />
               </div>
             </div>

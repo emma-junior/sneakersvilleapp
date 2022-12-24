@@ -12,6 +12,7 @@ import Success from './pages/Success';
 import Login from './pages/Login';
 import PrivateRoute from './components/PrivateRoute';
 import Profile from './pages/Profile';
+import "./index.css"
 
 
 function App() {

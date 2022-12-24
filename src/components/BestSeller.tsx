@@ -29,7 +29,7 @@ const BestSeller = () => {
         <Link to="/products"><h4>SEE ALL PRODUCT</h4></Link>
       </div>
       <div>
-        {isError && <div>{isError}</div>}
+        {isError && <div className='error'>{isError}</div>}
         {isloading && <span className='loader-spinner'><Loading /></span>}
         {data && <div className='bestseller__products'>
           {data.slice(0,8).map((product : Product) => <Card key={product._id}  product={product} />)}

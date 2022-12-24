@@ -13,7 +13,7 @@ import MobileNavModal from '../components/MobileNavModal';
 
 
 const Details = () => {
-  const {cardModal, mobileNavModal} = useGlobalContext();
+  const {cartModal, mobileNavModal} = useGlobalContext();
   const { id } = useParams()
     const windowSize = useWindowSize()
 
@@ -22,7 +22,7 @@ const Details = () => {
         {
         windowSize.width >= 768 ? (<Navbar />) : (<MobileNav />)
         } 
-        {cardModal && <div className='home-cart-modal'><div className='end'><Cartmodal /></div></div>}
+        {cartModal && <div className='home-cart-modal'><div className='end'><Cartmodal /></div></div>}
         {mobileNavModal && <div className='home-cart-modal'><div className='end'><MobileNavModal /></div></div>}
         <SingleProduct id={id}  />
         <Subscribe />
