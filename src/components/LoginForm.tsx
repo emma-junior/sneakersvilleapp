@@ -32,8 +32,8 @@ const LoginForm = () => {
   return (
     <div className='reg-form-container'>
             <form>
-                {error && <div className='error'>Something went wrong!!</div>}
                 <h1>SneakersVille</h1>
+                {error && <div className='error'>Something went wrong!!</div>}
                 <input 
                     type="text" 
                     value={username}
