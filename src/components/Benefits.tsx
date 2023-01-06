@@ -11,7 +11,7 @@ const Benefits = () => {
     interface benefitType {
         benefit:{
             id: number,
-            icon: any,
+            icon: JSX.Element,
             title: string,
             info: string
         }[]

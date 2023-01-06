@@ -33,7 +33,7 @@ const LoginForm = () => {
     <div className='reg-form-container'>
             <form>
                 <h1>SneakersVille</h1>
-                {error && <div className='error'>Something went wrong!!</div>}
+                {error && <div className='error'>Please enter your correct credentials !!</div>}
                 <input 
                     type="text" 
                     value={username}
