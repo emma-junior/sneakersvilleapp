@@ -11,6 +11,18 @@
     margin: 10px 0;
 }
 
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin tab {
+    @media (max-width: $tab) {
+        @content;
+    }
+}
+
 .payment-form {
     background: #d5dfe7;
     width: 100%;
@@ -24,6 +36,12 @@
         border-radius: 7px;
         padding: 20px;
         width: 40%;
+        @include tab {
+            width: 60%;
+        }
+        @include mobile {
+            width: 90%;
+        }
         .topic {
             font-size: 22px;
             font-weight: 600;
@@ -35,11 +53,13 @@
                 display: block;
                 height: 3.0rem;
                 text-indent: 1.0rem;
-                // margin-top: 2.3rem;
                 width: 100%;
                 border-radius: .3rem;
                 border: 2px solid rgb(194, 187, 187);
                 outline: none;
+                @include mobile {
+                    height: 2.5rem;
+                }
             }
         }
         .address {
@@ -49,6 +69,9 @@
             display: flex;
             width: 100%;
             justify-content: space-between;
+            @include mobile {
+                display: block;
+            }
             input {
                 display: block;
                 height: 2.5rem;
@@ -57,6 +80,10 @@
                 width: 47%;
                 border: 2px solid rgb(194, 187, 187);
                 outline: none;
+                @include mobile {
+                    width: 100%;
+                    margin: 6px 0
+                }
             }
         }
         .btn {

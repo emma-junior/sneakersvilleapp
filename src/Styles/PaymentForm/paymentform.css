@@ -20,6 +20,16 @@
   padding: 20px;
   width: 40%;
 }
+@media (max-width: 768px) {
+  .payment-form .form-wrapper {
+    width: 60%;
+  }
+}
+@media (max-width: 640px) {
+  .payment-form .form-wrapper {
+    width: 90%;
+  }
+}
 .payment-form .form-wrapper .topic {
   font-size: 22px;
   font-weight: 600;
@@ -37,6 +47,11 @@
   border: 2px solid rgb(194, 187, 187);
   outline: none;
 }
+@media (max-width: 640px) {
+  .payment-form .form-wrapper .single-form input {
+    height: 2.5rem;
+  }
+}
 .payment-form .form-wrapper .address {
   margin: 10px;
 }
@@ -44,6 +59,11 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+}
+@media (max-width: 640px) {
+  .payment-form .form-wrapper .address-input {
+    display: block;
+  }
 }
 .payment-form .form-wrapper .address-input input {
   display: block;
@@ -53,6 +73,12 @@
   width: 47%;
   border: 2px solid rgb(194, 187, 187);
   outline: none;
+}
+@media (max-width: 640px) {
+  .payment-form .form-wrapper .address-input input {
+    width: 100%;
+    margin: 6px 0;
+  }
 }
 .payment-form .form-wrapper .btn .submit-btn {
   background-color: rgb(3, 3, 73);

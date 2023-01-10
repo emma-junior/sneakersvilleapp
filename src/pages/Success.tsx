@@ -34,7 +34,7 @@ const Success = () => {
       }
     };
     data && createOrder();
-  }, [cart, data, User]);
+  }, [cart, data, User, totalAmount]);
     
   return (
     <div className="success">
