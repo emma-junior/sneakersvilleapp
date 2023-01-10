@@ -13,67 +13,69 @@
 }
 
 
-.navbar-header {
-    background-color: $primary-color;
-    color: #fff;
-    height: 45px;
-    @include flexCenter(center);
+// .navbar {
+    .navbar-header {
+        background-color: $primary-color;
+        color: #fff;
+        height: 45px;
+        @include flexCenter(center);
 
-    #{&}__p {
-        font-weight: map-get($font-weights, regular);
-        .p-span {
-            font-weight: map-get($font-weights, bold);
-            color: #D21C23;
+        #{&}__p {
+            font-weight: map-get($font-weights, regular);
+            .p-span {
+                font-weight: map-get($font-weights, bold);
+                color: #D21C23;
+            }
         }
     }
-}
 
-.navbar-cover {
-    #{&}__wrapper {
-        width: 95%;
-        margin: auto;
-        height: 80px;
-        @include flexCenter(space-between);
-
-        .navbar-cart {
-            width: 220px;
+    .navbar-cover {
+        #{&}__wrapper {
+            width: 95%;
+            margin: auto;
+            height: 80px;
             @include flexCenter(space-between);
-            .login-logout {
-                display: flex;
 
-                .login-register {
-                    cursor: pointer;
-                    color: $primary-color;
-                    padding: 0 4px;
+            .navbar-cart {
+                width: 320px;
+                @include flexCenter(space-between);
+                .login-logout {
                     display: flex;
-                    height: 5px;
-                    align-items: center;
-                    &:hover {
-                        color: #FF2F2F;
+
+                    .login-register {
+                        cursor: pointer;
+                        color: $primary-color;
+                        padding: 0 4px;
+                        display: flex;
+                        height: 5px;
+                        align-items: center;
+                        &:hover {
+                            color: #FF2F2F;
+                        }
                     }
                 }
             }
-        }
-        h1 {
-            font-weight: map-get($font-weights, bold);
-            font-size: 35px;
-            cursor: pointer;
-            color: $primary-color;
-            .ville {
-                color:rgb(3, 3, 73);
+            h1 {
+                font-weight: map-get($font-weights, bold);
+                font-size: 35px;
+                cursor: pointer;
+                color: $primary-color;
+                .ville {
+                    color:rgb(3, 3, 73);
+                }
+            }
+            input {
+                padding: 6px;
+                width: 250px;
+                border: none;
+                border-bottom: 2px solid $primary-color;
+                outline: none;
             }
         }
-        input {
-            padding: 6px;
-            width: 250px;
-            border: none;
-            border-bottom: 2px solid $primary-color;
-            outline: none;
+        hr {
+            width: 95%;
+            margin: auto;
         }
+        
     }
-    hr {
-        width: 95%;
-        margin: auto;
-    }
-    
-}
+// }

@@ -2,7 +2,8 @@ import React from 'react'
 import Select from './Select'
 import { useGlobalContext } from '../hooks/Context';
 import "../Styles/Shipping/shipping.css"
-import CheckoutBtn from './CheckoutBtn';
+import StripeCheckoutBtn from './CheckoutBtns/StripeCheckoutBtn';
+import PaystackCheckoutBtn from './CheckoutBtns/PaystackCheckoutBtn';
 
 const Shipping = () => {
     const {totalAmount} = useGlobalContext();
@@ -23,13 +24,13 @@ const Shipping = () => {
                 <label>* Zip/Postal Code</label>
                 <input className='input' />
             </div>
-            <button>Get A Quote</button>
+            <button className='shipping-btn'>Get A Quote</button>
         </div>
         <div className='coupon'>
             <h2>Use Coupon Code</h2>
             <p>Enter your coupon code if you have one</p>
             <input className='input' />
-            <button>Apply Coupon</button>
+            <button className='shipping-btn'>Apply Coupon</button>
         </div>
         <div className='card-total'>
             <h2>Cart Total</h2>
@@ -52,7 +53,8 @@ const Shipping = () => {
                 <h2>Grand Total</h2>
                 <h2>${totalAmount}</h2>
             </div>
-            <CheckoutBtn btnstyle="" word="Proceed To Checkout" amount={totalAmount} />
+            <StripeCheckoutBtn amount={totalAmount} />
+            <PaystackCheckoutBtn />
             {/* <button>Proceed To Checkout</button> */}
         </div>
     </section>

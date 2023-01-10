@@ -1,0 +1,36 @@
+@import "../../variables/variables";
+@import "../../variables/resets";
+
+@function weight($weight-name) {
+    @return map-get($font-weights, $weight-name)
+}
+
+@mixin checkoutBtn($bg-color) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $bg-color;
+    color: #fff;
+    width: 90%;
+    height: 50px;
+    margin: 10px auto;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: map-get($font-weights, bold);
+    border: none;
+}
+
+.stripe-btn {
+    @include checkoutBtn($primary-color);
+
+    &:hover {
+        background: #FF2F2F;
+    }
+}
+.paystack-btn {
+    @include checkoutBtn(rgb(3, 3, 73));
+    
+    &:hover {
+        background: #FF2F2F;
+    }
+}

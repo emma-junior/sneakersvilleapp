@@ -125,7 +125,7 @@
   outline: none;
   padding: 5px;
 }
-.shipping-wrapper button {
+.shipping-wrapper .shipping-btn {
   background: #000;
   border: none;
   color: #fff;
@@ -135,7 +135,7 @@
   padding: 15px 30px;
   cursor: pointer;
 }
-.shipping-wrapper button:hover {
+.shipping-wrapper .shipping-btn:hover {
   background: #FF2F2F;
   color: #FFF;
 }/*# sourceMappingURL=shipping.css.map */

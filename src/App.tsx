@@ -13,6 +13,8 @@ import Login from './pages/Login';
 import PrivateRoute from './components/PrivateRoute';
 import Profile from './pages/Profile';
 import "./index.css"
+import PaystackSuccess from './pages/PaystackSuccess';
+import PaymentForm from './components/CheckoutBtns/PaymentForm';
 
 
 function App() {
@@ -32,6 +34,8 @@ function App() {
               <Route path='/login' element={<Login />}/>
             </Route>
             <Route path='/success' element={<Success />} />
+            <Route path='/paystack' element={<PaystackSuccess />} />
+            <Route path='/pay-with-paystack' element={<PaymentForm />} />
             <Route path='/register' element={<Register />} />
             <Route path='/profile' element={<Profile />} />
           </Routes>

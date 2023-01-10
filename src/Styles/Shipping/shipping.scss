@@ -133,7 +133,7 @@
         outline: none;
         padding: 5px;
     }
-    button {
+    .shipping-btn {
         background: #000;
         border: none;
         color: #fff;
@@ -142,9 +142,10 @@
         margin: 15px 0;
         padding: 15px 30px;
         cursor: pointer;
-    }
-    button:hover {
-        background: #FF2F2F;
-        color: #FFF;
+
+        &:hover {
+            background: #FF2F2F;
+            color: #FFF;
+        }
     }
 }

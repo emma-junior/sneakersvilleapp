@@ -6,15 +6,16 @@ import { State } from "../redux/reducers";
 import { CurrentUser } from "../model";
 import { userRequest } from "../api";
 import { Product } from "../model";
+import { useGlobalContext } from '../hooks/Context';
 import "../Styles/Success/success.css"
 
 const Success = () => {
+    const {totalAmount} = useGlobalContext();
     const location:any = useLocation();
     const data = location.state.stripeData;
     const cart = location.state.products;
     const User:CurrentUser | null = useSelector((state:State) => state.user.currentUser);
     const [orderId, setOrderId] = useState(null);
-    console.log(cart)
     useEffect(() => {
     const createOrder = async () => {
       try {
@@ -24,8 +25,8 @@ const Success = () => {
             productId: item._id,
             quantity: item.quantity,
           })),
-          amount: 100,
-          address: data.billing_details.address,
+          amount: totalAmount,
+          address: data?.address || data?.billing_details.address
         });
         setOrderId(res.data._id);
       } catch(err) {

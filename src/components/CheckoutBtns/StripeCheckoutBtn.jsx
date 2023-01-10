@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
-import { userRequest } from "../api";
+import { userRequest } from "../../api";
 import { Link, useNavigate } from "react-router-dom";
+import "../../Styles/CheckoutBtns/checkoutbtns.css"
 
 const KEY = process.env.REACT_APP_STRIPE;
 
 
-const CheckoutBtn = ({btnstyle, word, amount}) => {
+const StripeCheckoutBtn = ({ amount}) => {
     const [stripeToken, setStripeToken] = useState(null);
     const Cart = useSelector((state) => state.cart);
     const User = useSelector((state) => state.user.currentUser);
@@ -33,7 +34,7 @@ const CheckoutBtn = ({btnstyle, word, amount}) => {
       }
     };
     stripeToken && makeRequest();
-  }, [stripeToken]);
+  }, [stripeToken, Cart, navigate]);
   console.log(stripeToken);
   return (
     <>
@@ -48,12 +49,12 @@ const CheckoutBtn = ({btnstyle, word, amount}) => {
             token={onToken}
             stripeKey={KEY}
       >
-        <button className={btnstyle}>{word}</button>
+        <button className="stripe-btn">Checkout With Stripe</button>
       </StripeCheckout> :
-        <Link to="/login"><button className={btnstyle}>{word}</button></Link>
+        <Link to="/login"><button className="stripe-btn">Checkout With Stripe</button></Link>
       }       
     </>
   )
 }
 
-export default CheckoutBtn
+export default StripeCheckoutBtn

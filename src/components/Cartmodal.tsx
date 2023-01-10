@@ -7,7 +7,8 @@ import { useGlobalContext } from '../hooks/Context';
 import "../Styles/Cardmodal/cartmodal.css"
 import { Link } from 'react-router-dom'
 import 'animate.css';
-import CheckoutBtn from './CheckoutBtn'
+import StripeCheckoutBtn from './CheckoutBtns/StripeCheckoutBtn'
+import PaystackCheckoutBtn from './CheckoutBtns/PaystackCheckoutBtn'
 
 
 
@@ -58,8 +59,8 @@ const Cartmodal = () => {
                 <p>${totalAmount}</p>
             </div>
             <Link to="/cart"><button className='viewcart-btn'>View Cart</button></Link>
-            <CheckoutBtn btnstyle="viewcart-btn"  word="Checkout" amount={totalAmount} />
-            {/* <button className='viewcart-btn'>Checkout</button> */}
+            <StripeCheckoutBtn amount={totalAmount} />
+            <PaystackCheckoutBtn />
         </div> : <h2>No Item in cart</h2>}
     </section>
   )

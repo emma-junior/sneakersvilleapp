@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.stripe-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #272727;
+  color: #fff;
+  width: 90%;
+  height: 50px;
+  margin: 10px auto;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+}
+.stripe-btn:hover {
+  background: #FF2F2F;
+}
+
+.paystack-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(3, 3, 73);
+  color: #fff;
+  width: 90%;
+  height: 50px;
+  margin: 10px auto;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 700;
+  border: none;
+}
+.paystack-btn:hover {
+  background: #FF2F2F;
+}/*# sourceMappingURL=checkoutbtns.css.map */
