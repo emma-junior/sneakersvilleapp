@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -30,6 +31,7 @@
 }
 .footer .footer__address h1 {
   margin: 20px 0;
+  font-family: "Bakbak One", cursive;
 }
 .footer .footer__address h1 .ville {
   color: rgb(3, 3, 73);

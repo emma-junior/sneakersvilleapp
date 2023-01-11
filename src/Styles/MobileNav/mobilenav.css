@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
@@ -14,6 +15,7 @@
 }
 .mobilenav h1 {
   color: #272727;
+  font-family: "Bakbak One", cursive;
 }
 .mobilenav h1 .ville {
   color: rgb(3, 3, 73);

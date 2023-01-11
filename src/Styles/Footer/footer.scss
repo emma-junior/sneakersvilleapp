@@ -1,5 +1,6 @@
 @import "../../variables/variables";
 @import "../../variables/resets";
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
 
 @mixin flexCenter($justify) {
     display: flex;
@@ -40,6 +41,7 @@
 
         h1 {
             margin: 20px 0;
+            font-family: 'Bakbak One', cursive;
 
             .ville {
                 color: rgb(3, 3, 73)

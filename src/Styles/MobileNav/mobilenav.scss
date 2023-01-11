@@ -1,5 +1,6 @@
 @import "../../variables/variables";
 @import "../../variables/resets";
+@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
 
 .mobilenav {
     display: flex;
@@ -10,6 +11,7 @@
 
     h1 {
         color: $primary-color;
+        font-family: 'Bakbak One', cursive;
 
         .ville {
             color:rgb(3, 3, 73);
