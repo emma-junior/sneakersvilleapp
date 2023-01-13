@@ -18,7 +18,7 @@ const Footer = () => {
             <p className='tel'>(+0024)-222-333-4444</p>
             <p className='email'>hello@sneakersville.com</p>
         </div>
-        <p className='footer__copyright'>Copyright <span className='copyright-icon'><BiCopyright /></span> 2021 SneakersVille | Built by Emmanuel Eze</p>
+        <p className='footer__copyright'>Copyright <span className='copyright-icon'><BiCopyright /></span> 2023 SneakersVille | Built by Emmanuel Eze</p>
     </section>
   )
 }
