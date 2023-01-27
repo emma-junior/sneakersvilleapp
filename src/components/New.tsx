@@ -45,7 +45,7 @@ const New = () => {
     <section data-aos="fade-up" className='bestseller'>
       <div className='bestseller__topic'>
         <p className='topic'><strong>New</strong> Arrivals</p>
-        <p className='topic-info'>We alway up to date new arrivals follows trending</p>
+        <p className='topic-info'>We are always up to date with new arrivals following trends</p>
       </div>
       <div className='wrapper'>
         {isError && <div className='error'>{isError}</div>}
