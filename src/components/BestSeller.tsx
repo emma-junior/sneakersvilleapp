@@ -7,12 +7,11 @@ import Aos from "aos";
 import "aos/dist/aos.css";
 import { Link } from 'react-router-dom'
 import Loading from './Loading'
-import { publicRequest } from '../api'
 import useFetch from '../hooks/usePublicFetch'
 
 
 const BestSeller = () => {
-  const { data, isloading, isError } = useFetch("products", "");
+  const { data, isloading, isError } = useFetch("products", "", "");
 
   useEffect(() => {
     Aos.init({duration: 2000})

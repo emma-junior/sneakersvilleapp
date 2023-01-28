@@ -14,25 +14,25 @@ import Loading from '../components/Loading'
 import Pagination from '../components/Pagination'
 import useFetch from '../hooks/usePublicFetch'
 
-let PageSize = 6;
 
+let PageSize = 6;
+  
 const Products = () => {
     const {cartModal, mobileNavModal} = useGlobalContext();
 
+    const [category, setCategory] = useState<string>("")
     const [currentPage, setCurrentPage] = useState<number>(1);
 
     const windowSize = useWindowSize()
     
-    const { data, isloading, isError } = useFetch("products", "");
-    const merged = [...data!, ...data!];
+    const { data, isloading, isError } = useFetch("products", "", category);
 
     const currentData = useMemo(() => {
     const firstPageIndex = (currentPage - 1) * PageSize;
     const lastPageIndex = firstPageIndex + PageSize;
-    return merged.slice(firstPageIndex, lastPageIndex);
-    }, [currentPage, merged]);
-  console.log(currentData,"current")
-  console.log(merged, "merged")
+    return data?.slice(firstPageIndex, lastPageIndex);
+    }, [currentPage, data]);
+
     return (
         <div className='home'>
             {
@@ -43,22 +43,33 @@ const Products = () => {
             <div>
               {isError && <div className='error'>{isError}</div>}
               {isloading && <span className='loader-spinner'><Loading /></span>}
-              {data &&
-                <div>
-                    <div className='products-wrapper'>
-                        {currentData?.map((product, index) => <Card key={index}  product={product} />)}
+              {data ?
+                <div className='categories_products'>
+                  <div className='categories'>
+                    <h3>Categories</h3>
+                    <ul>
+                      <li onClick={() => setCategory("")} className={`${!category && "all"}`}>All</li>
+                      <li onClick={() => setCategory("Men")} className={`${category === "Men" && "men"}`}>Men</li>
+                      <li onClick={() => setCategory("Women")} className={`${category === "Women" && "women"}`}>Women</li>
+                      <li onClick={() => setCategory("Kids")} className={`${category === "Kids" && "kids"}`}>Kids</li>
+                    </ul>
+                  </div>
+                    <div className='products-containers'>
+                      <div className='products-wrapper'>
+                          {currentData?.map((product, index) => <Card key={index}  product={product} />)}
+                      </div>
+                      <div className='products-pagination'>
+                          <Pagination
+                              className="pagination-bar"
+                              currentPage={currentPage}
+                              totalCount={data?.length || 17}
+                              pageSize={PageSize}
+                              siblingCount = {1}
+                              onPageChange={(page) => setCurrentPage(page)}
+                          />
+                      </div>
                     </div>
-                    <div className='products-pagination'>
-                        <Pagination
-                            className="pagination-bar"
-                            currentPage={currentPage}
-                            totalCount={merged.length}
-                            pageSize={PageSize}
-                            siblingCount = {1}
-                            onPageChange={(page) => setCurrentPage(page)}
-                         />
-                    </div>
-                </div>
+                </div> : <div>No Sneakers now, please check back</div>
               }
             </div>  
             <div className='sub-footer'>

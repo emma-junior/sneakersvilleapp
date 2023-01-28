@@ -15,7 +15,7 @@ import useFetch from '../hooks/usePublicFetch'
 
 
 const New = () => {
-    const { data, isloading, isError } = useFetch("products", "true");
+    const { data, isloading, isError } = useFetch("products", "true", "");
 
   useEffect(() => {
     Aos.init({duration: 2000})
