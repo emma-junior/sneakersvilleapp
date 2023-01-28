@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { publicRequest } from "../api";
 import { Product } from "../model";
 
-const useFetch = (request:string, req:string) => {
-  const requestParam = `/${request}?new=${req}`;
+const useFetch = (request:string, req:string, cat:string) => {
+  const requestParam = `/${request}?new=${req}&&category=${cat}`;
   const [data, setData] = useState<Product[] | null>(null);
   const [isloading, setIsloading] = useState(true);
   const [isError, setIsError] = useState(null);
@@ -23,7 +23,7 @@ const useFetch = (request:string, req:string) => {
       }
     }
     getProducts()
-  },[request, req])
+  },[request, req, cat, requestParam])
   return { data, isloading, isError };
 };
 

@@ -27,22 +27,59 @@
         margin: auto;
     }
 
-    .products-wrapper {
-        display: grid;
-        grid-template-columns: auto auto auto;
-        width: 70%;
+    .categories_products {
+        display: flex;
+        width: 85%;
+        justify-content: space-between;
         margin: auto;
         @include tab {
-            grid-template-columns: auto auto;
+            display: block;
+            width: 90%;
         }
-        @include mobile {
-            grid-template-columns: auto;
+        .categories {
+            margin-top: 10px;
+            ul {
+                border-left: 2px solid #e5e7eb;
+                margin-top: 5px;
+                @include tab {
+                    display: flex;
+                }
+                li{
+                    list-style: none;
+                    padding: 5px;
+                    padding-left: 10px;
+                    cursor: pointer;
+                }
+                .all,
+                .men,
+                .women,
+                .kids {
+                    color: rgb(3, 3, 73);
+                    font-weight: 700;
+                }
+            }
         }
-    }
-    .products-pagination {
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        margin: 30px auto;
+        .products-containers {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            .products-wrapper {
+                display: grid;
+                grid-template-columns: auto auto auto;
+                margin: auto;
+                @include tab {
+                    grid-template-columns: auto auto;
+                }
+                @include mobile {
+                    grid-template-columns: auto;
+                }
+            }
+            .products-pagination {
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                margin: 30px auto;
+            }
+        }
     }
 // }

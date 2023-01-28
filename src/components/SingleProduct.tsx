@@ -47,7 +47,7 @@ const SingleProduct = ({id}:Props) => {
   }, [id]);
 
 
-  const { data, isloading, isError } = useFetch("products", "");
+  const { data, isloading, isError } = useFetch("products", "", "");
 
   const addCart = (detail:Product) => {
     dispatch(addToCart(detail))
