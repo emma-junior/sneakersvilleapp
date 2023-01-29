@@ -25,9 +25,12 @@ const LoginForm = () => {
     }
 
     const handleClick = (e:FormEvent) => {
-    e.preventDefault();
-    login(dispatch, { username, password });
-  };
+        e.preventDefault();
+        login(dispatch, { username, password });
+    };
+    const disabledBtn = (e:FormEvent) => {
+        e.preventDefault();
+    }
 
   return (
     <div className='reg-form-container'>
@@ -51,7 +54,7 @@ const LoginForm = () => {
                 </div>
                 {username && password ? <button className="reg-btn" onClick={handleClick}>
                     {isFetching ? "Loading.." : "LOGIN"}
-                </button>: <button className='disabled-btn'>LOGIN</button>}
+                </button>: <button onClick={disabledBtn} className='disabled-btn'>LOGIN</button>}
             </form>
         </div>
   )
