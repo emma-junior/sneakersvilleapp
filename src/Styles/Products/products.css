@@ -44,6 +44,9 @@
   padding-left: 10px;
   cursor: pointer;
 }
+.categories_products .categories ul li:hover {
+  color: #FF2F2F;
+}
 .categories_products .categories ul .all,
 .categories_products .categories ul .men,
 .categories_products .categories ul .women,

@@ -7,11 +7,46 @@
 
 .success {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
+  background: #fafcff;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.success h2 {
-  padding: 0 3px;
+.success .success_wrapper {
+  background: #fff;
+  padding: 20px 40px;
+  margin: 0 15px;
+  border-radius: 15px;
+}
+.success .success_wrapper .check-icon {
+  font-size: 40px;
+  color: #19cfa8;
+  text-align: center;
+}
+.success .success_wrapper .successfull {
+  text-align: center;
+  color: #19cfa8;
+}
+.success .success_wrapper .order-id {
+  text-align: center;
+  color: #c2c3cc;
+  margin: 10px 0;
+}
+.success .success_wrapper hr {
+  margin: 25px auto;
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #c2c3cc;
+}
+.success .success_wrapper .paid {
+  display: flex;
+  justify-content: space-between;
+  color: #c2c3cc;
+  margin: 10px 0;
+}
+.success .success_wrapper .home {
+  text-align: center;
+  margin: 10px auto;
 }/*# sourceMappingURL=success.css.map */

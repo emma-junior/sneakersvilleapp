@@ -8,6 +8,7 @@ import { userRequest } from "../api";
 import { Product } from "../model";
 import { useGlobalContext } from '../hooks/Context';
 import "../Styles/Success/success.css"
+import {BsFillCheckCircleFill} from "react-icons/bs"
 
 const Success = () => {
     const {totalAmount} = useGlobalContext();
@@ -37,10 +38,23 @@ const Success = () => {
   }, [cart, data, User, totalAmount]);
     
   return (
-    <div className="success">
-      <h2>Successfull.</h2>
-      <p>{`Your order number is ${orderId}`} <Link to="/">Home</Link></p>
-    </div>
+    <section className="success">
+      <div className="success_wrapper">
+        <h2 className="check-icon"><BsFillCheckCircleFill /></h2>
+        <h2 className="successfull">Payment Successfull!</h2>
+        <p className="order-id">{`Transaction Number: ${orderId}`}</p>
+        <hr />
+        <div className="paid">
+          <p>Amount Paid:</p>
+          <p>{`$${totalAmount}`}</p>
+        </div>
+        <div className="paid">
+          <p>Bank:</p>
+          <p>Emmanuels Bank</p>
+        </div>
+        <p className="home"><Link to="/">HOME</Link></p>
+      </div>
+    </section>
   );
 };
 
