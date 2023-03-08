@@ -50,16 +50,6 @@
 .navbar-cover .navbar-cover__wrapper .navbar-cart .login-logout .login-register:hover {
   color: #FF2F2F;
 }
-.navbar-cover .navbar-cover__wrapper h1 {
-  font-weight: 700;
-  font-size: 35px;
-  cursor: pointer;
-  color: #272727;
-  font-family: "Bakbak One", cursive;
-}
-.navbar-cover .navbar-cover__wrapper h1 .ville {
-  color: rgb(3, 3, 73);
-}
 .navbar-cover .navbar-cover__wrapper input {
   padding: 6px;
   width: 250px;

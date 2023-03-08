@@ -10,6 +10,7 @@ import { CurrentUser } from '../model';
 import "../Styles/MobileNav/mobilenav.css"
 import { useAppDispatch } from '../helper/appDispatch';
 import { logOut } from '../redux/actions/user'
+import Logo from './Logo'
 
 const MobileNav = () => {
     const User:CurrentUser | null = useSelector((state:State) => state.user.currentUser);
@@ -23,7 +24,7 @@ const MobileNav = () => {
     const letter = User?.username.charAt(0).toUpperCase()
   return (
     <nav className='mobilenav'>
-        <Link to="/"><h1>Sneakers<span className='ville'>Ville</span></h1></Link>
+        <Link to="/"><Logo /></Link>
         <div className='mobilenav-icons'>
             {User && 
               <div className='account'>

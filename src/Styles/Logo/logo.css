@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.Logo h1 {
+  font-weight: 700;
+  font-size: 35px;
+  cursor: pointer;
+  color: #272727;
+  font-family: "Bakbak One", cursive;
+}
+@media (max-width: 768px) {
+  .Logo h1 {
+    font-size: 30px;
+  }
+}
+@media (max-width: 640px) {
+  .Logo h1 {
+    font-size: 26px;
+  }
+}
+.Logo h1 .ville {
+  color: rgb(3, 3, 73);
+}/*# sourceMappingURL=logo.css.map */

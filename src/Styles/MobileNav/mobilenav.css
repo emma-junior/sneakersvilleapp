@@ -13,13 +13,6 @@
   background-color: #fff;
   padding: 15px;
 }
-.mobilenav h1 {
-  color: #272727;
-  font-family: "Bakbak One", cursive;
-}
-.mobilenav h1 .ville {
-  color: rgb(3, 3, 73);
-}
 .mobilenav .mobilenav-icons {
   display: flex;
 }

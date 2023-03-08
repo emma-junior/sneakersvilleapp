@@ -56,16 +56,6 @@
                     }
                 }
             }
-            h1 {
-                font-weight: map-get($font-weights, bold);
-                font-size: 35px;
-                cursor: pointer;
-                color: $primary-color;
-                font-family: 'Bakbak One', cursive;
-                .ville {
-                    color:rgb(3, 3, 73);
-                }
-            }
             input {
                 padding: 6px;
                 width: 250px;

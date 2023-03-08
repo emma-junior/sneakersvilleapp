@@ -10,6 +10,7 @@ import { CurrentUser } from '../model';
 import { useAppDispatch } from '../helper/appDispatch';
 import { State } from '../redux/reducers';
 import { logOut } from '../redux/actions/user';
+import Logo from './Logo';
 
 
 
@@ -30,7 +31,7 @@ const Navbar = () => {
             <div>
               <input placeholder='Type anything and hit enter' />
             </div>
-            <Link to="/"><h1>Sneakers<span className='ville'>Ville</span></h1></Link>           
+            <Link to="/"><Logo /></Link>           
             <div className='navbar-cart'>
               {User ? <div className='login-logout'>
                 <Link to="profile"><h3 className='login-register'><BsPerson className='person-icon' /> {User.username}</h3></Link>

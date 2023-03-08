@@ -29,12 +29,8 @@
   text-align: center;
   margin: 30px 0;
 }
-.footer .footer__address h1 {
+.footer .footer__address .footer__Logo {
   margin: 20px 0;
-  font-family: "Bakbak One", cursive;
-}
-.footer .footer__address h1 .ville {
-  color: rgb(3, 3, 73);
 }
 .footer .footer__address .address, .footer .footer__address .email {
   color: #555;
