@@ -47,7 +47,6 @@
   background: #f9f9f9;
   padding: 30px 25px;
   border: solid 2px #ebebeb;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   border-radius: 5px;
@@ -68,7 +67,6 @@
   padding: 30px 25px;
   border: solid 2px #ebebeb;
   border-radius: 5px;
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
 }

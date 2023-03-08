@@ -41,26 +41,30 @@ const submitHandler = async (data:RegisterUser) => {
         <div className='reg-form-container'>
             <form onSubmit={handleSubmit(submitHandler)}>
                 <h1>Welcome to sneakersVille</h1>
-                <input 
-                    type="text" 
-                    placeholder='Username'
-                    {...register("username", {
-                    required: "username is required",
-                    })}
-                 />
-                <input 
-                    type="email" 
-                    placeholder='Email Address'
-                    {...register("email", {
-                        required: true,
-                        validate: {
-                            matchPattern: (value) => /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/.test(value)
-                        }
-                    })}
-                />
-                {errors.email?.type === "required" && <p className="errorMsg">Email is required.</p>}
-                {errors.email?.type === "matchPattern" && <p className="errorMsg">Email is not valid</p>}
-                <div className='reg-password'>
+                <div className='input-wrap'>
+                    <input 
+                        type="text" 
+                        placeholder='Username'
+                        {...register("username", {
+                        required: "username is required",
+                        })}
+                    />
+                </div>
+                <div className='input-wrap'>
+                    <input 
+                        type="email" 
+                        placeholder='Email Address'
+                        {...register("email", {
+                            required: true,
+                            validate: {
+                                matchPattern: (value) => /^[^@ ]+@[^@ ]+\.[^@ .]{2,}$/.test(value)
+                            }
+                        })}
+                    />
+                    {errors.email?.type === "required" && <p className="errorMsg">Email is required.</p>}
+                    {errors.email?.type === "matchPattern" && <p className="errorMsg">Email is not valid</p>}
+                </div>
+                <div className='input-wrap reg-password'>
                     <input 
                         type={input} 
                         placeholder="Password"
@@ -89,7 +93,7 @@ const submitHandler = async (data:RegisterUser) => {
                         </p>
                     )}
                 </div>
-                <button className='reg-btn'>{loading ? "Loading" : "SIGN UP"}</button>
+                <button className='reg-btn'>{loading ? "Loading..." : "SIGN UP"}</button>
                 <div className='account'>
                     <p>Already have an account ? <Link to="/login"><span>LOGIN</span></Link></p>
                 </div>

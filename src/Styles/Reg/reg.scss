@@ -99,14 +99,16 @@
                     font-weight: 700;
                     text-align: center;
                 }
-                input {
-                    display: block;
-                    height: 3.2rem;
-                    text-indent: 1.2rem;
+                .input-wrap {
                     margin-bottom: 2.3rem;
-                    width: 100%;
-                    border-radius: .3rem;
-                    border: 2px solid rgb(194, 187, 187);
+                    input {
+                        display: block;
+                        height: 3.2rem;
+                        text-indent: 1.2rem;
+                        width: 100%;
+                        border-radius: .3rem;
+                        border: 2px solid rgb(194, 187, 187);
+                    }
                 }
                 .reg-password {
                     position: relative;

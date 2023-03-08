@@ -80,11 +80,13 @@
   font-weight: 700;
   text-align: center;
 }
-.reg-page .reg .reg-form-container form input {
+.reg-page .reg .reg-form-container form .input-wrap {
+  margin-bottom: 2.3rem;
+}
+.reg-page .reg .reg-form-container form .input-wrap input {
   display: block;
   height: 3.2rem;
   text-indent: 1.2rem;
-  margin-bottom: 2.3rem;
   width: 100%;
   border-radius: 0.3rem;
   border: 2px solid rgb(194, 187, 187);
