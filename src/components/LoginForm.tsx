@@ -4,6 +4,7 @@ import { login } from '../redux/apiCalls';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '../helper/appDispatch';
 import { State } from '../redux/reducers';
+import Logo from './Logo';
 
 
 
@@ -35,15 +36,17 @@ const LoginForm = () => {
   return (
     <div className='reg-form-container'>
             <form>
-                <h1>SneakersVille</h1>
+                <Logo />
                 {error && <div className='error'>Please enter your correct credentials !!</div>}
-                <input 
-                    type="text" 
-                    value={username}
-                    placeholder="username"
-                    onChange={(e) => setUsername(e.target.value)}
-                 />
-                <div className='reg-password'>
+                <div className='input-wrap'>
+                    <input 
+                        type="text" 
+                        value={username}
+                        placeholder="username"
+                        onChange={(e) => setUsername(e.target.value)}
+                    />
+                 </div>
+                <div className='input-wrap reg-password'>
                     <input
                      type={input} 
                      value={password}
@@ -53,7 +56,7 @@ const LoginForm = () => {
                     {visible ? <p onClick={togglePassword} className='shown-password'><AiOutlineEye /></p>: <p onClick={togglePassword} className='shown-password'><AiOutlineEyeInvisible /></p>}
                 </div>
                 {username && password ? <button className="reg-btn" onClick={handleClick}>
-                    {isFetching ? "Loading.." : "LOGIN"}
+                    {isFetching ? "Loading..." : "LOGIN"}
                 </button>: <button onClick={disabledBtn} className='disabled-btn'>LOGIN</button>}
             </form>
         </div>
