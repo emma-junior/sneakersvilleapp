@@ -28,20 +28,20 @@ const MobileNav = () => {
         <div className='mobilenav-icons'>
             {User && 
               <div className='account'>
-                <p className='letter' onClick={() => setUserDropdown(!userDropdown)}>{letter}</p>
-                {userDropdown && <div className='dropdown'>
-                  <Link to="/profile"><p>PROFILE</p></Link>
-                  <p onClick={() => dispatch(logOut())}>LOG OUT</p>
-                </div>}
+                <div className='letter-container'><p className='letter' onClick={() => setUserDropdown(!userDropdown)}>{letter}</p></div>
+                {userDropdown && <ul className='dropdown'>
+                  <Link to="/profile"><li>Profile</li></Link>
+                  <li onClick={() => dispatch(logOut())}>Log Out</li>
+                </ul>}
               </div>
             }
             {!User &&
               <div className='account'>
-                <h4 className='icon' onClick={() => setNoUserDropdown(!noUserDropdown)}><BsPerson /> Account</h4>
-                {noUserDropdown && <div className='dropdown'>
-                  <Link to="/register"><p>REGISTER</p></Link>
-                  <Link to="/login"><p>LOGIN</p></Link>
-                </div>}
+                <div className='text-wrapper'><h4 className='icon' onClick={() => setNoUserDropdown(!noUserDropdown)}>Account</h4></div>
+                {noUserDropdown && <ul className='dropdown'>
+                  <Link to="/register"><li>Register</li></Link>
+                  <Link to="/login"><li>Login</li></Link>
+                </ul>}
               </div>
             }
             
