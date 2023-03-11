@@ -36,6 +36,11 @@
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .navbar-cover .navbar-cover__wrapper .navbar-cart {
+    width: 250px;
+  }
+}
 .navbar-cover .navbar-cover__wrapper .navbar-cart .login-logout {
   display: flex;
 }
@@ -56,6 +61,11 @@
   border: none;
   border-bottom: 2px solid #272727;
   outline: none;
+}
+@media (max-width: 768px) {
+  .navbar-cover .navbar-cover__wrapper input {
+    width: 200px;
+  }
 }
 .navbar-cover hr {
   width: 95%;

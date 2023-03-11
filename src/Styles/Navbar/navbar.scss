@@ -9,6 +9,12 @@
     align-items: center;
 }
 
+@mixin tab {
+    @media (max-width: $tab) {
+        @content;
+    }
+}
+
 @function weight($weight-name) {
     @return map-get($font-weights, $weight-name)
 }
@@ -39,6 +45,9 @@
 
             .navbar-cart {
                 width: 320px;
+                @include tab {
+                    width: 250px;
+                }
                 @include flexCenter(space-between);
                 .login-logout {
                     display: flex;
@@ -59,6 +68,9 @@
             input {
                 padding: 6px;
                 width: 250px;
+                @include tab {
+                    width: 200px;
+                }
                 border: none;
                 border-bottom: 2px solid $primary-color;
                 outline: none;
