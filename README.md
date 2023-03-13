@@ -19,3 +19,7 @@ SneakersVille is an ecommerce application for sneakers, users can browse through
 
 ### How it works
 The app does not require login before accessing and browsing through the application. It only requires a login before checking out. Users can create an account by registering and providing their username, email address and a password.
+
+### Screenshot
+
+![sneakersville](/public/assets/images/cover-pic.jpg)
