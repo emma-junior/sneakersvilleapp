@@ -12,7 +12,6 @@ Details on the SneakersVille application
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 SneakersVille is an ecommerce application for sneakers, users can browse through a wide selection of sneakers and add sneakers to cart. In the products page, the application contains features such as filtering by men, women and kids. Users can also view detailed product descriptions and images, as well as customer ratings. Stripe payment gateway and paystack payment gateway was also integrated in this application.
@@ -34,4 +33,26 @@ The app does not require login before accessing and browsing through the applica
 *Products Page*
 ![sneakersville_products_page](/public/assets/screenshots/products-pg.PNG)
 
+### Links
 
+- Live Site URL: [vercel.app](https://sneakersvilleapp.vercel.app/)
+
+## My process
+
+### Built with
+- [React](https://reactjs.org/) - JS library
+- Typescript
+- SCSS
+- Node.js
+- Express.js
+- Mongo db
+
+### What I learned
+
+On the frontend aspect- It deepened my knowledge on typescript, redux and i got to fully understood the benefits of using SCSS over the normal CSS.
+On the backend aspect- I learnt and understood how to make CRUD api's using the express.js framwork and the Mongo db database. I also understood more on JWT and how to use it in a project.
+I am proud of the application I built and the logic applied.
+
+### Continued development
+
+Continuous development would be around testing using cypress.
