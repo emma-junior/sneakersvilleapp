@@ -69,14 +69,23 @@
           width: 100%;
         }
       }
-      .images {
+      .images-wrapper {
+        max-width: 570px;
         display: flex;
-        margin: 10px auto;
-        width: 80%;
-        justify-content: space-between;
-        @include mobile {
-          width: 90%;
+        justify-content: center;
+        @include tab {
+          max-width: 590px;
         }
+        @include mobile {
+          max-width: 90%;
+        }
+        .images {
+          display: flex;
+          margin: 10px auto;
+          width: 85%;
+          justify-content: space-between;
+        }
+
       }
     }
     .singleproduct-detail {

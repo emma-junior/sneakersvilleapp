@@ -80,8 +80,10 @@ const SingleProduct = ({id}:Props) => {
           <div className='currentimage-div'>
             <img className='currentimage' src={images[currentImage]} alt='' />
           </div>
-          <div className='images'>
-            {images.map((images, index) => <ActiveImage key={index} currentImage={currentImage} setCurrentImage={setCurrentImage} images={images} num={index}   />)}
+          <div className='images-wrapper'>
+            <div className='images'>
+              {images.map((images, index) => <ActiveImage key={index} currentImage={currentImage} setCurrentImage={setCurrentImage} images={images} num={index}   />)}
+            </div>
           </div>
         </div>
         <div className='singleproduct-detail'>
