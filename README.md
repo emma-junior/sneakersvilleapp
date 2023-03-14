@@ -35,7 +35,7 @@ The app does not require login before accessing and browsing through the applica
 
 ### Links
 
-- Live Site URL: [vercel.app](https://sneakersvilleapp.vercel.app/)
+- Live Site URL: [SneakersVille](https://sneakersvilleapp.vercel.app/)
 
 ## My process
 
@@ -49,8 +49,8 @@ The app does not require login before accessing and browsing through the applica
 
 ### What I learned
 
-On the frontend aspect- It deepened my knowledge on typescript, redux and i got to fully understood the benefits of using SCSS over the normal CSS.
-On the backend aspect- I learnt and understood how to make CRUD api's using the express.js framwork and the Mongo db database. I also understood more on JWT and how to use it in a project.
+- On the frontend aspect: It deepened my knowledge on typescript, redux and i got to fully understood the benefits of using SCSS over the normal CSS.
+- On the backend aspect: I learnt and understood how to make CRUD api's using the express.js framwork and the Mongo db database. I also understood more on JWT and how to use it in a project.
 I am proud of the application I built and the logic applied.
 
 ### Continued development
