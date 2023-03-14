@@ -8,11 +8,6 @@
 .single-details {
   margin: 30px auto;
 }
-@media (max-width: 768px) {
-  .single-details {
-    margin: -100px auto 20px;
-  }
-}
 .single-details .details-headers {
   display: flex;
   flex-wrap: wrap;

@@ -45,7 +45,7 @@
     display: flex;
     justify-content: space-between;
     @include tab {
-      display: block;
+      flex-direction: column;
     }
     .singleproduct-images {
       width: 50%;
@@ -96,6 +96,7 @@
       @include tab {
         width: 100%;
         margin: 30px 20px;
+        height: 400px;
       }
       @include mobile {
         width: 350px;

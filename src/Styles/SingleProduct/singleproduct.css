@@ -28,7 +28,7 @@
 }
 @media (max-width: 768px) {
   .details .singleproduct {
-    display: block;
+    flex-direction: column;
   }
 }
 .details .singleproduct .singleproduct-images {
@@ -93,6 +93,7 @@
   .details .singleproduct .singleproduct-detail {
     width: 100%;
     margin: 30px 20px;
+    height: 400px;
   }
 }
 @media (max-width: 640px) {

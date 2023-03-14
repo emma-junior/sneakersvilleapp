@@ -25,9 +25,6 @@
 
 .single-details {
     margin: 30px auto;
-    @include tab {
-        margin: -100px auto 20px;
-    }
     .details-headers {
         display: flex;
         flex-wrap: wrap;
