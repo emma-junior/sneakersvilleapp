@@ -30,7 +30,7 @@ const PaymentForm = () => {
         // other params
           key: 'pk_test_20f26c6ed5e3229ba35cc32201058a2229371c65',
           email: 'emma@email.com',
-          amount: totalAmount * 100,
+          amount: totalAmount * 100 * 680,
         
         onSuccess: (transaction) => { 
           // Payment complete! Reference: transaction.reference
