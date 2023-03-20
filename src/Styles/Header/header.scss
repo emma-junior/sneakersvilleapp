@@ -18,7 +18,7 @@
 }
 
 .header {
-    background-image: url("../../../public/assets/images/cover-pic.jpg");
+    background-image: url("../../../public/assets/images/cover-pic.webp");
     background-color: #d2e1ed; 
     height: 550px;
     width: 100%;
@@ -27,7 +27,7 @@
     background-size: cover;
 
     @include tab {
-        background-image: url("../../../public/assets/images/mobile-cover-pic.jpg");
+        background-image: url("../../../public/assets/images/mobile-cover-pic.webp");
         color: #fff;
     }
     #{&}__content {

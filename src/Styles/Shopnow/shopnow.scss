@@ -26,7 +26,7 @@
     width: 100%;
     display: flex;
     .adidas {
-        background-image: url("../../../public/assets/images/shopnow-two.jpg");
+        background-image: url("../../../public/assets/images/shopnow-two.webp");
         width: 50%;
         @include bgimg;
         @include tab {
@@ -65,7 +65,7 @@
         }
     }
     .nike {
-        background-image: url("../../../public/assets/images/shopnow.jpg");
+        background-image: url("../../../public/assets/images/shopnow.webp");
         width: 50%;
         @include bgimg;
         @include tab {
