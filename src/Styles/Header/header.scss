@@ -27,7 +27,7 @@
     background-size: cover;
 
     @include tab {
-        background-image: url("../../../public/assets/images/mobile-cover-pic.png");
+        background-image: url("../../../public/assets/images/mobile-cover-pic.jpg");
         color: #fff;
     }
     #{&}__content {
