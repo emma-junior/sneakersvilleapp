@@ -50,7 +50,7 @@ const New = () => {
       <div className='wrapper'>
         {isError && <div className='error'>{isError}</div>}
         {isloading && <span className='loader-spinner'><Loading /></span>}
-        {data && <Carousel responsive={responsive} infinite={true} className="owl-carousel owl-theme new-slider">
+        {data && <Carousel responsive={responsive} infinite={true} autoPlay={true} className="owl-carousel owl-theme new-slider">
           {data?.map((product : Product) => <Card key={product._id}  product={product} />)}
         </Carousel>}
       </div>
