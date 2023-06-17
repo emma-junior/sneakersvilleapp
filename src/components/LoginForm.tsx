@@ -45,7 +45,7 @@ const LoginForm = () => {
                         placeholder="username"
                         onChange={(e) => setUsername(e.target.value)}
                     />
-                 </div>
+                </div>
                 <div className='input-wrap reg-password'>
                     <input
                      type={input} 

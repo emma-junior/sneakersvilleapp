@@ -57,6 +57,5 @@ const New = () => {
     </section>
   )
 }
-{/* className='new-product track' */}
 
 export default New

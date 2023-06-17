@@ -1,13 +1,6 @@
 @import "../../variables/variables";
 @import "../../variables/resets";
 
-@mixin loader($height) {
-    display: flex;
-    height: $height;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-}
 
 @mixin tab {
     @media (max-width: $tab) {
@@ -19,62 +12,7 @@
         @content;
     }
 }
-// .new {
-//     position: relative;
-//     height: 500px;
-//     width: 100%;
-//     margin: auto;
-//     overflow-x: hidden;
-//     overflow-y: hidden;
 
-//     .loader-spinner {
-//         @include loader(200px);
-//     }
-// }
-// .new-product {
-//     display: flex;
-//     justify-content: center;
-//     gap: 20px;
-//     margin-top: 15px;
-// }
-
-// .track {
-//     position: absolute;
-//     white-space: nowrap;
-//     will-change: transform;
-//     animation: marquee 15s linear infinite;
-//     width: 150%;
-//     @include tab {
-//         width: 300%;
-//     }
-//     @include mobile {
-//         width: 500%;
-//     }
-// }
-
-// .track:hover {
-//     animation-play-state: paused;
-// }
-// @keyframes marquee {
-//     from {
-//         transform: translate(0);
-//     }
-//     to {
-//         transform: translate(-50%)
-//     }
-// }
-// @include tab {
-//     @keyframes marquee {
-//         from {
-//             transform: translate(0);
-//         }
-//         to {
-//             transform: translate(-90%)
-//         }
-//     }
-// }
-
-//changed to react multi carousel
 .wrapper {
     width: 70%;
     @include mobile {

@@ -1,6 +1,8 @@
-const fadeOut = (e:any) => {
-    const loader = e.currentTarget.nextElementSibling;
-    loader.style.opacity = 0;
+const fadeOut = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    const loader = e.currentTarget.nextElementSibling as HTMLElement;
+    if (loader) {
+        loader.style.opacity = '0';
+    }
 }
 
 export default fadeOut;

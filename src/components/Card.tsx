@@ -38,9 +38,11 @@ const Card = ({product}: Props) => {
     
   return (
     <main className='card' onMouseEnter={() => setBtnShown(true)}  onMouseLeave={() => setBtnShown(false)}>
-        <Link to={`/details/${product?._id}`}><div className='card__imgwrapper'>           
+        <Link to={`/details/${product?._id}`}>
+            <div className='card__imgwrapper'>           
             <img className='card-img' src={product.imageOne} loading="lazy" alt='' />
-            </div></Link>
+            </div>
+        </Link>
         <section className={`${btnShown && "move-up"}`}>
             <div className={`card-info `}>
                 <div className='card-info__icon'>
