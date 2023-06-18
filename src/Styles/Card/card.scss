@@ -15,12 +15,22 @@
         @content;
     }
 }
+@mixin tab {
+    @media (max-width: $tab) {
+        @content;
+    }
+}
 
 .card {
     position: relative;
     padding: 20px 10px;
     cursor: pointer;
     max-width: 300px;
+    overflow: hidden;
+    max-height: 400px;
+    @include tab {
+        max-height: 450px;
+    }
 
 
     #{&}__imgwrapper {
@@ -40,17 +50,22 @@
         }
     }
 
-    .move-up {
-        position: absolute;
-        margin-top: -40px;
-        background: #fff;
-        left: -1%;
-        right: -10%;
-        transition: 0.3s ease-in-out; 
+    @media (hover) {
+        .move-up {
+            background: #fff;
+            transition: 0.3s ease-in-out; 
+            transform: translateY(10%);
+        }
+    }
+    &:hover .move-up {
+        transform: translateY(-30%);
+        @include tab {
+            transform: translateY(-35%);
+        }
     }
     .card-info {
         max-width: 300px;
-        padding: 20px auto 10px;
+        padding: 0px auto 10px;
         text-align: center;
 
         .card-info__icon {

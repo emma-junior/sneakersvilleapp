@@ -12,7 +12,7 @@
   justify-content: space-between;
   align-items: center;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .benefits {
     display: block;
     margin: auto;
@@ -24,7 +24,7 @@
   align-items: center;
   height: 170px;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .benefits .benefits__wrapper {
     height: 80px;
   }

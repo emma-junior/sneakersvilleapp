@@ -20,7 +20,7 @@
   padding: 20px;
   width: 40%;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .payment-form .form-wrapper {
     width: 60%;
   }

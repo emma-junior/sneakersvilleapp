@@ -20,7 +20,7 @@
   color: #333;
   cursor: pointer;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .single-details .details-headers .headers {
     margin: 15px;
   }

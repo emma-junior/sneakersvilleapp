@@ -14,7 +14,7 @@
   width: 50%;
   height: 100vh;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .reg-page .reg .reg-img-container {
     width: 100%;
   }
@@ -50,7 +50,7 @@
   align-items: center;
   background-color: #fff;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .reg-page .reg .reg-form-container {
     position: absolute;
     width: 80%;

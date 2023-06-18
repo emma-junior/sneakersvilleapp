@@ -14,7 +14,7 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .header {
     background-image: url("../../../public/assets/images/mobile-cover-pic.webp");
     color: #fff;

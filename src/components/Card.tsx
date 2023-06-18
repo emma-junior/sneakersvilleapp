@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import {Product} from '../model'
 import "../Styles/Card/card.css"
 import { addToCart } from '../redux/actions/cart'
@@ -15,7 +14,6 @@ interface Props {
 
 
 const Card = ({product}: Props) => {
-    const [btnShown, setBtnShown] = useState<boolean>(false)
     const Cart:Product[] = useSelector((state:State) => state.cart);
 
     const dispatch = useAppDispatch()
@@ -37,20 +35,20 @@ const Card = ({product}: Props) => {
     }
     
   return (
-    <main className='card' onMouseEnter={() => setBtnShown(true)}  onMouseLeave={() => setBtnShown(false)}>
+    <main className='card'>
         <Link to={`/details/${product?._id}`}>
             <div className='card__imgwrapper'>           
             <img className='card-img' src={product.imageOne} loading="lazy" alt='' />
             </div>
         </Link>
-        <section className={`${btnShown && "move-up"}`}>
+        <section className={`move-up`}>
             <div className={`card-info `}>
                 <div className='card-info__icon'>
                     <Rating size={30} readonly={true} allowHover={false} ratingValue={80} />
                 </div>        
                 <p className='card-info__title'>{product.title}</p>
                 <p className='card-info__price'>${product.price}</p>
-                {btnShown && <button onClick={() => addCart(product)} className='card-info__btn'>Add To Cart</button>}
+                <button onClick={() => addCart(product)} className='card-info__btn'>Add To Cart</button>
             </div>
         </section>
     </main>

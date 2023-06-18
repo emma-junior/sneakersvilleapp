@@ -20,7 +20,7 @@
   justify-content: space-between;
   margin: auto;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .categories_products {
     display: block;
     width: 90%;
@@ -33,7 +33,7 @@
   border-left: 2px solid #e5e7eb;
   margin-top: 5px;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .categories_products .categories ul {
     display: flex;
   }
@@ -64,7 +64,7 @@
   grid-template-columns: auto auto auto;
   margin: auto;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .categories_products .products-containers .products-wrapper {
     grid-template-columns: auto auto;
   }
