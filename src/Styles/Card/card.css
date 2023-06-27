@@ -11,7 +11,7 @@
   cursor: pointer;
   max-width: 300px;
   overflow: hidden;
-  max-height: 400px;
+  max-height: 393px;
 }
 @media (max-width: 900px) {
   .card {
