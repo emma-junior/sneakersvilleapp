@@ -20,7 +20,6 @@ const MobileNav = () => {
 
     const dispatch = useAppDispatch()
 
-    // console.log(User)
     const letter = User?.username.charAt(0).toUpperCase()
   return (
     <nav className='mobilenav'>
