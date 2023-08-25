@@ -16,7 +16,7 @@ const Cart = () => {
 
   useEffect(() => {
     setCartModal(false)
-  }, [])
+  }, [setCartModal])
   
 
   return (

@@ -17,7 +17,7 @@ const CartIcon = () => {
           count += cart.quantity;
         });
         setCartCount(count);
-    }, [Cart, cartCount]);
+    }, [Cart, cartCount, setCartCount]);
 
   return (
     <div className='navbar-cart-icon'>

@@ -31,20 +31,20 @@ const SingleProduct = ({id}:Props) => {
   const dispatch = useAppDispatch()
 
     useEffect(() => {
-    const getProduct = async () => {
-      try {
-        const res = await publicRequest.get("/products/" + id);
-        setDetail(res.data);
-        setIsLoading(false)
-        setError(null);
-      } catch (error:any) {
-        console.log(error)
-        setIsLoading(false);
-        setError(error.message);
-      }
-    };
-    getProduct();
-  }, [id]);
+      const getProduct = async () => {
+        try {
+          const res = await publicRequest.get("/products/" + id);
+          setDetail(res.data);
+          setIsLoading(false)
+          setError(null);
+        } catch (error:any) {
+          console.log(error)
+          setIsLoading(false);
+          setError(error.message);
+        }
+      };
+      getProduct();
+    }, [id]);
 
 
   const { data, isloading, isError } = useFetch("products", "", "");

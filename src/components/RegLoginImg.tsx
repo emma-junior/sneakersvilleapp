@@ -5,9 +5,9 @@ const RegLoginImg = ({pic}: {pic: string}) => {
   return (
     <div className='reg-img-container'>
         <div className='reg-img-cover'></div>
-        <img onLoad={fadeOut} className="reg-img" src={`/assets/images/${pic}.jpg`} />
+        <img onLoad={fadeOut} className="reg-img" src={`/assets/images/${pic}.jpg`} alt='' />
         <div className='reg-img-loader'>
-            <img src='/assets/svgs/loader.svg' />
+            <img src='/assets/svgs/loader.svg' alt='' />
         </div>
     </div>
   )

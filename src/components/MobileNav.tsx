@@ -1,22 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import CartIcon from './CartIcon'
-import {BsPerson} from "react-icons/bs"
 import {FaBars} from "react-icons/fa"
 import { Link } from 'react-router-dom'
 import { useGlobalContext } from '../hooks/Context';
 import { useSelector } from 'react-redux';
 import { State } from '../redux/reducers';
 import { CurrentUser } from '../model';
-import "../Styles/MobileNav/mobilenav.css"
+import "../Styles/MobileNav/mobilenav.css";
 import { useAppDispatch } from '../helper/appDispatch';
-import { logOut } from '../redux/actions/user'
-import Logo from './Logo'
+import { logOut } from '../redux/actions/user';
+import Logo from './Logo';
+
 
 const MobileNav = () => {
     const User:CurrentUser | null = useSelector((state:State) => state.user.currentUser);
     const {setMobileNavModal, setCartModal} = useGlobalContext()
     const [noUserDropdown, setNoUserDropdown] = useState<boolean>(false)
     const [userDropdown, setUserDropdown] = useState<boolean>(false)
+
+    let menuRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+      let handler = (e:any) =>{
+        if(!menuRef.current?.contains(e.target as Node)){
+          setUserDropdown(false);
+          setNoUserDropdown(false);
+        }
+      }
+
+      document.addEventListener("mousedown", handler)
+
+      return() => {
+        document.removeEventListener("mousedown", handler)
+      }
+    })
 
     const dispatch = useAppDispatch()
 
@@ -26,7 +43,7 @@ const MobileNav = () => {
         <Link to="/"><Logo /></Link>
         <div className='mobilenav-icons'>
             {User && 
-              <div className='account'>
+              <div className='account' ref={menuRef}>
                 <div className='letter-container'><p className='letter' onClick={() => setUserDropdown(!userDropdown)}>{letter}</p></div>
                 {userDropdown && <ul className='dropdown'>
                   <Link to="/profile"><li>Profile</li></Link>
@@ -35,7 +52,7 @@ const MobileNav = () => {
               </div>
             }
             {!User &&
-              <div className='account'>
+              <div className='account' ref={menuRef}>
                 <div className='text-wrapper'><h4 className='icon' onClick={() => setNoUserDropdown(!noUserDropdown)}>Account</h4></div>
                 {noUserDropdown && <ul className='dropdown'>
                   <Link to="/register"><li>Register</li></Link>
@@ -51,4 +68,4 @@ const MobileNav = () => {
   )
 }
 
-export default MobileNav
+export default MobileNav;
