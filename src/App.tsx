@@ -35,7 +35,7 @@ function App() {
             <Route path='/success' element={<Success />} />
             <Route path='/pay-with-paystack' element={<PaymentForm />} />
             <Route path='/register' element={<Register />} />
-            <Route path='/profile' element={<Profile />} />
+            <Route path='/coming-soon' element={<Profile />} />
           </Routes>
         </AppProvider>
       </Router>

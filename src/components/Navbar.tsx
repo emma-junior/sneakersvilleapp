@@ -34,7 +34,7 @@ const Navbar = () => {
             <Link to="/"><Logo /></Link>           
             <div className='navbar-cart'>
               {User ? <div className='login-logout'>
-                <Link to="profile"><h3 className='login-register'><BsPerson className='person-icon' /> {User.username}</h3></Link>
+                <Link to="/coming-soon"><h3 className='login-register'><BsPerson className='person-icon' /> {User.username}</h3></Link>
                 <p className='login-register' onClick={() => dispatch(logOut())}>Logout</p>
               </div> : <div className='login-logout'>
                   <Link to="/login"><p className='login-register'>Login</p></Link><p className='login-register'>/</p>
