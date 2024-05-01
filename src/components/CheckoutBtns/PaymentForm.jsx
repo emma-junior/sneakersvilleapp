@@ -6,6 +6,8 @@ import { userRequest } from "../../api";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
+const KEY = process.env.REACT_APP_PAYSTACK;
+
 const PaymentForm = () => {
   const { totalAmount } = useGlobalContext();
   const Cart = useSelector((state) => state.cart);
@@ -30,7 +32,7 @@ const PaymentForm = () => {
     const paystack = new PaystackPop();
     paystack.newTransaction({
       // other params
-      key: "pk_test_20f26c6ed5e3229ba35cc32201058a2229371c65",
+      key: `${KEY}`,
       email: "emma@email.com",
       amount: totalAmount * 100 * 1000,
 
