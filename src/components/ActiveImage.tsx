@@ -1,5 +1,5 @@
-import React from 'react'
-import "../Styles/ActiveImage/activeimage.css"
+import React from "react";
+import "../Styles/ActiveImage/activeimage.scss";
 
 interface Props {
   images?: string;
@@ -8,30 +8,30 @@ interface Props {
   num: number;
 }
 
-const ActiveImage = ({currentImage, setCurrentImage, images, num}: Props) => {
+const ActiveImage = ({ currentImage, setCurrentImage, images, num }: Props) => {
   return (
-    <div className='activeimage-container'>
+    <div className="activeimage-container">
       {currentImage === num ? (
-            <div className="activeimage-wrapper">
-              <img
-                className="image"
-                onClick={() => setCurrentImage(num)}
-                src={images}
-                alt="imageOne"
-              />
-            </div>
-          ) : (
-            <div className="image-wrapper">
-              <img
-                className="image"
-                onClick={() => setCurrentImage(num)}
-                src={images}
-                alt="imageOne"
-              />
-            </div>
-          )}
+        <div className="activeimage-wrapper">
+          <img
+            className="image"
+            onClick={() => setCurrentImage(num)}
+            src={images}
+            alt="imageOne"
+          />
+        </div>
+      ) : (
+        <div className="image-wrapper">
+          <img
+            className="image"
+            onClick={() => setCurrentImage(num)}
+            src={images}
+            alt="imageOne"
+          />
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default ActiveImage
+export default ActiveImage;

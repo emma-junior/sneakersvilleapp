@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../../Styles/PaymentForm/paymentform.css";
+import "../../Styles/PaymentForm/paymentform.scss";
 import PaystackPop from "@paystack/inline-js";
 import { useGlobalContext } from "../../hooks/Context";
 import { userRequest } from "../../api";

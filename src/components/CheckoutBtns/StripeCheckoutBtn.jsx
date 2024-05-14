@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import StripeCheckout from "react-stripe-checkout";
 import { userRequest } from "../../api";
 import { Link, useNavigate } from "react-router-dom";
-import "../../Styles/CheckoutBtns/checkoutbtns.css";
+import "../../Styles/CheckoutBtns/checkoutbtns.scss";
 
 const KEY = process.env.REACT_APP_STRIPE;
 

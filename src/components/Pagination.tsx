@@ -1,20 +1,19 @@
-import React from 'react'
+import React from "react";
 import classnames from "classnames";
 import { usePagination, DOTS } from "../hooks/usePagination";
-import "../Styles/Pagination/pagination.css"
-
+import "../Styles/Pagination/pagination.scss";
 
 interface Props {
-    className: string,
-    currentPage: any,
-    totalCount: number,
-    pageSize: number,
-    siblingCount: number,
-    onPageChange: React.Dispatch<React.SetStateAction<any >>
+  className: string;
+  currentPage: any;
+  totalCount: number;
+  pageSize: number;
+  siblingCount: number;
+  onPageChange: React.Dispatch<React.SetStateAction<any>>;
 }
 
 const Pagination = (props: Props) => {
-    const {
+  const {
     onPageChange,
     totalCount,
     siblingCount = 1,
@@ -23,7 +22,7 @@ const Pagination = (props: Props) => {
     className,
   } = props;
 
-  const paginationRange:any = usePagination({
+  const paginationRange: any = usePagination({
     currentPage,
     totalCount,
     siblingCount,
@@ -58,7 +57,7 @@ const Pagination = (props: Props) => {
       >
         <div className="arrow left" />
       </li>
-      {paginationRange.map((pageNumber:string) => {
+      {paginationRange.map((pageNumber: string) => {
         // If the pageItem is a DOT, render the DOTS unicode character
         if (pageNumber === DOTS) {
           return <li className="pagination-item dots">&#8230;</li>;
@@ -86,7 +85,7 @@ const Pagination = (props: Props) => {
         <div className="arrow right" />
       </li>
     </ul>
-  )
-}
+  );
+};
 
-export default Pagination
+export default Pagination;

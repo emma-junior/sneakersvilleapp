@@ -1,8 +1,8 @@
 import React, {useState, useMemo} from 'react'
 import Navbar from '../components/Navbar'
 import Card from '../components/Card'
-import '../Styles/Products/products.css'
-import "../Styles/Home/home.css"
+import '../Styles/Products/products.scss'
+import "../Styles/Home/home.scss"
 import Subscribe from '../components/Subscribe'
 import Footer from '../components/Footer'
 import { useGlobalContext } from '../hooks/Context'
