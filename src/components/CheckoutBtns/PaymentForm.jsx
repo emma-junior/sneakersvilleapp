@@ -21,7 +21,7 @@ const PaymentForm = () => {
       // country: ""
     },
   });
-
+  console.log(totalAmount, "amount ");
   const formFilled = Object.values(data && data.address).every(
     (value) => value
   );
@@ -43,6 +43,7 @@ const PaymentForm = () => {
       },
       onCancel: () => {
         // user closed popup
+        console.log("transaction cancelled");
       },
     });
   };

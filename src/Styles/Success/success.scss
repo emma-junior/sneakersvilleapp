@@ -1,56 +1,73 @@
 @import "../../variables/variables";
 @import "../../variables/resets";
 
-
 @mixin flexCenter($justify) {
-    display: flex;
-    justify-content: $justify;
-    align-items: center;
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
 }
 
 .success {
-    width: 100%;
-    height: 100vh;
-    background: #fafcff;
-    @include flexCenter(center);
+  width: 100%;
+  height: 100vh;
+  background: #d2e1ed;
+  @include flexCenter(center);
 
-    .success_wrapper {
-        background: #fff;
-        padding: 20px 40px;
-        margin: 0 15px;
-        border-radius: 15px;
+  .success_wrapper {
+    background: #fff;
+    padding: 20px 40px;
+    margin: 0 15px;
+    border-radius: 15px;
 
-        .check-icon {
-            font-size: 40px;
-            color: #19cfa8;
-            text-align: center;
-        }
-        .successfull {
-            text-align: center;
-            color: #19cfa8;
-        }
-        .order-id {
-            text-align: center;
-            color: #c2c3cc;
-            margin: 10px 0;
-        }
-        hr {
-            margin: 25px auto;
-            // border-color: #c2c3cc;
-            display: block;
-            height: 1px;
-            border: 0;
-            border-top: 1px solid #c2c3cc;
-        }
-        .paid {
-            display: flex;
-            justify-content: space-between;
-            color: #c2c3cc;
-            margin: 10px 0;
-        }
-        .home {
-            text-align: center;
-            margin: 10px auto;
-        }
+    .check-icon {
+      font-size: 40px;
+      color: #19cfa8;
+      text-align: center;
     }
+    .successfull {
+      text-align: center;
+      color: #19cfa8;
+    }
+    .order-id {
+      text-align: center;
+      color: #111;
+      margin: 10px 0;
+    }
+    hr {
+      margin: 25px auto;
+      // border-color: #c2c3cc;
+      display: block;
+      height: 1px;
+      border: 0;
+      border-top: 1px solid #c2c3cc;
+    }
+    .paid {
+      display: flex;
+      justify-content: space-between;
+      color: #111;
+      margin: 10px 0;
+    }
+    .cont-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 50px 0 5px;
+      font-size: 18px;
+      .cont {
+        display: flex;
+        align-items: center;
+        padding: 15px 30px;
+        border-radius: 15px;
+        .arrow {
+          display: flex;
+          align-items: center;
+          font-size: 15px;
+          margin-left: 10px;
+        }
+      }
+      .cont:hover {
+        background: #f0f6df;
+      }
+    }
+  }
 }

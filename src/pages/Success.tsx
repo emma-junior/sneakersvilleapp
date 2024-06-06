@@ -9,6 +9,7 @@ import { Product } from "../model";
 import { useGlobalContext } from "../hooks/Context";
 import "../Styles/Success/success.scss";
 import { BsFillCheckCircleFill } from "react-icons/bs";
+import { FaArrowRight } from "react-icons/fa";
 
 const Success = () => {
   const { totalAmount } = useGlobalContext();
@@ -56,9 +57,16 @@ const Success = () => {
           <p>Bank:</p>
           <p>Emmanuels Bank</p>
         </div>
-        <p className="home">
-          <Link to="/">HOME</Link>
-        </p>
+        <Link to="/">
+          <div className="cont-wrapper">
+            <div className="cont">
+              <p>continue shopping</p>
+              <p className="arrow">
+                <FaArrowRight />
+              </p>
+            </div>
+          </div>
+        </Link>
       </div>
     </section>
   );

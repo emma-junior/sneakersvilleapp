@@ -2,96 +2,98 @@
 @import "../../variables/resets";
 
 @mixin flexCenter($justify) {
-    display: flex;
-    justify-content: $justify;
-    align-items: center;
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
 }
 
 @function weight($weight-name) {
-    @return map-get($font-weights, $weight-name)
+  @return map-get($font-weights, $weight-name);
 }
 @mixin mobile {
-    @media (max-width: $mobile) {
-        @content;
-    }
+  @media (max-width: $mobile) {
+    @content;
+  }
 }
 @mixin tab {
-    @media (max-width: $tab) {
-        @content;
-    }
+  @media (max-width: $tab) {
+    @content;
+  }
 }
 
 .card {
-    position: relative;
-    padding: 20px 10px;
-    cursor: pointer;
+  position: relative;
+  padding: 20px 10px;
+  cursor: pointer;
+  max-width: 300px;
+  overflow: hidden;
+  max-height: 393px;
+  @include tab {
+    max-height: 450px;
+  }
+
+  #{&}__imgwrapper {
     max-width: 300px;
+    max-height: 300px;
+    display: inline-block;
     overflow: hidden;
-    max-height: 393px;
+
+    .card-img {
+      width: 100%;
+      height: 100%;
+      transition: 0.3s ease-in-out;
+    }
+
+    .card-img:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  @media (hover) {
+    .move-up {
+      background: #fff;
+      transition: 0.3s ease-in-out;
+      transform: translateY(10%);
+    }
+  }
+  &:hover .move-up {
+    transform: translateY(-30%);
     @include tab {
-        max-height: 450px;
+      transform: translateY(-35%);
     }
-
-
-    #{&}__imgwrapper {
-        max-width: 300px;
-        max-height: 300px;
-        display: inline-block;
-        overflow: hidden;
-
-        .card-img {
-            width: 100%;
-            height: 100%;
-            transition: 0.3s ease-in-out;
-        }
-
-        .card-img:hover {
-            transform: scale(1.2);
-        }
+    @include mobile {
+      transform: translateY(0);
     }
+  }
+  .card-info {
+    max-width: 300px;
+    padding: 0px auto 10px;
+    text-align: center;
 
-    @media (hover) {
-        .move-up {
-            background: #fff;
-            transition: 0.3s ease-in-out; 
-            transform: translateY(10%);
-        }
+    .card-info__icon {
+      font-size: 25px;
     }
-    &:hover .move-up {
-        transform: translateY(-30%);
-        @include tab {
-            transform: translateY(-35%);
-        }
+    .card-info__title {
+      font-weight: map-get($font-weights, bold);
     }
-    .card-info {
-        max-width: 300px;
-        padding: 0px auto 10px;
-        text-align: center;
-
-        .card-info__icon {
-            font-size: 25px;
-        }
-        .card-info__title {
-            font-weight: map-get($font-weights, bold);
-        }
-        .card-info__price {
-            font-weight: map-get($font-weights, medium);
-        }
-        .card-info__btn {
-            padding: 10px 23px;
-            background: $primary-color;
-            color: #fff;
-            border: none;
-            font-weight: map-get($font-weights, bold);
-            border-radius: 30px;
-            font-size: 18px;
-            margin: 10px 0;
-            cursor: pointer;
-        }
-        .card-info__btn:active {
-            background-color: rgb(53, 49, 49);
-            transform: scale(1.1);
-            transition: 0.2s ;
-        }
+    .card-info__price {
+      font-weight: map-get($font-weights, medium);
     }
+    .card-info__btn {
+      padding: 10px 23px;
+      background: $primary-color;
+      color: #fff;
+      border: none;
+      font-weight: map-get($font-weights, bold);
+      border-radius: 30px;
+      font-size: 18px;
+      margin: 10px 0;
+      cursor: pointer;
+    }
+    .card-info__btn:active {
+      background-color: rgb(53, 49, 49);
+      transform: scale(1.1);
+      transition: 0.2s;
+    }
+  }
 }
