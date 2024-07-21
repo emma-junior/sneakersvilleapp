@@ -1,163 +1,151 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
+@import "../variables";
+@import "../mixins";
 
 @function weight($weight-name) {
-    @return map-get($font-weights, $weight-name)
+  @return map-get($font-weights, $weight-name);
 }
 
 @mixin btn($bgcolor) {
-    background-color: $bgcolor;
-    color: #fff;
-    width: 100%;
-    height: 45px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-    margin: 15px auto;
-    border-radius: 7px;
-    font-weight: map-get($font-weights, bold);
-}
-
-@mixin tab {
-    @media (max-width: $tab) {
-        @content;
-    }
-}
-
-@mixin mobile {
-    @media (max-width: $mobile) {
-        @content;
-    }
+  background-color: $bgcolor;
+  color: #fff;
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  margin: 15px auto;
+  border-radius: 7px;
+  font-weight: map-get($font-weights, bold);
 }
 
 .reg-page {
-    .reg {
-        display: flex;
-        position: relative;
-        .reg-img-container{
-            position: relative;
-            width: 50%;
-            height: 100vh;
-            @include tab {
-                width: 100%;
-            }
+  .reg {
+    display: flex;
+    position: relative;
+    .reg-img-container {
+      position: relative;
+      width: 50%;
+      height: 100vh;
+      @include respondMax("lg-tablet") {
+        width: 100%;
+      }
 
-            .reg-img-cover {
-                position: absolute;
-                background-color: rgba(173, 117, 32, 0.356);
-                width: 100%;
-                height: 100%;
-            }
-           .reg-img{
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            }
-            .reg-img-loader {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                z-index: 3;
-                background-color: rgb(182, 100, 114);
-                display: grid;
-                place-items: center;
-                top: 0;
-                left: 0;
-                transition: 2s opacity linear;
-           }
-       }
-       .reg-form-container {
-            display: flex;
-            height: 100vh;
-            width: 50%;
-            align-items: center;
-            background-color: #fff;
-            @include tab {
-                position: absolute;
-                width: 80%;
-                height: 75vh;
-                top: 0;
-                bottom: 0;
-                border-radius: 10px;
-                left: 0;
-                right: 0;
-                margin: auto;
-                z-index: 10;
-            }
-
-            form {
-                margin: auto;
-                width: 70%;
-                @include mobile {
-                    width: 85%;
-                }
-                h1 {
-                    font-size: 28px;
-                    margin-bottom: 20px;
-                    color: $primary-color;
-                    font-weight: 700;
-                    text-align: center;
-                }
-                .input-wrap {
-                    margin-bottom: 2.3rem;
-                    input {
-                        display: block;
-                        height: 3.2rem;
-                        text-indent: 1.2rem;
-                        width: 100%;
-                        border-radius: .3rem;
-                        border: 2px solid rgb(194, 187, 187);
-                    }
-                }
-                .reg-password {
-                    position: relative;
-                    display: block;
-
-                    .shown-password {
-                        position: absolute;
-                        top: 50%;
-                        right: 0;
-                        width: 10%;
-                        font-size: 1.5rem;
-                        height: 100%;
-                        cursor: pointer;
-                        color: rgb(179, 179, 179);
-                        background-color: transparent;
-                        border: none;
-                        transition: .5s all ease;
-                        transform: translateY(-30%);
-                    }
-                    .shown-password:hover {
-                        color: rgb(148, 148, 148);                   
-                    }
-                }
-                .reg-btn {
-                    @include btn($primary-color);
-                    cursor: pointer;
-                }
-                .reg-btn:hover {
-                    background-color: rgb(51, 49, 49);
-                }
-                .account {
-                    font-weight: map-get($font-weights, medium);
-
-                    span {
-                        font-weight: map-get($font-weights, bold);
-                        cursor: pointer;
-                    }
-                    span:hover {
-                        color: #D21C23;
-                    }
-                }
-            }
-       }
+      .reg-img-cover {
+        position: absolute;
+        background-color: rgba(173, 117, 32, 0.356);
+        width: 100%;
+        height: 100%;
+      }
+      .reg-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .reg-img-loader {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        background-color: rgb(182, 100, 114);
+        display: grid;
+        place-items: center;
+        top: 0;
+        left: 0;
+        transition: 2s opacity linear;
+      }
     }
+    .reg-form-container {
+      display: flex;
+      height: 100vh;
+      width: 50%;
+      align-items: center;
+      background-color: #fff;
+      @include respondMax("lg-tablet") {
+        position: absolute;
+        width: 80%;
+        height: 75vh;
+        top: 0;
+        bottom: 0;
+        border-radius: 10px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        z-index: 10;
+      }
+
+      form {
+        margin: auto;
+        width: 70%;
+        @include respondMax("mobile") {
+          width: 85%;
+        }
+        h1 {
+          font-size: 28px;
+          margin-bottom: 20px;
+          color: $primary-color;
+          font-weight: 700;
+          text-align: center;
+        }
+        .input-wrap {
+          margin-bottom: 2.3rem;
+          input {
+            display: block;
+            height: 3.2rem;
+            text-indent: 1.2rem;
+            width: 100%;
+            border-radius: 0.3rem;
+            border: 2px solid rgb(194, 187, 187);
+          }
+        }
+        .reg-password {
+          position: relative;
+          display: block;
+
+          .shown-password {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            width: 10%;
+            font-size: 1.5rem;
+            height: 100%;
+            cursor: pointer;
+            color: rgb(179, 179, 179);
+            background-color: transparent;
+            border: none;
+            transition: 0.5s all ease;
+            transform: translateY(-30%);
+          }
+          .shown-password:hover {
+            color: rgb(148, 148, 148);
+          }
+        }
+        .reg-btn {
+          @include btn($primary-color);
+          cursor: pointer;
+        }
+        .reg-btn:hover {
+          background-color: rgb(51, 49, 49);
+        }
+        .account {
+          font-weight: map-get($font-weights, medium);
+
+          span {
+            font-weight: map-get($font-weights, bold);
+            cursor: pointer;
+          }
+          span:hover {
+            color: #d21c23;
+          }
+        }
+      }
+    }
+  }
 }
 .errorMsg {
-    color: rgb(219, 37, 37);
+  color: rgb(219, 37, 37);
 }
 .disabled-btn {
-    @include btn(#777);
-    cursor: default;
+  @include btn(#777);
+  cursor: default;
 }

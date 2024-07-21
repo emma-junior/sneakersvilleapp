@@ -1,86 +1,85 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
-@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+@import "../variables";
+@import url("https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap");
 
 @mixin dropdownbackground() {
-    background-color: #fff;
-    border-radius: 4px;
-    border: 1px solid rgba(33, 63, 125, 0.06);
-    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
-    width: 85px;
-    height: 60px;
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid rgba(33, 63, 125, 0.06);
+  box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+  width: 85px;
+  height: 60px;
 }
 @mixin list() {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    height: 30px;
-    color: #222;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 30px;
+  color: #222;
 }
 
 .mobilenav {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  background-color: #fff;
+  padding: 15px;
+
+  .mobilenav-icons {
     display: flex;
-    width: 100%;
-    justify-content: space-between;
-    background-color: #fff;
-    padding: 15px;
 
-    .mobilenav-icons {
-        display: flex; 
-        
-        .account {
-            position: relative;
+    .account {
+      position: relative;
 
-            .text-wrapper {
-                display: flex;
-                width: 75px;
-                height: 30px;
-                justify-content: space-around;
-                align-items: center;
-                background: rgba(33, 63, 125, 0.1);
-                border-radius: 4px;
-                h4 {
-                    display: flex;
-                    height: 100%;
-                    align-items: center;
-                }
-            }
-            .letter-container {
-                display: flex;
-                width: 75px;
-                height: 30px;
-                justify-content: center;
-                .letter {
-                    background-color: rgb(3, 3, 73);
-                    padding: 6px 10px;
-                    color: #fff;
-                    border-radius: 50%;
-                    cursor: pointer;
-                }
-            }
-            ul {
-                @include dropdownbackground();
-                position: absolute;
-                top: 30px;
-                z-index: 10;
-            
-                li {
-                    @include list();
-            
-                    &:hover {
-                        background: rgba(33, 63, 125, 0.1);
-                    }
-                }
-            }
+      .text-wrapper {
+        display: flex;
+        width: 75px;
+        height: 30px;
+        justify-content: space-around;
+        align-items: center;
+        background: rgba(33, 63, 125, 0.1);
+        border-radius: 4px;
+        h4 {
+          display: flex;
+          height: 100%;
+          align-items: center;
         }
-        
-        .icon {
-            cursor: pointer;
+      }
+      .letter-container {
+        display: flex;
+        width: 75px;
+        height: 30px;
+        justify-content: center;
+        .letter {
+          background-color: rgb(3, 3, 73);
+          padding: 6px 10px;
+          color: #fff;
+          border-radius: 50%;
+          cursor: pointer;
         }
-        h3 {
-            margin: 0 15px;
+      }
+      ul {
+        @include dropdownbackground();
+        position: absolute;
+        top: 30px;
+        z-index: 10;
+
+        li {
+          @include list();
+
+          &:hover {
+            background: rgba(33, 63, 125, 0.1);
+          }
         }
+      }
     }
+
+    .icon {
+      cursor: pointer;
+    }
+    h3 {
+      margin: 0 15px;
+    }
+  }
 }

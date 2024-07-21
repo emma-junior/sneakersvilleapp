@@ -1,39 +1,27 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
-@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+@import "../variables";
+@import "../mixins";
+@import url("https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap");
 
 @function weight($weight-name) {
-    @return map-get($font-weights, $weight-name)
-}
-
-@mixin tab {
-    @media (max-width: $tab) {
-        @content;
-    }
-}
-
-@mixin mobile {
-    @media (max-width: $mobile) {
-        @content;
-    }
+  @return map-get($font-weights, $weight-name);
 }
 
 .Logo {
-    h1 {
-        font-weight: map-get($font-weights, bold);
-        font-size: 35px;
-        @include tab {
-            font-size: 30px;
-        }
-        @include mobile {
-            font-size: 22px;
-        }
-        cursor: pointer;
-        color: $primary-color;
-        font-family: 'Bakbak One', cursive;
-    
-        .ville {
-            color: rgb(3, 3, 73);
-        }
+  h1 {
+    font-weight: map-get($font-weights, bold);
+    font-size: 35px;
+    @include respondMax("lg-tablet") {
+      font-size: 30px;
     }
+    @include respondMax("mobile") {
+      font-size: 22px;
+    }
+    cursor: pointer;
+    color: $primary-color;
+    font-family: "Bakbak One", cursive;
+
+    .ville {
+      color: rgb(3, 3, 73);
+    }
+  }
 }

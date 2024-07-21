@@ -1,46 +1,37 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
-
+@import "../variables";
+@import "../mixins";
 
 @function weight($weight-name) {
-    @return map-get($font-weights, $weight-name)
-}
-
-@mixin tab {
-    @media (max-width: $tab) {
-        @content;
-    }
-}
-@mixin mobile {
-    @media (max-width: $mobile) {
-        @content;
-    }
+  @return map-get($font-weights, $weight-name);
 }
 
 .header {
-    background-image: url("../../../public/assets/images/cover-pic.webp");
-    background-color: #d2e1ed; 
+  background-image: url("../../../public/assets/images/cover-pic.webp");
+  background-color: #d2e1ed;
+  height: 70vh;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  @include respondMax("desktop") {
     height: 550px;
-    width: 100%;
-    background-position: center; 
-    background-repeat: no-repeat; 
-    background-size: cover;
+  }
 
-    @include tab {
-        background-image: url("../../../public/assets/images/mobile-cover-pic.webp");
-        color: #fff;
-    }
-    #{&}__content {
-        width: 500px;
-        padding: 100px 70px;
+  @include respondMax("lg-tablet") {
+    background-image: url("../../../public/assets/images/mobile-cover-pic.webp");
+    color: #fff;
+  }
+  #{&}__content {
+    width: 500px;
+    padding: 100px 70px;
 
-        @include mobile {
-            width: 350px;
-            padding: 70px 30px;
-        }
-        .header-title {
-            font-size: 50px;
-            font-weight: map-get($font-weights, medium);
-        }
+    @include respondMax("mobile") {
+      width: 350px;
+      padding: 70px 30px;
     }
+    .header-title {
+      font-size: 50px;
+      font-weight: map-get($font-weights, medium);
+    }
+  }
 }

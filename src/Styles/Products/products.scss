@@ -1,89 +1,80 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
+@import "../variables";
+@import "../mixins";
 
 @mixin loader($height) {
-    display: flex;
-    height: $height;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  height: $height;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
-@mixin tab {
-    @media (max-width: $tab) {
-        @content;
-    }
-}
-@mixin mobile {
-    @media (max-width: $mobile) {
-        @content;
-    }
+.loader-spinner {
+  @include loader(90vh);
+  margin: auto;
 }
 
-// .products {
+.categories_products {
+  display: flex;
+  width: 70%;
+  justify-content: space-between;
+  margin: auto;
 
-    .loader-spinner {
-        @include loader(90vh);
-        margin: auto;
-    }
+  @include respondMax("desktop") {
+    width: 85%;
+  }
+  @include respondMax("lg-tablet") {
+    display: block;
+    width: 90%;
+  }
 
-    .categories_products {
+  .categories {
+    margin-top: 10px;
+    ul {
+      border-left: 2px solid #e5e7eb;
+      margin-top: 5px;
+      @include respondMax("lg-tablet") {
         display: flex;
-        width: 85%;
-        justify-content: space-between;
-        margin: auto;
-        @include tab {
-            display: block;
-            width: 90%;
-        }
-        .categories {
-            margin-top: 10px;
-            ul {
-                border-left: 2px solid #e5e7eb;
-                margin-top: 5px;
-                @include tab {
-                    display: flex;
-                }
-                li{
-                    list-style: none;
-                    padding: 5px;
-                    padding-left: 10px;
-                    cursor: pointer;
+      }
+      li {
+        list-style: none;
+        padding: 5px;
+        padding-left: 10px;
+        cursor: pointer;
 
-                    &:hover {
-                        color: #FF2F2F;
-                    }
-                }
-                .all,
-                .men,
-                .women,
-                .kids {
-                    color: rgb(3, 3, 73);
-                    font-weight: 700;
-                }
-            }
+        &:hover {
+          color: #ff2f2f;
         }
-        .products-containers {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            .products-wrapper {
-                display: grid;
-                grid-template-columns: auto auto auto;
-                margin: auto;
-                @include tab {
-                    grid-template-columns: auto auto;
-                }
-                @include mobile {
-                    grid-template-columns: auto;
-                }
-            }
-            .products-pagination {
-                display: flex;
-                width: 100%;
-                justify-content: center;
-                margin: 30px auto;
-            }
-        }
+      }
+      .all,
+      .men,
+      .women,
+      .kids {
+        color: rgb(3, 3, 73);
+        font-weight: 700;
+      }
     }
-// }
+  }
+  .products-containers {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .products-wrapper {
+      display: grid;
+      grid-template-columns: auto auto auto;
+      margin: auto;
+      @include respondMax("lg-tablet") {
+        grid-template-columns: auto auto;
+      }
+      @include respondMax("mobile") {
+        grid-template-columns: auto;
+      }
+    }
+    .products-pagination {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      margin: 30px auto;
+    }
+  }
+}

@@ -1,5 +1,5 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
+@import "../variables";
+@import "../mixins";
 
 @mixin flexCenter($justify) {
   display: flex;
@@ -10,16 +10,6 @@
 @function weight($weight-name) {
   @return map-get($font-weights, $weight-name);
 }
-@mixin mobile {
-  @media (max-width: $mobile) {
-    @content;
-  }
-}
-@mixin tab {
-  @media (max-width: $tab) {
-    @content;
-  }
-}
 
 .card {
   position: relative;
@@ -28,7 +18,7 @@
   max-width: 300px;
   overflow: hidden;
   max-height: 393px;
-  @include tab {
+  @include respondMax("lg-tablet") {
     max-height: 450px;
   }
 
@@ -58,10 +48,11 @@
   }
   &:hover .move-up {
     transform: translateY(-30%);
-    @include tab {
+    @include respondMax("lg-tablet") {
       transform: translateY(-35%);
     }
-    @include mobile {
+
+    @include respondMax("mobile") {
       transform: translateY(0);
     }
   }

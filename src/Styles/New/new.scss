@@ -1,22 +1,13 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
-
-
-@mixin tab {
-    @media (max-width: $tab) {
-        @content;
-    }
-}
-@mixin mobile {
-    @media (max-width: $mobile) {
-        @content;
-    }
-}
+@import "../variables";
+@import "../mixins";
 
 .wrapper {
+  width: 55%;
+  @include respondMax("desktop") {
     width: 70%;
-    @include mobile {
-        width: 80%;
-    }
-    margin: 30px auto;
+  }
+  @include respondMax("mobile") {
+    width: 80%;
+  }
+  margin: 30px auto;
 }

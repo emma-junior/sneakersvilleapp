@@ -1,31 +1,29 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
-
+@import "../variables";
 
 @mixin flexCenter($justify) {
-    display: flex;
-    justify-content: $justify;
-    align-items: center;
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
 }
 
 @function weight($weight-name) {
-    @return map-get($font-weights, $weight-name)
+  @return map-get($font-weights, $weight-name);
 }
 
-    .navbarList {
-        width: 90%;
-        margin: auto;
-        height: 70px;
-        @include flexCenter(center);
+.navbarList {
+  width: 90%;
+  margin: auto;
+  height: 70px;
+  @include flexCenter(center);
 
-        li {
-            font-weight: map-get($font-weights, regular);
-            list-style: none;
-            margin: 10px;
-            cursor: pointer;
+  li {
+    font-weight: map-get($font-weights, regular);
+    list-style: none;
+    margin: 10px;
+    cursor: pointer;
 
-            &:hover {
-                font-weight: map-get($font-weights, medium);
-            }
-        }
+    &:hover {
+      font-weight: map-get($font-weights, medium);
     }
+  }
+}

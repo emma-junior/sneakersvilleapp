@@ -1,85 +1,76 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
-@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
-
+@import "../variables";
+@import "../mixins";
+@import url("https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap");
 
 @mixin flexCenter($justify) {
-    display: flex;
-    justify-content: $justify;
-    align-items: center;
-}
-
-@mixin tab {
-    @media (max-width: $tab) {
-        @content;
-    }
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
 }
 
 @function weight($weight-name) {
-    @return map-get($font-weights, $weight-name)
+  @return map-get($font-weights, $weight-name);
 }
 
-
 // .navbar {
-    .navbar-header {
-        background-color: $primary-color;
-        color: #fff;
-        height: 45px;
-        @include flexCenter(center);
+.navbar-header {
+  background-color: $primary-color;
+  color: #fff;
+  height: 45px;
+  @include flexCenter(center);
 
-        #{&}__p {
-            font-weight: map-get($font-weights, regular);
-            .p-span {
-                font-weight: map-get($font-weights, bold);
-                color: #D21C23;
-            }
-        }
+  #{&}__p {
+    font-weight: map-get($font-weights, regular);
+    .p-span {
+      font-weight: map-get($font-weights, bold);
+      color: #d21c23;
     }
+  }
+}
 
-    .navbar-cover {
-        #{&}__wrapper {
-            width: 95%;
-            margin: auto;
-            height: 80px;
-            @include flexCenter(space-between);
+.navbar-cover {
+  #{&}__wrapper {
+    width: 95%;
+    margin: auto;
+    height: 80px;
+    @include flexCenter(space-between);
 
-            .navbar-cart {
-                width: 320px;
-                @include tab {
-                    width: 250px;
-                }
-                @include flexCenter(space-between);
-                .login-logout {
-                    display: flex;
+    .navbar-cart {
+      width: 320px;
+      @include respondMax("lg-tablet") {
+        width: 250px;
+      }
+      @include flexCenter(space-between);
+      .login-logout {
+        display: flex;
 
-                    .login-register {
-                        cursor: pointer;
-                        color: $primary-color;
-                        padding: 0 4px;
-                        display: flex;
-                        height: 5px;
-                        align-items: center;
-                        &:hover {
-                            color: #FF2F2F;
-                        }
-                    }
-                }
-            }
-            input {
-                padding: 6px;
-                width: 250px;
-                @include tab {
-                    width: 200px;
-                }
-                border: none;
-                border-bottom: 2px solid $primary-color;
-                outline: none;
-            }
+        .login-register {
+          cursor: pointer;
+          color: $primary-color;
+          padding: 0 4px;
+          display: flex;
+          height: 5px;
+          align-items: center;
+          &:hover {
+            color: #ff2f2f;
+          }
         }
-        hr {
-            width: 95%;
-            margin: auto;
-        }
-        
+      }
     }
+    input {
+      padding: 6px;
+      width: 250px;
+      @include respondMax("lg-tablet") {
+        width: 200px;
+      }
+      border: none;
+      border-bottom: 2px solid $primary-color;
+      outline: none;
+    }
+  }
+  hr {
+    width: 95%;
+    margin: auto;
+  }
+}
 // }

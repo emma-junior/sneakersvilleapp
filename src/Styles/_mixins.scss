@@ -1,0 +1,58 @@
+@mixin center($width, $height) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: $width;
+  height: $height;
+}
+
+@mixin overlay($bg) {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $bg;
+}
+
+// breakpoints
+$breakpoints: (
+  "sm-mobile": 375px,
+  "mobile": 600px,
+  //37.5em
+  "tablet": 768px,
+  //48em
+  "lg-tablet": 900px,
+  //56.25em
+  "sm-desktop": 1024px,
+  //64em
+  "desktop": 1366px,
+  //85.375em
+  "lg-desktop": 1920px,
+  //120em
+) !default;
+
+@mixin respondMin($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        +"Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin respondMax($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+        +"Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}

@@ -1,123 +1,118 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
-
+@import "../variables";
+@import "../mixins";
 
 @mixin loader($height) {
-    display: flex;
-    height: $height;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  height: $height;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 @mixin flexCenter($justify) {
-    display: flex;
-    justify-content: $justify;
-    align-items: center;
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
 }
 
 @function weight($weight-name) {
-    @return map-get($font-weights, $weight-name)
+  @return map-get($font-weights, $weight-name);
 }
-@mixin mobile {
-    @media (max-width: $mobile) {
-        @content;
-    }
-}
+
 .carttable {
-    width: 90%;
-    margin: 30px auto 0;
-    h2 {
-        font-weight: map-get($font-weights, medium);
-        width: 85%;
+  width: 90%;
+  margin: 30px auto 0;
+  h2 {
+    font-weight: map-get($font-weights, medium);
+    width: 85%;
+    margin: 0 auto;
+  }
+  table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin-top: 20px;
+
+    .cart-empty {
+      display: flex;
+      width: 90vw;
+      height: 200px;
+      justify-content: center;
+      align-items: center;
+    }
+
+    tr {
+      border-top: 1px solid black;
+      border-collapse: collapse;
+      th {
+        width: 20vw;
+        padding: 30px 0;
+        background: #f9f9f9;
+        @include respondMax("mobile") {
+          width: 90vw;
+          display: block;
+          padding: 10px;
+        }
+      }
+      td {
+        width: 25vw;
         margin: 0 auto;
-    }
-    table {
-        border: 1px solid black;
+        text-align: center;
+        padding: 20px 0;
+        font-weight: map-get($font-weights, medium);
+        border-top: 1px solid black;
         border-collapse: collapse;
-        margin-top: 20px;
-
-            .cart-empty {
-                display: flex;
-                width: 90vw;
-                height: 200px;
-                justify-content: center;
-                align-items: center;
-            }
-
-            tr {
-                border-top: 1px solid black;
-                border-collapse: collapse;
-                th {
-                    width: 20vw;
-                    padding: 30px 0;
-                    background: #f9f9f9;
-                    @include mobile {
-                        width: 90vw;
-                        display: block;
-                        padding: 10px;
-                    }      
-                }
-                td {
-                    width: 25vw;
-                    margin: 0 auto;
-                    text-align: center;
-                    padding: 20px 0;
-                    font-weight: map-get($font-weights, medium);
-                    border-top: 1px solid black;
-                    border-collapse: collapse;
-                    @include mobile {
-                        width: 90vw;
-                        display: block;
-                        padding: 10px;
-                        border: none;
-                    }
-
-                    img {
-                        width: 110px;
-                        border-radius: 10px;
-                    }
-                    .qty-change {
-                        border: 1px solid #777;
-                        padding: 1px 9px;
-                        margin: 5px;
-                        font-size: 18px;
-                        font-weight: map-get($font-weights, bold);
-                        cursor: pointer;
-                    }
-                    .delete {
-                        cursor: pointer;
-                    }
-                    .delete:hover {
-                        color: #FF2F2F;
-                    }
-                }
-            }
-    }
-    .shopping-clear {
-        width: 100%;
-        @include flexCenter(space-between);
-
-        button {
-            font-weight: map-get($font-weights, medium);
-            margin: 10px 15px;
-            background: #ebebeb;
-            padding: 15px 30px;
-            border: none;
-            cursor: pointer;
-            font-size: 17px;
-            @include mobile {
-                font-size: 15px;
-                padding: 10px 20px;
-                margin: 10px 1px;
-            }
+        @include respondMax("mobile") {
+          width: 90vw;
+          display: block;
+          padding: 10px;
+          border: none;
         }
-        button:hover {
-            background: #FF2F2F;
-            color: #FFF;
+
+        img {
+          width: 110px;
+          border-radius: 10px;
         }
+        .qty-change {
+          border: 1px solid #777;
+          padding: 1px 9px;
+          margin: 5px;
+          font-size: 18px;
+          font-weight: map-get($font-weights, bold);
+          cursor: pointer;
+        }
+        .delete {
+          cursor: pointer;
+        }
+        .delete:hover {
+          color: #ff2f2f;
+        }
+      }
     }
-    .loader-spinner {
-        @include loader(200px);
+  }
+  .shopping-clear {
+    width: 100%;
+    @include flexCenter(space-between);
+
+    button {
+      font-weight: map-get($font-weights, medium);
+      margin: 10px 15px;
+      background: #ebebeb;
+      padding: 15px 30px;
+      border: none;
+      cursor: pointer;
+      font-size: 17px;
+      @include respondMax("mobile") {
+        font-size: 15px;
+        padding: 10px 20px;
+        margin: 10px 1px;
+      }
     }
+    button:hover {
+      background: #ff2f2f;
+      color: #fff;
+    }
+  }
+  .loader-spinner {
+    @include loader(200px);
+  }
 }

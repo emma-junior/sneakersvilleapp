@@ -1,21 +1,20 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
+@import "../variables";
 
 .home {
-    position: relative;
+  position: relative;
 
-    .home-cart-modal {
-        position: absolute;
-        background-color:rgba(0, 0, 0, 0.4);
-        z-index: 1;
-        top: 0;
-        width: 100%;
-        transition: 0.2s ease-in-out;
-        min-height: 100%;
+  .home-cart-modal {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+    top: 0;
+    width: 100%;
+    transition: 0.2s ease-in-out;
+    min-height: 100%;
 
-        .end {
-            display: flex;
-            justify-content: flex-end;
-        }
+    .end {
+      display: flex;
+      justify-content: flex-end;
     }
+  }
 }

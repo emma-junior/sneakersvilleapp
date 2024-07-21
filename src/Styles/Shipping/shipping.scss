@@ -1,151 +1,138 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
-
+@import "../variables";
+@import "../mixins";
 
 @function weight($weight-name) {
-    @return map-get($font-weights, $weight-name)
-}
-
-@mixin mobile {
-    @media (max-width: $mobile) {
-        @content;
-    }
-}
-@mixin tab {
-    @media (max-width: $tab) {
-        @content;
-    }
+  @return map-get($font-weights, $weight-name);
 }
 
 .shipping-wrapper {
-    display: flex;
-    width: 90%;
-    margin: 30px auto;
-    justify-content: space-between;
-    @include mobile {
-        display: block;
+  display: flex;
+  width: 90%;
+  margin: 30px auto;
+  justify-content: space-between;
+  @include respondMax("mobile") {
+    display: block;
+  }
+
+  .shipping {
+    width: 30%;
+    background: #f9f9f9;
+    border: solid 2px #ebebeb;
+    padding: 30px 25px;
+    color: #555;
+    border-radius: 5px;
+    @include respondMax("mobile") {
+      width: 95%;
+      margin: auto;
     }
 
-    .shipping {
-        width: 30%;
-        background: #f9f9f9;
-        border: solid 2px #ebebeb;
-        padding: 30px 25px;
-        color: #555;
-        border-radius: 5px;
-        @include mobile {
-            width: 95%;
-            margin: auto;
-        }
-
-        p {
-            margin: 10px 0;
-        }
-        .region {
-            margin: 20px 0;
-        }
-        .select {
-            width: 100%;
-            height: 35px;
-            border: solid 2px #ebebeb;
-            outline: none;
-        }
-        
+    p {
+      margin: 10px 0;
     }
-    .coupon {
-        width: 30%;
-        @include mobile {
-            width: 95%;
-            margin: 15px auto;
-        }
-        background: #f9f9f9;
-        padding: 30px 25px;
-        border: solid 2px #ebebeb;
-        height: fit-content;
-        border-radius: 5px;
-
-        p {
-            margin: 10px 0;
-            color: #555;
-        }
+    .region {
+      margin: 20px 0;
     }
-    .card-total {
-        width: 30%;
-        background: #f9f9f9;
-        padding: 30px 25px;
-        border: solid 2px #ebebeb;
-        border-radius: 5px;
-        height: fit-content;
-        @include mobile {
-            width: 95%;
-            margin: auto;
-        }
-
-        .total-products {
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            
-            h3 {
-                font-size: 16px;
-            }
-            p {
-                font-size: 18px;
-                font-weight: map-get($font-weights, medium);
-            }
-        }
-        hr {
-            margin: 20px 0;
-        }
-        h3 {
-            font-size: 16px;
-        }
-        .standard {
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-            margin: 8px 0;
-            color: #555;
-        }
-        .grand-total {
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
-
-            h2 {
-                font-weight: map-get($font-weights, medium);
-                color: #ff2f35;
-                font-size: 20px;
-            }
-        }
+    .select {
+      width: 100%;
+      height: 35px;
+      border: solid 2px #ebebeb;
+      outline: none;
     }
-    
-    h2 {
-        font-size: 18px;
-        color: #111;
-        margin: 10px 0;
+  }
+  .coupon {
+    width: 30%;
+    @include respondMax("mobile") {
+      width: 95%;
+      margin: 15px auto;
+    }
+    background: #f9f9f9;
+    padding: 30px 25px;
+    border: solid 2px #ebebeb;
+    height: fit-content;
+    border-radius: 5px;
+
+    p {
+      margin: 10px 0;
+      color: #555;
+    }
+  }
+  .card-total {
+    width: 30%;
+    background: #f9f9f9;
+    padding: 30px 25px;
+    border: solid 2px #ebebeb;
+    border-radius: 5px;
+    height: fit-content;
+    @include respondMax("mobile") {
+      width: 95%;
+      margin: auto;
     }
 
-    .input {
-        width: 100%;
-        height: 35px;
-        border: solid 2px #ebebeb;
-        outline: none;
-        padding: 5px;
-    }
-    .shipping-btn {
-        background: #000;
-        border: none;
-        color: #fff;
+    .total-products {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      h3 {
         font-size: 16px;
-        font-weight: map-get($font-weights, bold);
-        margin: 15px 0;
-        padding: 15px 30px;
-        cursor: pointer;
-
-        &:hover {
-            background: #FF2F2F;
-            color: #FFF;
-        }
+      }
+      p {
+        font-size: 18px;
+        font-weight: map-get($font-weights, medium);
+      }
     }
+    hr {
+      margin: 20px 0;
+    }
+    h3 {
+      font-size: 16px;
+    }
+    .standard {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+      margin: 8px 0;
+      color: #555;
+    }
+    .grand-total {
+      display: flex;
+      width: 100%;
+      justify-content: space-between;
+
+      h2 {
+        font-weight: map-get($font-weights, medium);
+        color: #ff2f35;
+        font-size: 20px;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 18px;
+    color: #111;
+    margin: 10px 0;
+  }
+
+  .input {
+    width: 100%;
+    height: 35px;
+    border: solid 2px #ebebeb;
+    outline: none;
+    padding: 5px;
+  }
+  .shipping-btn {
+    background: #000;
+    border: none;
+    color: #fff;
+    font-size: 16px;
+    font-weight: map-get($font-weights, bold);
+    margin: 15px 0;
+    padding: 15px 30px;
+    cursor: pointer;
+
+    &:hover {
+      background: #ff2f2f;
+      color: #fff;
+    }
+  }
 }

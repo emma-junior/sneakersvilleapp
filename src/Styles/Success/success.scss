@@ -1,5 +1,4 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
+@import "../variables";
 
 @mixin flexCenter($justify) {
   display: flex;

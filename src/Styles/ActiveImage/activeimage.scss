@@ -1,36 +1,30 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
-
-@mixin mobile {
-    @media (max-width: $mobile) {
-        @content;
-    }
-}
+@import "../variables";
+@import "../mixins";
 
 .activeimage-container {
-    .activeimage-wrapper {
-        max-width: 110px;
-        border: solid yellow 2px;
-        cursor: pointer;
-        @include mobile {
-            width: 70px;
-        }
-
-        .image {
-            width: 100%;
-        }
+  .activeimage-wrapper {
+    max-width: 110px;
+    border: solid yellow 2px;
+    cursor: pointer;
+    @include respondMax("mobile") {
+      width: 70px;
     }
 
-    .image-wrapper {
-        max-width: 110px;
-        cursor: pointer;
-        @include mobile {
-            width: 70px;
-            margin: 0 3px;
-        }
-
-        .image {
-            width: 100%;
-        }
+    .image {
+      width: 100%;
     }
+  }
+
+  .image-wrapper {
+    max-width: 110px;
+    cursor: pointer;
+    @include respondMax("mobile") {
+      width: 70px;
+      margin: 0 3px;
+    }
+
+    .image {
+      width: 100%;
+    }
+  }
 }

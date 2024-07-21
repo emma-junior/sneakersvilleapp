@@ -1,71 +1,59 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
-
+@import "../variables";
+@import "../mixins";
 
 @mixin flexCenter($justify) {
-    display: flex;
-    justify-content: $justify;
-    align-items: center;
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
 }
 
 @function weight($weight-name) {
-    @return map-get($font-weights, $weight-name)
-}
-
-@mixin mobile {
-    @media (max-width: $mobile) {
-        @content;
-    }
-}
-@mixin tab {
-    @media (max-width: $tab) {
-        @content;
-    }
+  @return map-get($font-weights, $weight-name);
 }
 
 .single-details {
-    margin: 30px auto;
-    .details-headers {
-        display: flex;
-        flex-wrap: wrap;
-        @include flexCenter(center);
-        
-        .headers {
-            margin: 20px 30px 30px;
-            color: #333;
-            cursor: pointer;
-            @include tab {
-                margin: 15px;
-            }
-            @include mobile {
-                margin: 10px;
-            }
-        }
-        .header-active {
-            color: #ff2f2f;
-        }
+  margin: 30px auto;
+  .details-headers {
+    display: flex;
+    flex-wrap: wrap;
+    @include flexCenter(center);
+
+    .headers {
+      margin: 20px 30px 30px;
+      color: #333;
+      cursor: pointer;
+      @include respondMax("lg-tablet") {
+        margin: 15px;
+      }
+      @include respondMax("mobile") {
+        margin: 10px;
+      }
     }
-    .description {
-        color: #444;
-        font-size: 18px;
+    .header-active {
+      color: #ff2f2f;
     }
-    table {
-        border: 1px solid black;
-        border-collapse: collapse;
-        tr {
-            font-size: 18px;
-            color: #444;
-            display: flex;
-            border-top: 1px solid black;
-            border-collapse: collapse;
-            .bold {
-                font-weight: map-get($font-weights, medium);
-                padding: 10px;
-                width: 30vw;
-            }
-            .not-bold {
-                width: 60vw;
-            }
-        }
+  }
+  .description {
+    color: #444;
+    font-size: 18px;
+  }
+  table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    tr {
+      font-size: 18px;
+      color: #444;
+      display: flex;
+      border-top: 1px solid black;
+      border-collapse: collapse;
+      .bold {
+        font-weight: map-get($font-weights, medium);
+        padding: 10px;
+        width: 30vw;
+      }
+      .not-bold {
+        width: 60vw;
+      }
     }
+  }
 }

@@ -1,66 +1,65 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
-
+@import "../variables";
+@import "../mixins";
 
 @mixin flexCenter($justify) {
-    display: flex;
-    justify-content: $justify;
-    align-items: center;
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
 }
 
 @function weight($weight-name) {
-    @return map-get($font-weights, $weight-name)
+  @return map-get($font-weights, $weight-name);
 }
 
 @mixin tab {
-    @media (max-width: $tab) {
-        @content;
-    }
+  @media (max-width: $tab) {
+    @content;
+  }
 }
 
 .subscribe {
-    width: 90%;
-    margin: 70px auto;
-    @include flexCenter(space-between);
-    @include tab {
-        display: block;
-    }
+  width: 90%;
+  margin: 70px auto;
+  @include flexCenter(space-between);
+  @include respondMax("lg-tablet") {
+    display: block;
+  }
 
-    #{&}__connected {
-        width: 40%;
-        .connected__title {
-            font-size: 30px;
-        }
-        .connected__para {
-            color: #555;
-        }
-        @include tab {
-            margin-bottom: 15px;
-            width: 90%;
-        }
+  #{&}__connected {
+    width: 40%;
+    .connected__title {
+      font-size: 30px;
     }
-
-    #{&}__mail {
-        .mail {
-            display: flex;
-            padding: 2px;
-
-            .mail-icon {
-                font-size: 25px;
-                margin-right: 7px;
-            }
-            .mail-input {
-                width: 600px;
-                border: none;
-                outline: none;
-            }
-            .subscribe-btn {
-                font-weight: map-get($font-weights, bold);
-                cursor: pointer;
-            }
-            .subscribe-btn:hover {
-                color: #FF2F2F;
-            }
-        }
+    .connected__para {
+      color: #555;
     }
+    @include respondMax("lg-tablet") {
+      margin-bottom: 15px;
+      width: 90%;
+    }
+  }
+
+  #{&}__mail {
+    .mail {
+      display: flex;
+      padding: 2px;
+
+      .mail-icon {
+        font-size: 25px;
+        margin-right: 7px;
+      }
+      .mail-input {
+        width: 600px;
+        border: none;
+        outline: none;
+      }
+      .subscribe-btn {
+        font-weight: map-get($font-weights, bold);
+        cursor: pointer;
+      }
+      .subscribe-btn:hover {
+        color: #ff2f2f;
+      }
+    }
+  }
 }

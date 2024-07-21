@@ -1,60 +1,54 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
-@import url('https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap');
+@import "../variables";
+@import "../mixins";
+@import url("https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap");
 
 @mixin flexCenter($justify) {
-    display: flex;
-    justify-content: $justify;
-    align-items: center;
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
 }
 
 @function weight($weight-name) {
-    @return map-get($font-weights, $weight-name)
-}
-
-@mixin mobile {
-    @media (max-width: $mobile) {
-        @content;
-    }
+  @return map-get($font-weights, $weight-name);
 }
 
 .footer {
-    width: 45%;
-    margin: 100px auto 20px;
+  width: 45%;
+  margin: 100px auto 20px;
 
-    @include mobile {
-        width: 90%;
+  @include respondMax("mobile") {
+    width: 90%;
+  }
+  #{&}__list {
+    @include flexCenter(space-between);
+
+    li {
+      list-style: none;
+      font-weight: map-get($font-weights, medium);
+      cursor: pointer;
     }
-    #{&}__list {
-        @include flexCenter(space-between);
+  }
 
-        li {
-            list-style: none;
-            font-weight: map-get($font-weights, medium);
-            cursor: pointer;
-        }
+  #{&}__address {
+    text-align: center;
+    margin: 30px 0;
+
+    .footer__Logo {
+      margin: 20px 0;
     }
-
-    #{&}__address {
-        text-align: center;
-        margin: 30px 0;
-
-        .footer__Logo {
-            margin: 20px 0;
-        }
-        .address, .email {
-            color: #555;
-        }
-        .tel {
-            color: #555;
-            margin: 5px 0;
-        }
-        
+    .address,
+    .email {
+      color: #555;
     }
-
-    .footer__copyright {
-        text-align: center;
-        color: #555;
-        margin: 50px 0;
+    .tel {
+      color: #555;
+      margin: 5px 0;
     }
+  }
+
+  .footer__copyright {
+    text-align: center;
+    color: #555;
+    margin: 50px 0;
+  }
 }

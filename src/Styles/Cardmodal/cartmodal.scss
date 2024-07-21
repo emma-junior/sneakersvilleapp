@@ -1,108 +1,95 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
-
+@import "../variables";
+@import "../mixins";
 
 @function weight($weight-name) {
-    @return map-get($font-weights, $weight-name)
+  @return map-get($font-weights, $weight-name);
 }
 
 @mixin flexCenter($justify) {
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}
+
+.cover {
+  width: 35%;
+  padding: 40px;
+  background: #fff;
+  height: 100vh;
+  position: fixed;
+  z-index: 2;
+  @include respondMax("lg-tablet") {
+    width: 60%;
+  }
+  @include respondMax("mobile") {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .times-icon {
     display: flex;
-    justify-content: $justify;
+    justify-content: flex-end;
+    cursor: pointer;
+  }
+  .cart-empty {
+    font-size: 30px;
+    display: flex;
+    height: 100%;
+    width: 100%;
     align-items: center;
-}
-
-@mixin tab {
-    @media (max-width: $tab) {
-        @content;
+    justify-content: center;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 30px 10px;
+  }
+  .cartmap-container {
+    .wrap {
+      height: 200px;
+      overflow-y: scroll;
     }
-}
-@mixin mobile {
-    @media (max-width: $mobile) {
-        @content;
-    }
-}
-
-.cover{
-    width: 35%;
-    padding: 40px;
-    background: #fff;
-    height: 100vh;
-    position: fixed;
-    z-index: 2;
-    @include tab {
-        width: 60%;
-    }
-    @include mobile {
-        width: 90%;
-        padding: 20px;
-    }
-
-    .times-icon {
-        display: flex;
-        justify-content: flex-end;
-        cursor: pointer;
-    }
-    .cart-empty {
-        font-size: 30px;
-        display: flex;
-        height: 100%;
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-    h2 {
-        font-size: 20px;
-        margin: 30px 10px;
-    }
-    .cartmap-container {
-        
-        .wrap {
-            height: 200px;
-            overflow-y: scroll;
+    .cartmap-wrapper {
+      display: flex;
+      margin: 20px;
+      img {
+        width: 100px;
+        margin-right: 10px;
+      }
+      .cartmap-wrapper-content {
+        .cartmap-title {
+          font-weight: map-get($font-weights, medium);
+          @include respondMax("mobile") {
+            font-size: 15px;
+          }
         }
-        .cartmap-wrapper {
-            display: flex;
-            margin: 20px;
-            img {
-                width: 100px;
-                margin-right: 10px;
-            }
-            .cartmap-wrapper-content {
-                .cartmap-title {
-                    font-weight: map-get($font-weights, medium);
-                    @include mobile {
-                        font-size: 15px;
-                    }
-                }
-                .cartmap-price {
-                    font-weight: map-get($font-weights, regular);
-                    display: flex;
-                    height: 40px;
-                    width: 70%;
-                    justify-content: space-between;
-                    align-items: center;
-                }
-            }
+        .cartmap-price {
+          font-weight: map-get($font-weights, regular);
+          display: flex;
+          height: 40px;
+          width: 70%;
+          justify-content: space-between;
+          align-items: center;
         }
-        .subtotal {
-            margin-top: 35px;
-            padding: 20px;
-            @include flexCenter(space-between);
-        }
-        .viewcart-btn {
-            background: $primary-color;
-            color: #fff;
-            width: 90%;
-            height: 50px;
-            margin: 10px auto;
-            cursor: pointer;
-            font-weight: map-get($font-weights, medium);
-            @include flexCenter(center);
-            border: none;
-        }
-        .viewcart-btn:hover {
-            background: #FF2F2F;
-        }
+      }
     }
+    .subtotal {
+      margin-top: 35px;
+      padding: 20px;
+      @include flexCenter(space-between);
+    }
+    .viewcart-btn {
+      background: $primary-color;
+      color: #fff;
+      width: 90%;
+      height: 50px;
+      margin: 10px auto;
+      cursor: pointer;
+      font-weight: map-get($font-weights, medium);
+      @include flexCenter(center);
+      border: none;
+    }
+    .viewcart-btn:hover {
+      background: #ff2f2f;
+    }
+  }
 }

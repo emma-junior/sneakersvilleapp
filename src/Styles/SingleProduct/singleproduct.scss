@@ -1,5 +1,5 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
+@import "../variables";
+@import "../mixins";
 
 @mixin loader($height) {
   display: flex;
@@ -19,50 +19,43 @@
   @return map-get($font-weights, $weight-name);
 }
 
-@mixin tab {
-  @media (max-width: $tab) {
-    @content;
-  }
-}
-@mixin mobile {
-  @media (max-width: $mobile) {
-    @content;
-  }
-}
-
 .loader-spinner {
   @include loader(200px);
 }
 
 .details {
-  width: 90%;
+  width: 75%;
   margin: 30px auto;
-  @include mobile {
+  @include respondMax("desktop") {
+    width: 90%;
+  }
+  @include respondMax("mobile") {
     margin: 15px auto 5px;
   }
 
   .singleproduct {
     display: flex;
     justify-content: space-between;
-    @include tab {
+    @include respondMax("lg-tablet") {
       flex-direction: column;
     }
+
     .singleproduct-images {
       width: 50%;
-      @include tab {
+      @include respondMax("lg-tablet") {
         width: 90%;
         margin: auto;
       }
-      @include mobile {
+      @include respondMax("mobile") {
         width: 100%;
         margin: auto;
       }
       .currentimage-div {
         max-width: 570px;
-        @include tab {
+        @include respondMax("lg-tablet") {
           max-width: 590px;
         }
-        @include mobile {
+        @include respondMax("mobile") {
           width: 340px;
         }
         .currentimage {
@@ -73,10 +66,10 @@
         max-width: 570px;
         display: flex;
         justify-content: center;
-        @include tab {
+        @include respondMax("lg-tablet") {
           max-width: 590px;
         }
-        @include mobile {
+        @include respondMax("mobile") {
           max-width: 90%;
         }
         .images {
@@ -85,7 +78,6 @@
           width: 85%;
           justify-content: space-between;
         }
-
       }
     }
     .singleproduct-detail {
@@ -93,12 +85,12 @@
       color: #444;
       height: 600px;
       margin: auto 0;
-      @include tab {
+      @include respondMax("lg-tablet") {
         width: 100%;
         margin: 30px 20px;
         height: 400px;
       }
-      @include mobile {
+      @include respondMax("mobile") {
         width: 350px;
         margin: 10px 5px;
       }
@@ -106,7 +98,7 @@
       h1 {
         color: #111;
         font-size: 35px;
-        @include mobile {
+        @include respondMax("mobile") {
           font-size: 30px;
         }
       }
@@ -210,7 +202,7 @@
     }
     .related-product {
       display: flex;
-      @include tab {
+      @include respondMax("lg-tablet") {
         width: 95%;
         margin: auto;
         flex-wrap: wrap;

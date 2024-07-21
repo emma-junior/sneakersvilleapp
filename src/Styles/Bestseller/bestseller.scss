@@ -1,64 +1,61 @@
-@import "../../variables/variables";
-@import "../../variables/resets";
-
+@import "../variables";
+@import "../mixins";
 
 @mixin flexCenter($justify) {
-    display: flex;
-    justify-content: $justify;
-    align-items: center;
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
 }
 @mixin loader($height) {
-    display: flex;
-    height: $height;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-}
-
-@mixin mobile {
-    @media (max-width: $mobile) {
-        @content;
-    }
+  display: flex;
+  height: $height;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .bestseller {
+  #{&}__topic {
+    text-align: center;
+    margin: 80px auto 20px;
+    .topic {
+      font-size: 30px;
+    }
+    .topic-info {
+      color: #555;
+    }
+  }
+  #{&}__all {
+    width: 85%;
+    @include flexCenter(space-between);
+    margin: 50px auto;
+    @include respondMax("desktop") {
+      width: 95%;
+    }
 
-    #{&}__topic {
-        text-align: center;
-        margin: 80px auto 20px;
-        .topic {
-            font-size: 30px;
-        }
-        .topic-info {
-            color: #555;
-        }
+    h4 {
+      color: #111;
     }
-    #{&}__all {
-        width: 95%;
-        @include flexCenter(space-between);
-        margin: 50px auto;
-        
-        h4 {
-            color: #111;
-        }
-        h4:hover {
-            color: #FF2F2F;
-        }
+    h4:hover {
+      color: #ff2f2f;
     }
-    #{&}__products {
-        margin: 10px auto;
-        width: 95%;
-        display: grid;
-        grid-template-columns: auto auto auto auto;
-
-        @include mobile {
-            display: block;
-            width: 300px;
-            margin: 5px auto ;
-        }
-
+  }
+  #{&}__products {
+    margin: 10px auto;
+    width: 85%;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    @include respondMax("desktop") {
+      width: 95%;
+      grid-template-columns: auto auto auto auto;
     }
-    .loader-spinner {
-        @include loader(200px);
+    @include respondMax("mobile") {
+      display: block;
+      width: 300px;
+      margin: 5px auto;
     }
+  }
+  .loader-spinner {
+    @include loader(200px);
+  }
 }
