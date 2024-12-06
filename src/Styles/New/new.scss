@@ -2,7 +2,7 @@
 @import "../mixins";
 
 .wrapper {
-  width: 55%;
+  width: 60%;
   @include respondMax("desktop") {
     width: 70%;
   }
